@@ -35,7 +35,7 @@ export type CmsTripPageData = {
     key: string;
     title: string;
     summary: string;
-    image: CmsImage;
+    image: CmsImage | null;
     experience: string;
     mealPlan: string;
     stays: CmsTripStay[];

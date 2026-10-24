@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: Promise<{ slug?: string
   if (!key) notFound();
   const web3FormsAccessKey = process.env.WEB3FORMS_ACCESS_KEY || "";
   switch (key) {
-    case "home": return <HomeReferencePage />;
+    case "home": return <HomeReferencePage trips={await getTripCards()} />;
     case "kilimanjaro": return <KilimanjaroReferencePage />;
     case "machame": return <KilimanjaroRouteDetailPage route="machame" />;
     case "lemosho": return <KilimanjaroRouteDetailPage route="lemosho" />;

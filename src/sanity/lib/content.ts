@@ -197,7 +197,7 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
           slides: slidesByTier.get(tier) || [],
         } satisfies CmsTripStay;
       }).filter((stay: CmsTripStay) => Boolean(stay.image)),
-    })).filter((day): day is typeof day & { image: CmsImage } => Boolean(day.image));
+    }));
 
     const presetInclusionGroups = buildInclusionGroups(raw.includedServiceKeys);
     const legacyInclusionGroups = (raw.inclusionGroups || []).map((group, groupIndex) => ({
