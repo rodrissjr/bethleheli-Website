@@ -201,6 +201,15 @@ export const trip = defineType({
       validation: (rule) => rule.unique(),
     }),
     defineField({
+      name: 'notIncluded',
+      title: 'What Is Not Included',
+      type: 'array',
+      group: 'inclusions',
+      description: 'Items explicitly excluded by the source itinerary or final proposal.',
+      of: [defineArrayMember({type: 'string'})],
+      validation: (rule) => rule.unique(),
+    }),
+    defineField({
       name: 'inclusionGroups',
       title: 'Legacy Inclusion Groups',
       type: 'array',

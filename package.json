@@ -16,7 +16,10 @@
     "sanity:migrate:validate": "cd studio && npx sanity exec ../migration/scripts/validate.mjs --with-user-token",
     "sanity:docx-trips:dry-run": "node migration/scripts/migrate-docx-trips.mjs",
     "sanity:docx-trips:write": "cd studio && BETHELI_DOCX_TRIPS_WRITE=1 npx sanity exec ../migration/scripts/migrate-docx-trips.mjs --with-user-token",
-    "sanity:docx-trips:validate": "cd studio && npx sanity exec ../migration/scripts/validate-docx-trips.mjs --with-user-token"
+    "sanity:docx-trips:validate": "cd studio && npx sanity exec ../migration/scripts/validate-docx-trips.mjs --with-user-token",
+    "sanity:supplied-itineraries:dry-run": "node migration/scripts/migrate-supplied-itineraries.mjs",
+    "sanity:supplied-itineraries:write": "cd studio && BETHELI_SUPPLIED_ITINERARIES_WRITE=1 npx sanity exec ../migration/scripts/migrate-supplied-itineraries.mjs --with-user-token",
+    "sanity:supplied-itineraries:validate": "cd studio && npx sanity exec ../migration/scripts/validate-supplied-itineraries.mjs --with-user-token"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

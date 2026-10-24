@@ -1249,6 +1249,16 @@
         },
         "optional": true
       },
+      "notIncluded": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
+      },
       "inclusionGroups": {
         "type": "objectAttribute",
         "value": {

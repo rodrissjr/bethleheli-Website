@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-10-24T09:24:13.817Z",
+  "mode": "dry-run",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "source": {
+    "source": "Three supplied Microsoft Word itinerary documents",
+    "sourceDocuments": [
+      "01_East_African_Safari_and_Beach_Bliss.docx",
+      "02_East_African_Safari_and_Beach_Bliss_Copy.docx",
+      "03_African_Nights_and_Circle_of_Life_Safari.docx"
+    ],
+    "duplicateDecision": "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
+    "publishingDecision": "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
+    "priceDecision": "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
+    "researchDecision": "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
+  },
+  "counts": {
+    "sourceDocuments": 3,
+    "uniqueTrips": 2,
+    "newAccommodationDrafts": 9,
+    "itineraryDays": 26,
+    "images": 0
+  },
+  "warnings": [
+    "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
+    "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
+    "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
+    "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
+  ],
+  "qualityIssues": [],
+  "status": "ready-for-draft-import"
+}

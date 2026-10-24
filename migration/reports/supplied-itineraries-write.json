@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-10-24T09:25:05.256Z",
+  "mode": "draft-write",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "source": {
+    "source": "Three supplied Microsoft Word itinerary documents",
+    "sourceDocuments": [
+      "01_East_African_Safari_and_Beach_Bliss.docx",
+      "02_East_African_Safari_and_Beach_Bliss_Copy.docx",
+      "03_African_Nights_and_Circle_of_Life_Safari.docx"
+    ],
+    "duplicateDecision": "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
+    "publishingDecision": "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
+    "priceDecision": "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
+    "researchDecision": "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
+  },
+  "counts": {
+    "sourceDocuments": 3,
+    "uniqueTrips": 2,
+    "newAccommodationDrafts": 9,
+    "itineraryDays": 26,
+    "images": 0
+  },
+  "warnings": [
+    "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
+    "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
+    "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
+    "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
+  ],
+  "qualityIssues": [],
+  "status": "drafts-written",
+  "written": {
+    "accommodations": [
+      {
+        "slug": "hamerkop-house-by-lemala",
+        "draftId": "drafts.c0f89f53-0af7-4b0b-ad3b-38349b13e2de"
+      },
+      {
+        "slug": "gibbs-farm",
+        "draftId": "drafts.c26a9ffe-1589-45ef-a6af-b5d47e01303f"
+      },
+      {
+        "slug": "entamanu-ngorongoro",
+        "draftId": "drafts.b7b43925-2d74-4a5d-a069-490c1b0b6fc9"
+      },
+      {
+        "slug": "lemala-nanyukie-lodge",
+        "draftId": "drafts.84f2bfe6-7c9f-4c69-a166-af16effab071"
+      },
+      {
+        "slug": "zanzibar-white-sand-luxury-villas-spa",
+        "draftId": "drafts.532a8dda-5d16-444b-931f-ab5a4ff83a3c"
+      },
+      {
+        "slug": "ngorongoro-lions-paw",
+        "draftId": "drafts.c93860e3-4e22-4694-bdf7-dde5bae6425e"
+      },
+      {
+        "slug": "intimate-camp-zebra",
+        "draftId": "drafts.51580e1b-d4e1-4cef-a003-9a9e0a00f13e"
+      },
+      {
+        "slug": "ndutu-kati-kati-tented-camp",
+        "draftId": "drafts.952e5f0f-ae8b-43d1-b1b0-1344c070d162"
+      },
+      {
+        "slug": "moyo-tented-camp-central-serengeti",
+        "draftId": "drafts.2bda6c34-fa95-45ea-9ada-2ae114dfce6f"
+      }
+    ],
+    "trips": [
+      {
+        "slug": "east-african-safari-and-beach-bliss",
+        "draftId": "drafts.ed7560cf-8a8c-4c69-ad48-d4999dbabbc3"
+      },
+      {
+        "slug": "african-nights-and-circle-of-life-safari",
+        "draftId": "drafts.daf7a257-185b-45b6-88b6-3469152730c7"
+      }
+    ]
+  }
+}

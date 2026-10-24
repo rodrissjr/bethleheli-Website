@@ -227,6 +227,7 @@ export type Trip = {
   inclusionsTitle?: string;
   inclusionsDescription?: string;
   includedServiceKeys?: Array<string>;
+  notIncluded?: Array<string>;
   inclusionGroups?: Array<
     {
       _key: string;
