@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-10-24T14:54:12.789Z",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "placeholder": {
+    "assetId": "image-be209b88d27ecccc821a9aa4a725fd16353fe750-2400x1400-webp",
+    "filename": "betheli-temporary-itinerary-placeholder.webp",
+    "alt": "Temporary Tanzania safari landscape placeholder — to be replaced with client photography."
+  },
+  "published": [
+    {
+      "slug": "african-nights-and-circle-of-life-safari",
+      "draftId": "drafts.daf7a257-185b-45b6-88b6-3469152730c7",
+      "publishedId": "daf7a257-185b-45b6-88b6-3469152730c7",
+      "assetId": "image-be209b88d27ecccc821a9aa4a725fd16353fe750-2400x1400-webp"
+    },
+    {
+      "slug": "east-african-safari-and-beach-bliss",
+      "draftId": "drafts.ed7560cf-8a8c-4c69-ad48-d4999dbabbc3",
+      "publishedId": "ed7560cf-8a8c-4c69-ad48-d4999dbabbc3",
+      "assetId": "image-be209b88d27ecccc821a9aa4a725fd16353fe750-2400x1400-webp"
+    }
+  ]
+}
