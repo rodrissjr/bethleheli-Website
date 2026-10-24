@@ -139,9 +139,10 @@ function presentSeo(raw: RawSeo): CmsSeo | null {
 }
 
 async function fetchSanity<const Query extends string>(query: Query, params: Record<string, string>, tags: string[]): Promise<ClientReturn<Query>> {
-  return sanityClient.fetch(query, params, {
-    next: { revalidate: 60, tags },
-  });
+  return sanityClient.fetch(query, params, process.env.NODE_ENV === "development"
+    ? {cache: "no-store"}
+    : {next: {revalidate: 60, tags}},
+  );
 }
 
 export async function getTripPageContent(slug: string): Promise<CmsTripPageData | null> {
