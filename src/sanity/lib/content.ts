@@ -34,6 +34,10 @@ type RawImage = NonNullable<RawTrip["heroImage"]>;
 type RawMoney = { amount?: number | null; currency?: string | null };
 type RawSeo = TRIP_SEO_QUERY_RESULT;
 
+function isDefined<T>(value: T): value is NonNullable<T> {
+  return value != null;
+}
+
 const mealPlanLabels: Record<string, string> = {
   breakfast: "Breakfast",
   lunch: "Lunch",
@@ -157,7 +161,9 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
     const map = presentImage(raw?.sharedMap, 1200);
     if (!raw || !heroImage || !overviewImages.length || !map) return null;
 
-    const allAccommodations = (raw.itinerary || []).flatMap(day => day.accommodations || []);
+    const allAccommodations = (raw.itinerary || [])
+      .flatMap(day => day.accommodations || [])
+      .filter(isDefined);
     const slidesByTier = new Map<CmsTripStay["tier"], CmsTripStay["slides"]>();
     for (const accommodation of allAccommodations) {
       const tier = tierLabels[accommodation.tier || ""];
@@ -180,7 +186,7 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
       image: presentImage(day.image, 1600),
       experience: day.experience || "",
       mealPlan: mealPlanLabels[day.mealPlan || ""] || day.mealPlan || "",
-      stays: (day.accommodations || []).map(accommodation => {
+      stays: (day.accommodations || []).filter(isDefined).map(accommodation => {
         const tier = tierLabels[accommodation.tier || ""] || "Mid-range";
         const coverImage = presentImage(accommodation.coverImage, 1400);
         return {
