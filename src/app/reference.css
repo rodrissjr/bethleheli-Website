@@ -346,6 +346,9 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
 .trip-ref-nav .button{margin-left:auto;background:#2e3e52;min-height:51px;font-size:15px;white-space:nowrap}
 .trip-ref-nav .button:hover,.trip-ref-nav .button:focus-visible{background:#405670}
 .trip-ref-nav~main [id]{scroll-margin-top:100px}
+.trip-ref-back-link{display:inline-flex;align-items:center;gap:8px;width:max-content;margin-bottom:22px;padding:9px 14px;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(20,34,40,.34);color:#fff;font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:700;line-height:1;backdrop-filter:blur(8px);transition:background-color .2s,border-color .2s,transform .2s}
+.trip-ref-back-link:hover,.trip-ref-back-link:focus-visible{border-color:#fff;background:rgba(255,255,255,.2);transform:translateX(-2px)}
+.trip-ref-back-link:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .trip-ref-overview>.shell{display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.35fr);gap:48px;align-items:center}
 .trip-ref-overview h2{max-width:570px;font-size:42px}
 .trip-ref-overview p{max-width:650px;margin-top:22px;color:rgba(255,255,255,.72);font-size:14px;line-height:1.8}
@@ -444,7 +447,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
 @media(max-width:650px){.trip-ref-chapter-items,.trip-ref-chapter-items:has(>.trip-ref-chapter-item:nth-child(3)){grid-template-columns:1fr;gap:24px;padding:22px}.trip-ref-chapter-heading{padding:22px}.trip-ref-chapter-heading h3{font-size:23px}}
 .trip-ref-context{margin-top:18px;color:#667178;font-size:13px;line-height:1.75}
 @media(max-width:900px){
-  .trip-ref-nav>.shell{gap:12px;min-height:70px;overflow-x:auto}.trip-ref-nav .button{display:none}.trip-ref-nav~main [id]{scroll-margin-top:70px}
+  .trip-ref-nav>.shell{gap:12px;min-height:70px;overflow-x:auto}.trip-ref-nav .button{display:none}.trip-ref-nav~main [id]{scroll-margin-top:70px}.trip-ref-back-link{margin-bottom:16px;padding:8px 12px;font-size:12px}
   .trip-ref-overview>.shell{grid-template-columns:1fr;gap:38px}
   .trip-ref-itinerary>.shell{grid-template-columns:1fr;gap:40px}
   .trip-ref-itinerary aside>img{height:450px;object-fit:contain}
