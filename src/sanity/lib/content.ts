@@ -161,24 +161,6 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
     const map = presentImage(raw?.sharedMap, 1200);
     if (!raw || !heroImage || !overviewImages.length || !map) return null;
 
-    const allAccommodations = (raw.itinerary || [])
-      .flatMap(day => day.accommodations || [])
-      .filter(isDefined);
-    const slidesByTier = new Map<CmsTripStay["tier"], CmsTripStay["slides"]>();
-    for (const accommodation of allAccommodations) {
-      const tier = tierLabels[accommodation.tier || ""];
-      if (!tier) continue;
-      const slides = (accommodation.gallery || [])
-        .map(entry => presentImage(entry, 1400))
-        .filter((entry): entry is CmsImage => Boolean(entry))
-        .map(entry => ({ property: accommodation.propertyName || "Accommodation", tier, image: entry.src, alt: entry.alt }));
-      const current = slidesByTier.get(tier) || [];
-      for (const slide of slides) {
-        if (!current.some((candidate) => candidate.image === slide.image)) current.push(slide);
-      }
-      slidesByTier.set(tier, current.slice(0, 10));
-    }
-
     const itinerary = (raw.itinerary || []).map((day, dayIndex) => ({
       key: day._key || `day-${dayIndex + 1}`,
       title: day.title || "Itinerary day",
@@ -189,12 +171,23 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
       stays: (day.accommodations || []).filter(isDefined).map(accommodation => {
         const tier = tierLabels[accommodation.tier || ""] || "Mid-range";
         const coverImage = presentImage(accommodation.coverImage, 1400);
+        const slides = (accommodation.gallery || [])
+          .map(entry => presentImage(entry, 1400))
+          .filter((entry): entry is CmsImage => Boolean(entry))
+          .map(entry => ({
+            property: accommodation.propertyName || "Accommodation",
+            tier,
+            image: entry.src,
+            alt: entry.alt,
+          }));
         return {
           property: accommodation.propertyName || "Accommodation",
           tier,
           image: coverImage?.src || "",
           alt: coverImage?.alt || accommodation.propertyName || "Accommodation",
-          slides: slidesByTier.get(tier) || [],
+          // A stay may only display images attached to that specific property.
+          // Blending galleries across a tier can misrepresent a lodge.
+          slides,
         } satisfies CmsTripStay;
       }).filter((stay: CmsTripStay) => Boolean(stay.image)),
     }));

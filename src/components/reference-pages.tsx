@@ -778,10 +778,9 @@ function TripAccommodation({ day, mealPlan, options }: { day: number; mealPlan: 
   const [paused, setPaused] = useState(false);
   const [mealInfoOpen, setMealInfoOpen] = useState(false);
   const selected = options[selectedIndex] ?? options[0];
-  const tierSlides = selected
-    ? safariStayChoices.flatMap(choice => choice.slides).filter((stay, index, all) => stay.tier === selected.tier && stay.property !== selected.property && all.findIndex(candidate => candidate.image === stay.image) === index)
-    : [];
-  const slides = selected ? (selected.slides?.length ? selected.slides : [selected, ...tierSlides]) : [];
+  // Each property keeps its own gallery. Never fill a lodge gallery with images
+  // belonging to other properties, even when they share the same price tier.
+  const slides = selected ? (selected.slides?.length ? selected.slides : [selected]) : [];
   const slide = slides[slideIndex] || slides[0];
   const chooseOption = (index: number) => { setSelectedIndex(index); setSlideIndex(0); };
   const move = (direction: number) => setSlideIndex(index => (index + direction + slides.length) % slides.length);
