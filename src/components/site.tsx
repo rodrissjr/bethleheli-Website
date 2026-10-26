@@ -17,7 +17,9 @@ const navItems = [
 ] as const;
 const navSubmenus: Record<string, readonly (readonly [string, string])[]> = {
   Kilimanjaro: [["Kilimanjaro overview", "/kilimanjaro"], ["Machame Route", "/kilimanjaro/machame-route"], ["Lemosho Route", "/kilimanjaro/lemosho-route"], ["Marangu Route", "/kilimanjaro/marangu-route"], ["Rongai Route", "/kilimanjaro/rongai-route"], ["Northern Circuit", "/kilimanjaro/northern-circuit"], ["Umbwe Route", "/kilimanjaro/umbwe-route"], ["Group climbs", "/groups"]],
-  Trips: [["All trips", "/trips"], ["Zanzibar", "/trips#zanzibar-trips"], ["Safari", "/trips#safari-trips"], ["Kilimanjaro", "/trips#kilimanjaro-trips"], ["Combo safaris", "/trips#combo-trips"]],
+  // These destinations have their own landing pages. The previous hash links
+  // targeted sections that do not exist on /trips, leaving visitors in place.
+  Trips: [["All trips", "/trips"], ["Zanzibar", "/zanzibar"], ["Safari", "/safari"], ["Kilimanjaro", "/kilimanjaro"], ["Plan a combo trip", "/plan-your-trip"]],
 };
 const mobileNavItems = [
   ["Home", "/"], ["Kilimanjaro", "/kilimanjaro"], ["Safari", "/safari"], ["Zanzibar", "/zanzibar"], ["Trips", "/trips"],
