@@ -268,9 +268,11 @@ export async function getGroupDepartures(): Promise<CmsGroupDeparture[]> {
       const endYear = end.getUTCFullYear();
       const price = departure.price?.amount || 0;
       const originalPrice = departure.originalPrice?.amount || 0;
-      const routeAlreadyIncludesDuration = /\b\d+\s*(?:-|–|—)?\s*days?\b/i.test(departure.routeName);
-      const duration = departure.durationDays && !routeAlreadyIncludesDuration
-        ? `${departure.durationDays} ${departure.durationDays === 1 ? "day" : "days"}`
+      const routeDuration = departure.routeName.match(/\s*(?:-|–|—)?\s*(\d+)\s*days?\b/i);
+      const routeName = departure.routeName.replace(/\s*(?:-|–|—)?\s*\d+\s*days?\b/i, "").trim();
+      const durationDays = departure.durationDays || Number(routeDuration?.[1] || 0);
+      const duration = durationDays
+        ? `${durationDays} ${durationDays === 1 ? "day" : "days"}`
         : "";
       const range = startYear === endYear
         ? `From ${startDay} ${longStartMonth} – ${endDay} ${longEndMonth}`
@@ -282,9 +284,11 @@ export async function getGroupDepartures(): Promise<CmsGroupDeparture[]> {
         monthIndex: start.getUTCMonth(),
         year: String(startYear),
         dateTime: departure.startDate,
-        title: [departure.routeName, duration].filter(Boolean).join(" — "),
+        // Keep titles consistent even when an editor includes the duration in
+        // routeName. The layout receives one route label and one duration.
+        title: [routeName, duration].filter(Boolean).join(" — "),
         range,
-        highlights: departure.highlights || [],
+        highlights: (departure.highlights || []).map(item => item.trim()).filter(Boolean).slice(0, 4),
         price: formatMoney(departure.price, false),
         deposit: formatMoney(departure.deposit, false),
         originalPrice: originalPrice ? formatMoney(departure.originalPrice, false) : undefined,
