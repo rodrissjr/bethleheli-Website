@@ -390,6 +390,11 @@ const categoryLabels: Record<string, CmsTripCard["categories"][number]> = {
   zanzibar: "Zanzibar",
 };
 
+const sourcedTripCardImages: Record<string, string> = {
+  "african-nights-and-circle-of-life-safari": "/images/trips/african-nights-circle-of-life.jpg",
+  "east-african-safari-and-beach-bliss": "/images/trips/east-african-safari-beach-bliss.webp",
+};
+
 export async function getTripCards(): Promise<CmsTripCard[]> {
   try {
     const raw: TRIP_CARDS_QUERY_RESULT = await fetchSanity(TRIP_CARDS_QUERY, {}, ["sanity", "trip"]);
@@ -400,10 +405,11 @@ export async function getTripCards(): Promise<CmsTripCard[]> {
       const categories = (trip.categories || [])
         .map((category) => categoryLabels[category])
         .filter((category): category is CmsTripCard["categories"][number] => Boolean(category));
-      if (!trip.slug || !trip.title || !trip.durationDays || !cardImage || !categories.length) return [];
+      const sourcedCardImage = trip.slug ? sourcedTripCardImages[trip.slug] : undefined;
+      if (!trip.slug || !trip.title || !trip.durationDays || (!sourcedCardImage && !cardImage) || !categories.length) return [];
       return [{
         title: trip.title,
-        src: cardImage.src,
+        src: sourcedCardImage || cardImage!.src,
         href: `/trips/${trip.slug}`,
         categories,
         days: trip.durationDays,
