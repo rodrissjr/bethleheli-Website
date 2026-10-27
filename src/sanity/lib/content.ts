@@ -12,6 +12,7 @@ import type {
 import type {
   CmsGroupDeparture,
   CmsImage,
+  CmsKilimanjaroRouteTrip,
   CmsSeo,
   CmsTripCard,
   CmsTripPageData,
@@ -23,6 +24,7 @@ import { sanityClient } from "./client";
 import { urlForImage } from "./image";
 import {
   GROUP_DEPARTURES_QUERY,
+  KILIMANJARO_ROUTE_TRIPS_QUERY,
   TRIP_CARDS_QUERY,
   TRIP_PAGE_QUERY,
   TRIP_SEO_QUERY,
@@ -250,6 +252,76 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
     console.error(`Unable to load Sanity trip content for ${slug}.`, error);
     return null;
   }
+}
+
+type RawKilimanjaroRouteTrip = {
+  title?: string | null;
+  slug?: string | null;
+  durationDays?: number | null;
+  startingPrice?: RawMoney | null;
+  itineraryFor?: string | null;
+  destinations?: Array<string | null> | null;
+  itinerary?: Array<{
+    _key?: string | null;
+    title?: string | null;
+    summary?: string | null;
+    experience?: string | null;
+    mealPlan?: string | null;
+    image?: RawImage | null;
+    accommodations?: Array<string | null> | null;
+  } | null> | null;
+};
+
+const routeNames: Record<string, string> = {
+  machame: "machame",
+  lemosho: "lemosho",
+  marangu: "marangu",
+  rongai: "rongai",
+  "northern-circuit": "northern circuit",
+  umbwe: "umbwe",
+};
+
+function normalizeRouteText(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+export async function getKilimanjaroRouteTrips(): Promise<Partial<Record<string, CmsKilimanjaroRouteTrip>>> {
+  try {
+    const raw = await fetchSanity(KILIMANJARO_ROUTE_TRIPS_QUERY, {}, ["sanity", "trip"]) as unknown as RawKilimanjaroRouteTrip[];
+    const matchedTrips: Partial<Record<string, CmsKilimanjaroRouteTrip>> = {};
+    for (const [route, routeName] of Object.entries(routeNames)) {
+      const matched = (raw || []).find((trip) => {
+        const source = normalizeRouteText([trip.slug, trip.title, trip.itineraryFor].filter(Boolean).join(" "));
+        return source.includes(routeName);
+      });
+      if (!matched?.title || !matched.durationDays) continue;
+
+      matchedTrips[route] = {
+        title: matched.title,
+        durationDays: matched.durationDays,
+        startingPrice: formatMoney(matched.startingPrice),
+        itineraryFor: matched.itineraryFor || "",
+        destinations: (matched.destinations || []).filter((destination): destination is string => Boolean(destination)),
+        itinerary: (matched.itinerary || []).filter(isDefined).map((day, index) => ({
+          key: day._key || `route-day-${index + 1}`,
+          title: day.title || `Day ${index + 1}`,
+          summary: day.summary || "",
+          experience: day.experience || "",
+          mealPlan: mealPlanLabels[day.mealPlan || ""] || day.mealPlan || "",
+          accommodations: (day.accommodations || []).filter((name): name is string => Boolean(name)),
+          image: presentImage(day.image, 1200),
+        })),
+      };
+    }
+    return matchedTrips;
+  } catch (error) {
+    console.error("Unable to load Sanity Kilimanjaro route itineraries.", error);
+    return {};
+  }
+}
+
+export async function getKilimanjaroRouteTrip(route: string): Promise<CmsKilimanjaroRouteTrip | null> {
+  return (await getKilimanjaroRouteTrips())[route] || null;
 }
 
 export async function getGroupDepartures(): Promise<CmsGroupDeparture[]> {

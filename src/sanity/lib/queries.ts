@@ -79,6 +79,27 @@ export const TRIP_PAGE_QUERY = defineQuery(/* groq */ `
   }
 `);
 
+export const KILIMANJARO_ROUTE_TRIPS_QUERY = defineQuery(/* groq */ `
+  *[_type == "trip" && "kilimanjaro" in categories && defined(slug.current)] | order(durationDays asc, title asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    durationDays,
+    startingPrice { amount, currency },
+    itineraryFor,
+    destinations,
+    itinerary[] {
+      _key,
+      title,
+      summary,
+      experience,
+      mealPlan,
+      image { ${imageFields} },
+      "accommodations": accommodations[]->propertyName
+    }
+  }
+`);
+
 export const GROUP_DEPARTURES_QUERY = defineQuery(/* groq */ `
   *[_type == "groupDeparture" && bookingStatus == "scheduled"] | order(startDate asc) {
     _id,

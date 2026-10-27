@@ -1,7 +1,7 @@
 import {randomUUID} from 'node:crypto'
-import {mkdirSync, writeFileSync} from 'node:fs'
+import {createReadStream, existsSync, mkdirSync, writeFileSync} from 'node:fs'
 import {createRequire} from 'node:module'
-import {dirname, resolve} from 'node:path'
+import {basename, dirname, resolve} from 'node:path'
 import {fileURLToPath, pathToFileURL} from 'node:url'
 
 import {suppliedItinerariesSource} from '../supplied-itineraries-source.mjs'
@@ -64,11 +64,22 @@ const validateSource = () => {
     if (!accommodation.description || !accommodation.location) {
       errors.push(`${accommodation.slug}: location and description are required.`)
     }
+    if (!accommodation.imageSources?.length) {
+      errors.push(`${accommodation.slug}: at least one original accommodation photo is required.`)
+    }
+    for (const source of accommodation.imageSources ?? []) {
+      if (!existsSync(resolve(repositoryRoot, source))) errors.push(`${accommodation.slug}: missing image file ${source}.`)
+    }
   }
 
   for (const trip of suppliedItinerariesSource.trips) {
     if (trip.itinerary.length !== trip.durationDays) {
       errors.push(`${trip.slug}: expected ${trip.durationDays} itinerary days; found ${trip.itinerary.length}.`)
+    }
+    for (const source of [trip.heroImageSource, ...(trip.overviewImageSources ?? [])]) {
+      if (!source || !existsSync(resolve(repositoryRoot, source))) {
+        errors.push(`${trip.slug}: missing original trip image ${source ?? '(hero image not set)'}.`)
+      }
     }
     if (!trip.categories.length || trip.categories.some((value) => !allowedCategories.has(value))) {
       errors.push(`${trip.slug}: categories are missing or invalid.`)
@@ -107,13 +118,17 @@ const writeReport = (name, report) => {
 const {errors, warnings} = validateSource()
 const counts = {
   sourceDocuments: suppliedItinerariesSource.inventory.sourceDocuments.length,
+  sourcePages: suppliedItinerariesSource.inventory.additionalSourcePages.length,
   uniqueTrips: suppliedItinerariesSource.trips.length,
   newAccommodationDrafts: suppliedItinerariesSource.accommodations.length,
   itineraryDays: suppliedItinerariesSource.trips.reduce(
     (total, trip) => total + trip.itinerary.length,
     0,
   ),
-  images: 0,
+  images: new Set([
+    ...suppliedItinerariesSource.accommodations.flatMap((accommodation) => accommodation.imageSources ?? []),
+    ...suppliedItinerariesSource.trips.flatMap((trip) => [trip.heroImageSource, ...(trip.overviewImageSources ?? [])]),
+  ]).size,
 }
 const baseReport = {
   generatedAt: new Date().toISOString(),
@@ -145,6 +160,7 @@ if (errors.length) {
   const {getCliClient} = await import(pathToFileURL(studioSanityCli).href)
   const client = getCliClient({apiVersion: '2026-10-20'}).withConfig({perspective: 'raw'})
   const accommodationIds = {}
+  const imageAssetIds = new Map()
   const written = {accommodations: [], trips: []}
 
   const findBySlug = (type, slug) =>
@@ -160,6 +176,24 @@ if (errors.length) {
     const id = baseId(existingId || randomUUID())
     const result = await client.createOrReplace({...document, _id: `drafts.${id}`})
     return {...result, baseId: id}
+  }
+
+  const uploadContentImage = async (source, alt) => {
+    const path = resolve(repositoryRoot, source)
+    let assetId = imageAssetIds.get(path)
+    if (!assetId) {
+      const asset = await client.assets.upload('image', createReadStream(path), {
+        filename: basename(path),
+      })
+      assetId = asset._id
+      imageAssetIds.set(path, assetId)
+      console.log(`Uploaded source image: ${basename(path)}`)
+    }
+    return {
+      _type: 'contentImage',
+      asset: {_type: 'reference', _ref: assetId},
+      alt,
+    }
   }
 
   for (const slug of suppliedItinerariesSource.existingAccommodationSlugs) {
@@ -178,6 +212,15 @@ if (errors.length) {
       destinationGroup: accommodation.destinationGroup,
       location: accommodation.location,
       description: accommodation.description,
+      coverImage: await uploadContentImage(
+        accommodation.imageSources[0],
+        `${accommodation.propertyName} — original cover photo`,
+      ),
+      gallery: await Promise.all(
+        accommodation.imageSources.slice(1).map((source, index) =>
+          uploadContentImage(source, `${accommodation.propertyName} — original photo ${index + 1}`),
+        ),
+      ),
     })
     accommodationIds[accommodation.slug] = result.baseId
     written.accommodations.push({slug: accommodation.slug, draftId: result._id})
@@ -191,6 +234,13 @@ if (errors.length) {
       slug: {_type: 'slug', current: trip.slug},
       categories: trip.categories,
       durationDays: trip.durationDays,
+      ...(trip.startingPrice ? {startingPrice: trip.startingPrice} : {}),
+      heroImage: await uploadContentImage(trip.heroImageSource, `${trip.title} — original trip hero`),
+      overviewImages: await Promise.all(
+        trip.overviewImageSources.map((source, index) =>
+          uploadContentImage(source, `${trip.title} — original overview photo ${index + 1}`),
+        ),
+      ),
       heroSummary: trip.heroSummary,
       overviewParagraphs: trip.overviewParagraphs,
       itineraryFor: trip.itineraryFor,

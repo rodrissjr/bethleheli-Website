@@ -1,31 +1,37 @@
 {
-  "generatedAt": "2026-10-24T09:24:13.817Z",
+  "generatedAt": "2026-10-27T14:27:44.625Z",
   "mode": "dry-run",
   "projectId": "ife51h63",
   "dataset": "production",
   "source": {
-    "source": "Three supplied Microsoft Word itinerary documents",
+    "source": "Three supplied Microsoft Word itinerary documents plus three source itinerary pages",
     "sourceDocuments": [
       "01_East_African_Safari_and_Beach_Bliss.docx",
       "02_East_African_Safari_and_Beach_Bliss_Copy.docx",
       "03_African_Nights_and_Circle_of_Life_Safari.docx"
     ],
     "duplicateDecision": "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
-    "publishingDecision": "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
-    "priceDecision": "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
-    "researchDecision": "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
+    "publishingDecision": "Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.",
+    "priceDecision": "The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.",
+    "researchDecision": "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative.",
+    "additionalSourcePages": [
+      "https://betheliexpeditions.com/tanzanian-traffic-jam-the-great-migration/",
+      "https://betheliexpeditions.com/african-nights-circle-of-life-safari/",
+      "https://betheliexpeditions.com/east-african-safari-beach-bliss/"
+    ]
   },
   "counts": {
     "sourceDocuments": 3,
-    "uniqueTrips": 2,
-    "newAccommodationDrafts": 9,
-    "itineraryDays": 26,
-    "images": 0
+    "sourcePages": 3,
+    "uniqueTrips": 3,
+    "newAccommodationDrafts": 14,
+    "itineraryDays": 36,
+    "images": 43
   },
   "warnings": [
     "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
-    "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
-    "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
+    "Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.",
+    "The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.",
     "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
   ],
   "qualityIssues": [],

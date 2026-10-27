@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-24T09:25:52.650Z",
+  "generatedAt": "2026-10-27T12:10:24.497Z",
   "projectId": "ife51h63",
   "dataset": "production",
   "status": "passed-with-expected-image-warnings",
   "counts": {
     "tripDrafts": 2,
-    "accommodationsFound": 11
+    "accommodationsFound": 12
   },
   "errors": [],
   "warnings": [
@@ -14,12 +14,7 @@
     "hamerkop-house-by-lemala: accommodation images remain intentionally incomplete.",
     "gibbs-farm: accommodation images remain intentionally incomplete.",
     "entamanu-ngorongoro: accommodation images remain intentionally incomplete.",
-    "lemala-nanyukie-lodge: accommodation images remain intentionally incomplete.",
-    "zanzibar-white-sand-luxury-villas-spa: accommodation images remain intentionally incomplete.",
-    "ngorongoro-lions-paw: accommodation images remain intentionally incomplete.",
-    "intimate-camp-zebra: accommodation images remain intentionally incomplete.",
-    "ndutu-kati-kati-tented-camp: accommodation images remain intentionally incomplete.",
-    "moyo-tented-camp-central-serengeti: accommodation images remain intentionally incomplete."
+    "zanzibar-white-sand-luxury-villas-spa: accommodation images remain intentionally incomplete."
   ],
   "sample": {
     "accommodations": [
@@ -60,10 +55,10 @@
         "tier": "luxury"
       },
       {
-        "_id": "drafts.51580e1b-d4e1-4cef-a003-9a9e0a00f13e",
+        "_id": "51580e1b-d4e1-4cef-a003-9a9e0a00f13e",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 4,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Ndutu during the southern Serengeti calving season",
         "propertyName": "Intimate Camp Zebra",
@@ -72,10 +67,10 @@
         "tier": "midRange"
       },
       {
-        "_id": "drafts.84f2bfe6-7c9f-4c69-a166-af16effab071",
+        "_id": "84f2bfe6-7c9f-4c69-a166-af16effab071",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 3,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Eastern Serengeti",
         "propertyName": "Lemala Nanyukie Lodge",
@@ -86,7 +81,7 @@
       {
         "_id": "NJnMV77vCyO9g8HOX8MTUf",
         "destinationGroup": "safariMainland",
-        "galleryCount": 2,
+        "galleryCount": 3,
         "hasCoverImage": true,
         "hasDescription": true,
         "location": "Arusha",
@@ -96,10 +91,10 @@
         "tier": "luxury"
       },
       {
-        "_id": "drafts.2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
+        "_id": "2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 4,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Seronera Valley, Central Serengeti",
         "propertyName": "Moyo Tented Camp — Central Serengeti",
@@ -108,10 +103,22 @@
         "tier": "luxury"
       },
       {
-        "_id": "drafts.952e5f0f-ae8b-43d1-b1b0-1344c070d162",
+        "_id": "drafts.2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 4,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Seronera Valley, Central Serengeti",
+        "propertyName": "Moyo Tented Camp — Central Serengeti",
+        "slug": "moyo-tented-camp-central-serengeti",
+        "style": "tentedSuite",
+        "tier": "midRange"
+      },
+      {
+        "_id": "952e5f0f-ae8b-43d1-b1b0-1344c070d162",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 4,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Ndutu, southern Serengeti ecosystem",
         "propertyName": "Ndutu Kati Kati Tented Camp",
@@ -120,10 +127,10 @@
         "tier": "midRange"
       },
       {
-        "_id": "drafts.c93860e3-4e22-4694-bdf7-dde5bae6425e",
+        "_id": "c93860e3-4e22-4694-bdf7-dde5bae6425e",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 4,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Eastern rim of the Ngorongoro Crater",
         "propertyName": "Ngorongoro Lion's Paw",
@@ -179,12 +186,12 @@
         "daysWithoutExperience": 0,
         "daysWithoutTitles": 0,
         "durationDays": 10,
-        "hasHeroImage": false,
+        "hasHeroImage": true,
         "includedServiceCount": 19,
         "itineraryCount": 10,
         "landscapeCount": 4,
         "notIncludedCount": 4,
-        "overviewImageCount": null,
+        "overviewImageCount": 1,
         "seoDescriptionLength": 138,
         "seoTitleLength": 37,
         "slug": "african-nights-and-circle-of-life-safari",
@@ -217,12 +224,12 @@
         "daysWithoutExperience": 0,
         "daysWithoutTitles": 0,
         "durationDays": 16,
-        "hasHeroImage": false,
+        "hasHeroImage": true,
         "includedServiceCount": 20,
         "itineraryCount": 16,
         "landscapeCount": 4,
         "notIncludedCount": 5,
-        "overviewImageCount": null,
+        "overviewImageCount": 1,
         "seoDescriptionLength": 142,
         "seoTitleLength": 44,
         "slug": "east-african-safari-and-beach-bliss",

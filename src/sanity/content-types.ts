@@ -73,6 +73,23 @@ export type CmsTripPageData = {
   }>;
 };
 
+export type CmsKilimanjaroRouteTrip = {
+  title: string;
+  durationDays: number;
+  startingPrice: string;
+  itineraryFor: string;
+  destinations: string[];
+  itinerary: Array<{
+    key: string;
+    title: string;
+    summary: string;
+    experience: string;
+    mealPlan: string;
+    accommodations: string[];
+    image: CmsImage | null;
+  }>;
+};
+
 export type CmsTripCard = {
   title: string;
   src: string;

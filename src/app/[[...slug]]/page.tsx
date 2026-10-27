@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { GroupsPage, SitePage } from "@/components/site";
 import { HomeReferencePage, KilimanjaroReferencePage, KilimanjaroRouteDetailPage, SafariReferencePage, TripDetailReferencePage, TripsReferencePage, ZanzibarReferencePage } from "@/components/reference-pages";
 import { pageMeta, routeKeyFromSlug } from "@/lib/routes";
-import { getGroupDepartures, getTripCards, getTripPageContent, getTripSeo } from "@/sanity/lib/content";
+import { getGroupDepartures, getKilimanjaroRouteTrip, getKilimanjaroRouteTrips, getTripCards, getTripPageContent, getTripSeo } from "@/sanity/lib/content";
 import { TermsPage } from "@/components/terms-page";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug?: string[] }> }): Promise<Metadata> {
@@ -32,25 +32,25 @@ export default async function Page({ params }: { params: Promise<{ slug?: string
   const key = routeKeyFromSlug(slug);
   const dynamicTripSlug = slug?.length === 2 && slug[0] === "trips" ? slug[1] : null;
   if (!key && dynamicTripSlug) {
-    const trip = await getTripPageContent(dynamicTripSlug);
+    const [trip, trips] = await Promise.all([getTripPageContent(dynamicTripSlug), getTripCards()]);
     if (!trip) notFound();
-    return <TripDetailReferencePage data={trip} />;
+    return <TripDetailReferencePage data={trip} trips={trips} slug={dynamicTripSlug} />;
   }
   if (!key) notFound();
   const web3FormsAccessKey = process.env.WEB3FORMS_ACCESS_KEY || "";
   switch (key) {
     case "home": return <HomeReferencePage trips={await getTripCards()} />;
-    case "kilimanjaro": return <KilimanjaroReferencePage />;
-    case "machame": return <KilimanjaroRouteDetailPage route="machame" />;
-    case "lemosho": return <KilimanjaroRouteDetailPage route="lemosho" />;
-    case "marangu": return <KilimanjaroRouteDetailPage route="marangu" />;
-    case "rongai": return <KilimanjaroRouteDetailPage route="rongai" />;
-    case "northernCircuit": return <KilimanjaroRouteDetailPage route="northern-circuit" />;
-    case "umbwe": return <KilimanjaroRouteDetailPage route="umbwe" />;
+    case "kilimanjaro": return <KilimanjaroReferencePage routeTrips={await getKilimanjaroRouteTrips()} />;
+    case "machame": return <KilimanjaroRouteDetailPage route="machame" trip={await getKilimanjaroRouteTrip("machame")} />;
+    case "lemosho": return <KilimanjaroRouteDetailPage route="lemosho" trip={await getKilimanjaroRouteTrip("lemosho")} />;
+    case "marangu": return <KilimanjaroRouteDetailPage route="marangu" trip={await getKilimanjaroRouteTrip("marangu")} />;
+    case "rongai": return <KilimanjaroRouteDetailPage route="rongai" trip={await getKilimanjaroRouteTrip("rongai")} />;
+    case "northernCircuit": return <KilimanjaroRouteDetailPage route="northern-circuit" trip={await getKilimanjaroRouteTrip("northern-circuit")} />;
+    case "umbwe": return <KilimanjaroRouteDetailPage route="umbwe" trip={await getKilimanjaroRouteTrip("umbwe")} />;
     case "safari": return <SafariReferencePage />;
     case "zanzibar": return <ZanzibarReferencePage />;
     case "trips": return <TripsReferencePage trips={await getTripCards()} />;
-    case "northernSerengeti": return <TripDetailReferencePage data={await getTripPageContent("northern-serengeti")} />;
+    case "northernSerengeti": return <TripDetailReferencePage data={await getTripPageContent("northern-serengeti")} trips={await getTripCards()} slug="northern-serengeti" />;
     case "groups": return <GroupsPage departures={await getGroupDepartures()} web3FormsAccessKey={web3FormsAccessKey} />;
     case "terms": return <TermsPage />;
     default: return <SitePage page={key} web3FormsAccessKey={web3FormsAccessKey} />;

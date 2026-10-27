@@ -15,7 +15,7 @@ const landscape = (name, descriptor, iconKey, description) => ({
 
 export const suppliedItinerariesSource = {
   inventory: {
-    source: 'Three supplied Microsoft Word itinerary documents',
+    source: 'Three supplied Microsoft Word itinerary documents plus three source itinerary pages',
     sourceDocuments: [
       '01_East_African_Safari_and_Beach_Bliss.docx',
       '02_East_African_Safari_and_Beach_Bliss_Copy.docx',
@@ -24,11 +24,16 @@ export const suppliedItinerariesSource = {
     duplicateDecision:
       'The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.',
     publishingDecision:
-      'Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.',
+      'Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.',
     priceDecision:
-      'The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.',
+      'The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.',
     researchDecision:
       'Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative.',
+    additionalSourcePages: [
+      'https://betheliexpeditions.com/tanzanian-traffic-jam-the-great-migration/',
+      'https://betheliexpeditions.com/african-nights-circle-of-life-safari/',
+      'https://betheliexpeditions.com/east-african-safari-beach-bliss/',
+    ],
   },
   existingAccommodationSlugs: ['mount-meru-hotel', 'nimali-tarangire'],
   accommodations: [
@@ -41,6 +46,7 @@ export const suppliedItinerariesSource = {
       location: 'Kiligolf, between Kilimanjaro International Airport and Arusha',
       description:
         'A private Lemala-managed house on the Kiligolf wildlife and golf estate, positioned between Kilimanjaro International Airport and Arusha for a relaxed start or finish to a safari.',
+      imageSources: ['migration/assets/supplied-itineraries/hamerkop-house-by-lemala-1.jpg', 'migration/assets/supplied-itineraries/hamerkop-house-by-lemala-2.jpg', 'migration/assets/supplied-itineraries/hamerkop-house-by-lemala-3.jpg'],
     },
     {
       propertyName: "Gibb's Farm",
@@ -51,6 +57,7 @@ export const suppliedItinerariesSource = {
       location: 'Karatu, on the outer slopes of the Ngorongoro Crater',
       description:
         'A historic coffee farm and garden retreat near Karatu, well placed for Ngorongoro, Lake Manyara and Lake Eyasi.',
+      imageSources: ['migration/assets/supplied-itineraries/gibbs-farm-1.jpg', 'migration/assets/supplied-itineraries/gibbs-farm-2.jpg'],
     },
     {
       propertyName: 'Entamanu Ngorongoro',
@@ -61,6 +68,7 @@ export const suppliedItinerariesSource = {
       location: 'North-western rim of the Ngorongoro Crater',
       description:
         'A tented camp on the remote north-western crater rim with views into Ngorongoro and west across the Serengeti plains.',
+      imageSources: ['migration/assets/supplied-itineraries/entamanu-ngorongoro-1.jpg', 'migration/assets/supplied-itineraries/entamanu-ngorongoro-2.jpg'],
     },
     {
       propertyName: 'Lemala Nanyukie Lodge',
@@ -71,6 +79,7 @@ export const suppliedItinerariesSource = {
       location: 'Eastern Serengeti',
       description:
         'A luxury tented lodge in the eastern Serengeti, used as the base for game drives and the balloon-safari morning in this itinerary.',
+      imageSources: ['migration/assets/supplied-itineraries/lemala-nanyukie-lodge-1.jpg', 'migration/assets/supplied-itineraries/lemala-nanyukie-lodge-2.jpg', 'migration/assets/supplied-itineraries/lemala-nanyukie-lodge-3.jpg'],
     },
     {
       propertyName: 'Zanzibar White Sand Luxury Villas & Spa',
@@ -81,6 +90,7 @@ export const suppliedItinerariesSource = {
       location: 'Paje Beach, Zanzibar',
       description:
         'A boutique beachfront resort on Paje Beach with private villas, tropical gardens and direct access to Zanzibar’s south-east coast.',
+      imageSources: ['migration/assets/supplied-itineraries/zanzibar-white-sands-1.jpg', 'migration/assets/supplied-itineraries/zanzibar-white-sands-2.jpg', 'migration/assets/supplied-itineraries/zanzibar-white-sands-3.jpg'],
     },
     {
       propertyName: "Ngorongoro Lion's Paw",
@@ -91,6 +101,7 @@ export const suppliedItinerariesSource = {
       location: 'Eastern rim of the Ngorongoro Crater',
       description:
         'A tented lodge on the eastern side of the Ngorongoro caldera, close to the crater entrance and overlooking the crater landscape.',
+      imageSources: ['migration/assets/supplied-itineraries/ngorongoro-lions-paw-1.jpg', 'migration/assets/supplied-itineraries/ngorongoro-lions-paw-2.jpg'],
     },
     {
       propertyName: 'Intimate Camp Zebra',
@@ -101,6 +112,7 @@ export const suppliedItinerariesSource = {
       location: 'Ndutu during the southern Serengeti calving season',
       description:
         'A seasonal mobile camp that follows the Great Migration, relocating to the Ndutu area from December to March for the calving season.',
+      imageSources: ['migration/assets/supplied-itineraries/intimate-camp-zebra-1.jpg', 'migration/assets/supplied-itineraries/intimate-camp-zebra-2.jpg', 'migration/assets/supplied-itineraries/intimate-camp-zebra-3.jpg'],
     },
     {
       propertyName: 'Ndutu Kati Kati Tented Camp',
@@ -111,6 +123,7 @@ export const suppliedItinerariesSource = {
       location: 'Ndutu, southern Serengeti ecosystem',
       description:
         'A seasonal mobile tented camp positioned in the southern Serengeti ecosystem during the migration and calving period.',
+      imageSources: ['migration/assets/supplied-itineraries/ndutu-kati-kati-tented-camp-1.jpg', 'migration/assets/supplied-itineraries/ndutu-kati-kati-tented-camp-2.jpg', 'migration/assets/supplied-itineraries/ndutu-kati-kati-tented-camp-3.jpg'],
     },
     {
       propertyName: 'Moyo Tented Camp — Central Serengeti',
@@ -121,14 +134,209 @@ export const suppliedItinerariesSource = {
       location: 'Seronera Valley, Central Serengeti',
       description:
         'A luxury tented camp in the central Serengeti, with spacious en-suite tents and year-round access to the wildlife-rich Seronera area.',
+      imageSources: ['migration/assets/supplied-itineraries/moyo-tented-camp-1.jpg', 'migration/assets/supplied-itineraries/moyo-tented-camp-2.jpg', 'migration/assets/supplied-itineraries/moyo-tented-camp-3.jpg'],
+    },
+    {
+      propertyName: 'Lake Duluti Lodge',
+      slug: 'lake-duluti-lodge',
+      tier: 'midRange',
+      style: 'gardenLodge',
+      destinationGroup: 'safariMainland',
+      location: 'Lake Duluti, near Arusha',
+      description: 'A garden lodge near Lake Duluti and Mount Meru, used as the Arusha-area start for the migration safari.',
+      imageSources: ['migration/assets/supplied-itineraries/lake-duluti-lodge-1.jpg', 'migration/assets/supplied-itineraries/lake-duluti-lodge-2.jpg', 'migration/assets/supplied-itineraries/lake-duluti-lodge-3.jpg'],
+    },
+    {
+      propertyName: 'Tarangire Sopa Lodge',
+      slug: 'tarangire-sopa-lodge',
+      tier: 'midRange',
+      style: 'safariCamp',
+      destinationGroup: 'safariMainland',
+      location: 'Tarangire National Park',
+      description: 'A safari lodge within Tarangire National Park, providing a base for game drives in the park.',
+      imageSources: ['migration/assets/supplied-itineraries/tarangire-sopa-lodge-1.jpg', 'migration/assets/supplied-itineraries/tarangire-sopa-lodge-2.jpg', 'migration/assets/supplied-itineraries/tarangire-sopa-lodge-3.jpg'],
+    },
+    {
+      propertyName: 'Olea Pamoja Farm Lodge',
+      slug: 'olea-pamoja-farm-lodge',
+      tier: 'midRange',
+      style: 'gardenLodge',
+      destinationGroup: 'safariMainland',
+      location: 'Karatu, Tanzania',
+      description: 'A farm lodge in the Karatu area, used for an overnight between Lake Manyara and Ngorongoro.',
+      imageSources: ['migration/assets/supplied-itineraries/olea-pamoja-farm-lodge-1.webp', 'migration/assets/supplied-itineraries/olea-pamoja-farm-lodge-2.webp', 'migration/assets/supplied-itineraries/olea-pamoja-farm-lodge-3.webp'],
+    },
+    {
+      propertyName: 'Ngorongoro Serena Lodge',
+      slug: 'ngorongoro-serena-lodge',
+      tier: 'luxury',
+      style: 'safariCamp',
+      destinationGroup: 'safariMainland',
+      location: 'Ngorongoro Conservation Area',
+      description: 'A lodge in the Ngorongoro Conservation Area, used after the crater-floor safari.',
+      imageSources: ['migration/assets/supplied-itineraries/ngorongoro-serena-lodge-1.jpg', 'migration/assets/supplied-itineraries/ngorongoro-serena-lodge-2.jpg'],
+    },
+    {
+      propertyName: 'Karibu Mara River Camp',
+      slug: 'karibu-mara-river-camp',
+      tier: 'midRange',
+      style: 'safariCamp',
+      destinationGroup: 'safariMainland',
+      location: 'Northern Serengeti, near the Mara River',
+      description: 'A tented camp in the North Mara area, used as a base for seasonal migration and Mara River game drives.',
+      imageSources: ['migration/assets/supplied-itineraries/karibu-mara-river-camp-1.webp', 'migration/assets/supplied-itineraries/karibu-mara-river-camp-2.jpg', 'migration/assets/supplied-itineraries/karibu-mara-river-camp-3.jpg', 'migration/assets/supplied-itineraries/karibu-mara-river-camp-4.jpg'],
     },
   ],
   trips: [
+    {
+      title: 'Tanzanian Traffic Jam: The Great Migration',
+      slug: 'tanzanian-traffic-jam-the-great-migration',
+      categories: ['safari'],
+      durationDays: 10,
+      startingPrice: {amount: 5130, currency: 'USD'},
+      heroImageSource: 'migration/assets/supplied-itineraries/tanzanian-traffic-jam-hero.webp',
+      overviewImageSources: ['migration/assets/supplied-itineraries/great-migration-overview.jpg', 'migration/assets/supplied-itineraries/karibu-mara-river-camp-1.webp'],
+      heroSummary:
+        'A ten-day Tanzania safari through Tarangire, Lake Manyara, Ngorongoro and the Serengeti, with time in the north for the seasonal Great Migration.',
+      overviewParagraphs: [
+        'Discover the awe-inspiring beauty of Tanzania with this 10-day Serengeti Migration Safari. The journey combines northern Tanzania’s varied landscapes and wildlife with time in the Serengeti migration country.',
+        'Highlights include elephant and baobab country in Tarangire, Lake Manyara, a game drive on the Ngorongoro Crater floor, and several days following wildlife across the central and northern Serengeti.',
+        'The itinerary includes an early-morning hot-air balloon safari and a final flight from Kogatende to Arusha. The Great Migration and river crossings are seasonal wildlife events; sightings and timing depend on rainfall and cannot be guaranteed.',
+      ],
+      itineraryFor: 'Private northern Tanzania migration safari',
+      travelDatesText: 'Best for migration viewing June–October; wildlife movements vary by season',
+      guestsText: 'Quoted per person sharing; confirm rooming and availability',
+      destinations: [
+        'Arusha',
+        'Tarangire National Park',
+        'Lake Manyara National Park',
+        'Ngorongoro Conservation Area',
+        'Central Serengeti',
+        'Northern Serengeti',
+      ],
+      planningTitle: 'Plan this Great Migration safari',
+      planningDescription:
+        'The source page advertises US $5,130 per person for travel through 31 December 2026. This is a time-limited published rate, not a guaranteed quote; confirm current dates, availability and price with the team.',
+      itinerary: [
+        day(
+          'Arrival in Arusha',
+          'Meet your driver-guide at Kilimanjaro International Airport and transfer to your Arusha lodge.',
+          'Upon arrival at Kilimanjaro International Airport, your Betheli Expeditions driver-guide will meet you, brief you on the safari and transfer you by private vehicle to Lake Duluti Lodge. The lodge sits among coffee farms and natural gardens at the foot of Mount Meru. Overnight at Lake Duluti Lodge.',
+          'halfBoard',
+          ['lake-duluti-lodge'],
+        ),
+        day(
+          'Tarangire National Park',
+          'Drive to Tarangire for an afternoon game drive among elephants, baobabs and river country.',
+          'After breakfast, depart at approximately 08:00 for the drive to Tarangire National Park. The park’s baobab-dotted savannah, seasonal swamps and Tarangire River provide habitat for elephants and many other species. Enjoy a game drive before continuing to Tarangire Sopa Lodge for dinner and overnight.',
+          'fullBoard',
+          ['tarangire-sopa-lodge'],
+        ),
+        day(
+          'Lake Manyara National Park',
+          'Explore Lake Manyara’s forest, lake shore and open habitats before continuing to Karatu.',
+          'After breakfast, enter Lake Manyara National Park for a game drive with a picnic lunch. The park is known for its lake and varied habitats, including groundwater forest and open plains, with opportunities to see primates, birds and large mammals. Later drive to Karatu for dinner and overnight at Olea Pamoja Farm Lodge.',
+          'fullBoard',
+          ['olea-pamoja-farm-lodge'],
+        ),
+        day(
+          'Karatu to Ngorongoro Crater',
+          'Descend into the Ngorongoro Crater for a full game drive, then return to the crater highlands.',
+          'Start early for the descent into the Ngorongoro Crater. The approximately 20-kilometre-wide caldera contains grassland, woodland and wetland habitats, supporting a high concentration of wildlife and a chance to look for the rare black rhino. Enjoy a picnic lunch on the crater floor, then ascend and drive to Ngorongoro Serena Lodge for dinner and overnight.',
+          'fullBoard',
+          ['ngorongoro-serena-lodge'],
+        ),
+        day(
+          'Central Serengeti National Park',
+          'Travel to the Serengeti with wildlife viewing on the way to your central-area camp.',
+          'After breakfast, leave the lodge and drive toward Central Serengeti with a game drive en route. Enter through Naabi Hill Gate and continue across the plains and woodland toward Seronera. Enjoy a picnic lunch, then continue wildlife viewing before dinner and overnight at Moyo Tented Camp.',
+          'fullBoard',
+          ['moyo-tented-camp-central-serengeti'],
+        ),
+        day(
+          'Central Serengeti Game Drives',
+          'Spend the day searching the Seronera region for resident wildlife and seasonal herds.',
+          'Set out for morning and afternoon game drives in Central Serengeti. The area’s rivers and varied habitats attract buffalo, hippo, elephant, giraffe and antelope, as well as predators including lion and leopard. The Great Migration may pass through depending on the season. Return to Moyo Tented Camp for dinner and overnight.',
+          'fullBoard',
+          ['moyo-tented-camp-central-serengeti'],
+        ),
+        day(
+          'Journey to Northern Serengeti',
+          'Continue north on a game drive toward the Mara River and northern Serengeti plains.',
+          'Drive from Central Serengeti toward the northern region, stopping for wildlife viewing along the way. The northern plains and river corridors are an important seasonal part of the migration route, where wildebeest and zebra may gather near the Mara River. Enjoy a picnic lunch and continue to Karibu Mara River Camp for dinner and overnight.',
+          'fullBoard',
+          ['karibu-mara-river-camp'],
+        ),
+        day(
+          'Serengeti Hot-Air Balloon Safari',
+          'Take an optional pre-dawn balloon flight, bush breakfast and a full day of game viewing.',
+          'Wake at approximately 04:30 for transfer to the balloon launch site, followed by a safety briefing before sunrise. The flight lasts about an hour, subject to weather and operating conditions. Celebrate the landing with a traditional toast and bush breakfast, then spend the remainder of the day on game drives. Return to Karibu Mara River Camp for dinner and overnight.',
+          'fullBoard',
+          ['karibu-mara-river-camp'],
+        ),
+        day(
+          'Mara River and Migration Country',
+          'Explore the northern Serengeti around the Mara River in search of wildlife and migration activity.',
+          'Continue game drives across the northern Serengeti plains and around the Mara River. During the migration season, large herds may approach or cross the river, but crossings are unpredictable and cannot be promised. Return to Karibu Mara River Camp for dinner and overnight.',
+          'fullBoard',
+          ['karibu-mara-river-camp'],
+        ),
+        day(
+          'Fly from Serengeti to Arusha',
+          'Enjoy a final game drive, then fly from Kogatende to Arusha for lunch and your onward flight.',
+          'After breakfast, enjoy a final game drive en route to Kogatende Airstrip for your scheduled flight to Arusha. On arrival, transfer to Arusha Coffee Lodge for a hot lunch, then continue to Kilimanjaro International Airport for your outbound flight. No overnight accommodation is listed for this day.',
+          'breakfastLunch',
+        ),
+      ],
+      landscapesTitle: 'From elephant country to the migration plains',
+      landscapes: [
+        landscape('Tarangire', 'Elephants and baobabs', 'zebra', 'The Tarangire River and seasonal swamps draw wildlife through baobab-dotted savannah.'),
+        landscape('Lake Manyara', 'Forest, lake and plains', 'water', 'A compact but varied landscape of lake shore, groundwater forest and open habitats.'),
+        landscape('Ngorongoro Crater', 'Wildlife-rich caldera', 'mountain', 'The crater floor brings grassland, woodland and wetland habitats together within the caldera.'),
+        landscape('Serengeti', 'Migration country', 'grass', 'Central and northern plains offer year-round wildlife and seasonal migration viewing.'),
+      ],
+      inclusionsEyebrow: 'YOUR SAFARI, TAKEN CARE OF',
+      inclusionsTitle: 'What is included in this migration safari',
+      inclusionsDescription: 'Confirm the current flight schedule, balloon arrangements and included services in your final trip proposal.',
+      includedServiceKeys: [
+        'personal-trip-planning',
+        'airport-transfers',
+        'private-safari-vehicle',
+        'domestic-flight',
+        'safari-lodges-camps',
+        'safari-guide',
+        'full-board-meals',
+        'breakfast',
+        'lunch-box',
+        'drinking-water',
+        'park-conservation-fees',
+        'game-drives',
+        'crater-service-fee',
+        'hot-air-balloon-safari',
+        'local-trip-coordination',
+        'government-taxes',
+      ],
+      notIncluded: [
+        'International airfare to and from Tanzania',
+        'Premium drinks and drinks not specifically listed',
+        'Visas and travel documents',
+        'Personal expenses including telephone calls, laundry and postage',
+        'Any optional activity not listed in the final quote',
+      ],
+      seo: {
+        title: '10-Day Tanzania Great Migration Safari',
+        description: 'Explore Tarangire, Lake Manyara, Ngorongoro and the Serengeti on a 10-day Tanzania safari with seasonal migration viewing.',
+        canonicalPath: '/trips/tanzanian-traffic-jam-the-great-migration',
+      },
+    },
     {
       title: 'East African Safari & Beach Bliss',
       slug: 'east-african-safari-and-beach-bliss',
       categories: ['safari', 'zanzibar'],
       durationDays: 16,
+      heroImageSource: 'migration/assets/supplied-itineraries/east-african-safari-beach-bliss-hero.webp',
+      overviewImageSources: ['migration/assets/supplied-itineraries/zanzibar-white-sands-1.jpg', 'migration/assets/supplied-itineraries/lemala-nanyukie-lodge-1.jpg'],
+      startingPrice: {amount: 11499, currency: 'USD'},
       heroSummary:
         'A private Tanzania journey combining Tarangire, Lake Eyasi, Ngorongoro and the Serengeti with a restorative Zanzibar beach stay.',
       overviewParagraphs: [
@@ -138,7 +346,7 @@ export const suppliedItinerariesSource = {
         'The itinerary can operate year-round. Wildlife movements and weather vary by season, so final routing, activities and availability should be confirmed for the chosen dates.',
       ],
       itineraryFor: 'Private safari and beach journey',
-      travelDatesText: 'January–December; seasonal wildlife patterns apply',
+      travelDatesText: 'Year-round; source rate period is 15 June 2025–31 December 2026',
       guestsText: 'Quoted per person sharing; private arrangements available',
       destinations: [
         'Arusha',
@@ -151,7 +359,7 @@ export const suppliedItinerariesSource = {
       ],
       planningTitle: 'Plan this safari and beach journey',
       planningDescription:
-        'The supplied document listed US $11,499 per person for travel through 31 December 2025. Request a current quote for your dates, rooming and availability.',
+        'The source page lists US $11,499 per person for travel from 15 June 2025 through 31 December 2026. Rates may fluctuate and are not guaranteed until confirmed in a customized proposal; request current availability for your dates.',
       itinerary: [
         day(
           'Arrival in Arusha',
@@ -314,6 +522,8 @@ export const suppliedItinerariesSource = {
       slug: 'african-nights-and-circle-of-life-safari',
       categories: ['safari'],
       durationDays: 10,
+      heroImageSource: 'migration/assets/supplied-itineraries/african-nights-circle-of-life-hero.jpg',
+      overviewImageSources: ['migration/assets/supplied-itineraries/great-migration-overview.jpg', 'migration/assets/supplied-itineraries/moyo-tented-camp-1.jpg'],
       heroSummary:
         'A seasonal northern Tanzania safari through Tarangire, Ngorongoro, Ndutu and the Serengeti, timed for green-season wildlife and calving drama.',
       overviewParagraphs: [
@@ -335,7 +545,7 @@ export const suppliedItinerariesSource = {
       ],
       planningTitle: 'Plan this green-season safari',
       planningDescription:
-        'The supplied document listed US $6,735 per person for travel ending 31 March 2025. Request a current seasonal quote and confirm camp locations for your dates.',
+        'The source page lists US $6,735 per person for travel from 15 November 2025 through 31 March 2026. That published rate period has ended; request a current seasonal quote and confirm camp locations for your dates.',
       itinerary: [
         day(
           'Arrival in Arusha',

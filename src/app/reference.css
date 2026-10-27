@@ -103,7 +103,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
 .ref-dark-story>img{width:100%;height:470px;object-fit:cover;border-radius:12px}
 .ref-why-grid{min-height:1255px}
 .ref-why-grid>.shell>img{width:100%;height:620px;object-fit:cover;border-radius:12px;margin-top:37px}
-.ref-kili-why-grid>.shell>img{height:clamp(460px,44vw,540px);object-position:center bottom}
+.ref-kili-why-grid>.shell>img{height:clamp(520px,67vw,760px);object-fit:cover;object-position:center bottom;background:transparent}
 .ref-why-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 34px;margin-top:36px}
 .ref-why-items article{border-top:1px solid rgba(255,255,255,.2);padding-top:18px}
 .ref-why-items article>span{color:#ea4729;font-size:15px}
@@ -218,7 +218,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
   .ref-image-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ref-dark-story,.ref-stay-grid,.ref-intro-split,.ref-itinerary,.ref-safety-grid{gap:35px}
   .ref-fact-grid.four{grid-template-columns:repeat(2,1fr)}
-  .ref-why-grid{min-height:0}.ref-why-grid>.shell>img{height:480px}.ref-kili-why-grid>.shell>img{height:460px}.ref-why-items{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ref-why-grid{min-height:0}.ref-why-grid>.shell>img{height:480px}.ref-kili-why-grid>.shell>img{height:clamp(460px,67vw,620px)}.ref-why-items{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 /* FAQ page: match the dedicated desktop frame in the source Figma. */
@@ -314,7 +314,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
   .ref-place-grid{gap:16px;margin-top:28px}.ref-place>img{height:210px}.ref-place-copy{min-height:0}
   .ref-image-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.ref-image-card{flex:0 0 78%;min-height:420px;scroll-snap-align:start}
   .ref-dark-story.reversed>img,.ref-dark-story.reversed>div{grid-column:auto;grid-row:auto}.ref-dark-story>img{height:280px}.ref-dark-story{min-height:0}
-  .ref-why-grid>.shell>img{height:300px}.ref-kili-why-grid>.shell>img{height:300px;object-position:center}.ref-why-items{grid-template-columns:1fr 1fr;gap:20px}
+  .ref-why-grid>.shell>img{height:300px}.ref-kili-why-grid>.shell>img{height:auto;max-height:none;object-fit:initial;object-position:center}.ref-why-items{grid-template-columns:1fr 1fr;gap:20px}
   .ref-stay-grid{margin-top:25px}.ref-stay-photo>img{height:290px}
   .ref-season-grid{grid-template-columns:repeat(2,1fr)}.ref-season-grid article{padding:15px}
   .ref-intro-split>img{height:300px}.ref-fact-grid{gap:8px}.ref-fact-grid article{min-height:0}.ref-journey article,.ref-journey article:nth-child(even){display:block}.ref-journey article:nth-child(even)>img,.ref-journey article:nth-child(even)>div{grid-column:auto;grid-row:auto}.ref-journey img{height:190px}.ref-journey article>div{padding:18px 0}.ref-journey article:nth-child(4) img{height:320px}.ref-journey article:nth-child(4)>div{left:20px;bottom:10px}
@@ -1917,6 +1917,15 @@ body:has(.contact-main) .contact-main{width:min(1200px,calc(100% - 48px));paddin
 .planning-aside .whatsapp:hover,.planning-aside .whatsapp:focus-visible{border-color:#ea4729;background:#fff0eb}
 .planning-aside .whatsapp .arrow{width:34px;height:34px;background:#243138;color:#fff}
 .planning-aside>small{margin-top:28px;color:#667178;font-family:Poppins,Arial,sans-serif;font-size:13px;line-height:1.75}
+.planning-socials{margin-top:24px;padding-top:18px;border-top:1px solid rgba(36,49,56,.14)}
+.planning-socials>p{margin:0 0 12px;color:#243138;font-family:Poppins,Arial,sans-serif;font-size:14px;font-weight:600}
+.planning-socials nav{display:flex;flex-wrap:wrap;gap:8px}
+.planning-socials nav a{display:inline-flex;min-height:40px;align-items:center;justify-content:center;gap:7px;padding:8px 11px;border:1px solid rgba(36,49,56,.14);border-radius:999px;background:#fff;color:#243138;font-family:Poppins,Arial,sans-serif;font-size:12px;font-weight:500;text-decoration:none;transition:border-color .2s ease,color .2s ease,background-color .2s ease}
+.planning-socials nav a:hover,.planning-socials nav a:focus-visible{border-color:#ea4729;background:#fff0eb;color:#ea4729}
+.planning-socials nav svg{display:block;width:17px;height:17px;flex:none;fill:currentColor}
+.planning-socials nav a:nth-child(2) svg{fill:none;stroke:currentColor;stroke-width:1.8}
+.planning-socials .planning-social-dot{fill:currentColor;stroke:none}
+.planning-socials .planning-social-tripadvisor img{display:block;width:88px;height:auto}
 
 /* Four well-proportioned climb cards; two on tablets, one on phones. */
 .ref-climb-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;overflow:visible}
@@ -2740,6 +2749,16 @@ body:has(.contact-main) .contact-main{width:min(1200px,calc(100% - 48px));paddin
 .home-footer .home-footer-contact>span,.home-footer .home-footer-contact>a{padding:0;border:0;line-height:1.5}
 .home-footer-bottom a{color:rgba(255,255,255,.72);text-decoration:underline;text-underline-offset:3px}
 .home-footer-bottom a:hover,.home-footer-bottom a:focus-visible{color:#fff}
+.home-footer-socials{display:flex;align-items:center;gap:10px}
+.home-footer-socials a{display:grid;width:36px;height:36px;place-items:center;border:1px solid rgba(255,255,255,.22);border-radius:50%;color:rgba(255,255,255,.8);text-decoration:none;transition:color .2s ease,border-color .2s ease,background-color .2s ease}
+.home-footer-socials a:hover,.home-footer-socials a:focus-visible{border-color:#fff;background:rgba(255,255,255,.1);color:#fff}
+.home-footer-socials svg{width:18px;height:18px;fill:currentColor}
+.home-footer-socials a:nth-child(2) svg{fill:none;stroke:currentColor;stroke-width:1.8}
+.home-footer-socials .home-footer-social-dot{fill:currentColor;stroke:none}
+.home-footer-socials .home-footer-tripadvisor{width:auto;height:34px;padding:7px 9px;border:0;border-radius:999px;background:#fff}
+.home-footer-socials .home-footer-tripadvisor:hover,.home-footer-socials .home-footer-tripadvisor:focus-visible{background:#f2f2f2}
+.home-footer-socials .home-footer-tripadvisor img{display:block;width:88px;height:auto}
+@media(max-width:650px){.home-footer-socials{margin:20px 0}}
 .legal-page{background:#faf8f4;color:#243138}
 .legal-hero{padding:84px 0 74px;background:#243138;color:#fff}
 .legal-hero .eyebrow{color:#ef6a50}.legal-hero h1{max-width:780px;margin-top:14px;font-size:clamp(42px,6vw,72px);line-height:1.03}
