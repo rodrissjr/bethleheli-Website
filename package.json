@@ -22,6 +22,8 @@
     "sanity:supplied-itineraries:validate": "cd studio && npx sanity exec ../migration/scripts/validate-supplied-itineraries.mjs --with-user-token",
     "sanity:supplied-itineraries:publish:dry-run": "cd studio && npx sanity exec ../migration/scripts/publish-supplied-itineraries.mjs --with-user-token",
     "sanity:supplied-itineraries:publish": "cd studio && BETHELI_SUPPLIED_ITINERARIES_PUBLISH=1 npx sanity exec ../migration/scripts/publish-supplied-itineraries.mjs --with-user-token",
+    "sanity:supplied-itineraries:prices:dry-run": "cd studio && npx sanity exec ../migration/scripts/update-supplied-itinerary-prices.mjs --with-user-token",
+    "sanity:supplied-itineraries:prices:write": "cd studio && BETHELI_SUPPLIED_ITINERARY_PRICES_WRITE=1 npx sanity exec ../migration/scripts/update-supplied-itinerary-prices.mjs --with-user-token",
     "sanity:supplied-itineraries:publish-placeholders": "cd studio && npx sanity exec ../migration/scripts/publish-supplied-itineraries-with-placeholder.mjs --with-user-token"
   },
   "dependencies": {

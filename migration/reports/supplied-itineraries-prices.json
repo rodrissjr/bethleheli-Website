@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-10-28T07:34:33.296Z",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "status": "updated",
+  "changes": [
+    {
+      "_id": "daf7a257-185b-45b6-88b6-3469152730c7",
+      "slug": "african-nights-and-circle-of-life-safari",
+      "title": "African Nights & Circle of Life Safari",
+      "before": null,
+      "after": {
+        "amount": 6735,
+        "currency": "USD"
+      }
+    }
+  ],
+  "verified": [
+    {
+      "_id": "daf7a257-185b-45b6-88b6-3469152730c7",
+      "slug": "african-nights-and-circle-of-life-safari",
+      "startingPrice": {
+        "amount": 6735,
+        "currency": "USD"
+      }
+    },
+    {
+      "_id": "ed7560cf-8a8c-4c69-ad48-d4999dbabbc3",
+      "slug": "east-african-safari-and-beach-bliss",
+      "startingPrice": {
+        "amount": 11499,
+        "currency": "USD"
+      }
+    },
+    {
+      "_id": "f38ab3ae-45fa-486d-bbae-4bbcadddf2cd",
+      "slug": "tanzanian-traffic-jam-the-great-migration",
+      "startingPrice": {
+        "amount": 5130,
+        "currency": "USD"
+      }
+    }
+  ]
+}

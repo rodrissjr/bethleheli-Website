@@ -26,7 +26,7 @@ export const suppliedItinerariesSource = {
     publishingDecision:
       'Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.',
     priceDecision:
-      'The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.',
+      'The source-page prices are retained for trip-card consistency, including historical advertised rates. Every price remains subject to the date-range warning and a current customized quote.',
     researchDecision:
       'Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative.',
     additionalSourcePages: [
@@ -522,6 +522,7 @@ export const suppliedItinerariesSource = {
       slug: 'african-nights-and-circle-of-life-safari',
       categories: ['safari'],
       durationDays: 10,
+      startingPrice: {amount: 6735, currency: 'USD'},
       heroImageSource: 'migration/assets/supplied-itineraries/african-nights-circle-of-life-hero.jpg',
       overviewImageSources: ['migration/assets/supplied-itineraries/great-migration-overview.jpg', 'migration/assets/supplied-itineraries/moyo-tented-camp-1.jpg'],
       heroSummary:
