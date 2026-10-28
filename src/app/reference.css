@@ -58,7 +58,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
 .ref-hero-route-facts span{display:flex;align-items:center;gap:13px;color:#fff;font-size:16px;font-weight:600;white-space:nowrap}
 .ref-hero-route-facts b{color:#ea4729;font-size:30px;font-weight:400}
 .ref-section{padding:112px 0;background:#fafafa}
-.ref-section:nth-child(even):not(.ref-dark):not(.ref-seasons){background:#fff}
+.ref-section:nth-child(even):not(.ref-dark):not(.ref-seasons):not(.trip-ref-exclusions){background:#fff}
 .ref-intro{max-width:770px}
 .ref-intro>span{display:block;color:#ea4729;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.4}
 .ref-intro h2{margin-top:11px;font-size:clamp(2rem,3.7vw,3.25rem);font-weight:500;line-height:1.12;letter-spacing:normal}
