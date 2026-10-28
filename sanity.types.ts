@@ -386,7 +386,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../src/sanity/lib/queries.ts
 // Variable: TRIP_PAGE_QUERY
-// Query: *[_type == "trip" && slug.current == $slug][0] {    _id,    title,    durationDays,    startingPrice { amount, currency },    heroImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },    heroSummary,    overviewParagraphs,    overviewImages[] { _key,   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },    overviewImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },    itineraryFor,    travelDatesText,    guestsText,    destinations,    planningTitle,    planningDescription,    itinerary[] {      _key,      title,      summary,      image {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },      experience,      mealPlan,      accommodations[]-> {        _id,        propertyName,        tier,        coverImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },        gallery[] {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions }      }    },    landscapesTitle,    landscapes[] {      _key,      name,      descriptor,      iconKey,      image {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },      description    },    inclusionsEyebrow,    inclusionsTitle,    inclusionsDescription,    includedServiceKeys,    inclusionGroups[] {      _key,      marker,      title,      description,      items[] { _key, iconKey, title, description }    },    relatedTrips[] {      _key,      title,      summary,      durationLabel,      image {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },      href    },    seo {      title,      description,      canonicalPath,      shareImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions }    },    "sharedMap": *[_id == "tripSettings"][0].map {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions }  }
+// Query: *[_type == "trip" && slug.current == $slug][0] {    _id,    title,    durationDays,    startingPrice { amount, currency },    heroImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },    heroSummary,    overviewParagraphs,    overviewImages[] { _key,   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },    overviewImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },    itineraryFor,    travelDatesText,    guestsText,    destinations,    planningTitle,    planningDescription,    itinerary[] {      _key,      title,      summary,      image {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },      experience,      mealPlan,      accommodations[]-> {        _id,        propertyName,        tier,        coverImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },        gallery[] {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions }      }    },    landscapesTitle,    landscapes[] {      _key,      name,      descriptor,      iconKey,      image {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },      description    },    inclusionsEyebrow,    inclusionsTitle,    inclusionsDescription,    includedServiceKeys,    notIncluded,    inclusionGroups[] {      _key,      marker,      title,      description,      items[] { _key, iconKey, title, description }    },    relatedTrips[] {      _key,      title,      summary,      durationLabel,      image {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },      href    },    seo {      title,      description,      canonicalPath,      shareImage {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions }    },    "sharedMap": *[_id == "tripSettings"][0].map {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions }  }
 export type TRIP_PAGE_QUERY_RESULT = {
   _id: string;
   title: string | null;
@@ -491,6 +491,7 @@ export type TRIP_PAGE_QUERY_RESULT = {
   inclusionsTitle: string | null;
   inclusionsDescription: string | null;
   includedServiceKeys: Array<string> | null;
+  notIncluded: Array<string> | null;
   inclusionGroups: Array<{
     _key: string;
     marker: string | null;
@@ -551,6 +552,45 @@ export type TRIP_PAGE_QUERY_RESULT = {
     dimensions: SanityImageDimensions | null;
   } | null;
 } | null;
+
+// Source: ../src/sanity/lib/queries.ts
+// Variable: KILIMANJARO_ROUTE_TRIPS_QUERY
+// Query: *[_type == "trip" && "kilimanjaro" in categories && defined(slug.current)] | order(durationDays asc, title asc) {    _id,    title,    "slug": slug.current,    durationDays,    startingPrice { amount, currency },    itineraryFor,    destinations,    itinerary[] {      _key,      title,      summary,      experience,      mealPlan,      image {   asset,  alt,  crop,  hotspot,  "lqip": asset->metadata.lqip,  "dimensions": asset->metadata.dimensions },      "accommodations": accommodations[]->propertyName    }  }
+export type KILIMANJARO_ROUTE_TRIPS_QUERY_RESULT = Array<{
+  _id: string;
+  title: string | null;
+  slug: string | null;
+  durationDays: number | null;
+  startingPrice: {
+    amount: number | null;
+    currency: "USD" | null;
+  } | null;
+  itineraryFor: string | null;
+  destinations: Array<string> | null;
+  itinerary: Array<{
+    _key: string;
+    title: string | null;
+    summary: string | null;
+    experience: string | null;
+    mealPlan:
+      | "breakfast"
+      | "breakfastLunch"
+      | "fullBoard"
+      | "halfBoard"
+      | "lunch"
+      | "lunchDinner"
+      | null;
+    image: {
+      asset: SanityImageAssetReference | null;
+      alt: string | null;
+      crop: SanityImageCrop | null;
+      hotspot: SanityImageHotspot | null;
+      lqip: string | null;
+      dimensions: SanityImageDimensions | null;
+    } | null;
+    accommodations: Array<string | null> | null;
+  }> | null;
+}>;
 
 // Source: ../src/sanity/lib/queries.ts
 // Variable: GROUP_DEPARTURES_QUERY
@@ -646,7 +686,8 @@ export type TRIP_SLUGS_QUERY_RESULT = Array<{
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    '\n  *[_type == "trip" && slug.current == $slug][0] {\n    _id,\n    title,\n    durationDays,\n    startingPrice { amount, currency },\n    heroImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    heroSummary,\n    overviewParagraphs,\n    overviewImages[] { _key, \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    overviewImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    itineraryFor,\n    travelDatesText,\n    guestsText,\n    destinations,\n    planningTitle,\n    planningDescription,\n    itinerary[] {\n      _key,\n      title,\n      summary,\n      image { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n      experience,\n      mealPlan,\n      accommodations[]-> {\n        _id,\n        propertyName,\n        tier,\n        coverImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n        gallery[] { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n      }\n    },\n    landscapesTitle,\n    landscapes[] {\n      _key,\n      name,\n      descriptor,\n      iconKey,\n      image { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n      description\n    },\n    inclusionsEyebrow,\n    inclusionsTitle,\n    inclusionsDescription,\n    includedServiceKeys,\n    inclusionGroups[] {\n      _key,\n      marker,\n      title,\n      description,\n      items[] { _key, iconKey, title, description }\n    },\n    relatedTrips[] {\n      _key,\n      title,\n      summary,\n      durationLabel,\n      image { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n      href\n    },\n    seo {\n      title,\n      description,\n      canonicalPath,\n      shareImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n    },\n    "sharedMap": *[_id == "tripSettings"][0].map { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n  }\n': TRIP_PAGE_QUERY_RESULT;
+    '\n  *[_type == "trip" && slug.current == $slug][0] {\n    _id,\n    title,\n    durationDays,\n    startingPrice { amount, currency },\n    heroImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    heroSummary,\n    overviewParagraphs,\n    overviewImages[] { _key, \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    overviewImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    itineraryFor,\n    travelDatesText,\n    guestsText,\n    destinations,\n    planningTitle,\n    planningDescription,\n    itinerary[] {\n      _key,\n      title,\n      summary,\n      image { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n      experience,\n      mealPlan,\n      accommodations[]-> {\n        _id,\n        propertyName,\n        tier,\n        coverImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n        gallery[] { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n      }\n    },\n    landscapesTitle,\n    landscapes[] {\n      _key,\n      name,\n      descriptor,\n      iconKey,\n      image { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n      description\n    },\n    inclusionsEyebrow,\n    inclusionsTitle,\n    inclusionsDescription,\n    includedServiceKeys,\n    notIncluded,\n    inclusionGroups[] {\n      _key,\n      marker,\n      title,\n      description,\n      items[] { _key, iconKey, title, description }\n    },\n    relatedTrips[] {\n      _key,\n      title,\n      summary,\n      durationLabel,\n      image { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n      href\n    },\n    seo {\n      title,\n      description,\n      canonicalPath,\n      shareImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n    },\n    "sharedMap": *[_id == "tripSettings"][0].map { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n  }\n': TRIP_PAGE_QUERY_RESULT;
+    '\n  *[_type == "trip" && "kilimanjaro" in categories && defined(slug.current)] | order(durationDays asc, title asc) {\n    _id,\n    title,\n    "slug": slug.current,\n    durationDays,\n    startingPrice { amount, currency },\n    itineraryFor,\n    destinations,\n    itinerary[] {\n      _key,\n      title,\n      summary,\n      experience,\n      mealPlan,\n      image { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n      "accommodations": accommodations[]->propertyName\n    }\n  }\n': KILIMANJARO_ROUTE_TRIPS_QUERY_RESULT;
     '\n  *[_type == "groupDeparture" && bookingStatus == "scheduled"] | order(startDate asc) {\n    _id,\n    routeName,\n    durationDays,\n    startDate,\n    endDate,\n    highlights,\n    price { amount, currency },\n    deposit { amount, currency },\n    promotionStatus,\n    originalPrice { amount, currency },\n    seasonStatus,\n    seasonLabel\n  }\n': GROUP_DEPARTURES_QUERY_RESULT;
     '\n  *[_type == "trip" && slug.current == $slug][0].seo {\n    title,\n    description,\n    canonicalPath,\n    shareImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n  }\n': TRIP_SEO_QUERY_RESULT;
     '\n  *[_type == "trip" && defined(slug.current) && slug.current != "northern-serengeti"] | order(durationDays asc, title asc) {\n    _id,\n    title,\n    "slug": slug.current,\n    categories,\n    durationDays,\n    startingPrice { amount, currency },\n    heroImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    "overviewImage": overviewImages[0] { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n },\n    "legacyCardImage": cardImage { \n  asset,\n  alt,\n  crop,\n  hotspot,\n  "lqip": asset->metadata.lqip,\n  "dimensions": asset->metadata.dimensions\n }\n  }\n': TRIP_CARDS_QUERY_RESULT;

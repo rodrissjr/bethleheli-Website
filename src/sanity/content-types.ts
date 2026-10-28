@@ -52,6 +52,7 @@ export type CmsTripPageData = {
   inclusionsEyebrow: string;
   inclusionsTitle: string;
   inclusionsDescription: string;
+  notIncluded: string[];
   inclusionGroups: Array<{
     key: string;
     marker: string;

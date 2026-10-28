@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-10-28T07:53:56.220Z",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "status": "updated",
+  "publishedTrips": 10,
+  "updatedDocuments": 8,
+  "verified": [
+    {
+      "_id": "daf7a257-185b-45b6-88b6-3469152730c7",
+      "exclusionCount": 4,
+      "slug": "african-nights-and-circle-of-life-safari"
+    },
+    {
+      "_id": "ed7560cf-8a8c-4c69-ad48-d4999dbabbc3",
+      "exclusionCount": 5,
+      "slug": "east-african-safari-and-beach-bliss"
+    },
+    {
+      "_id": "YkPlCo51dgmxCpSBSoMrZP",
+      "exclusionCount": 7,
+      "slug": "lake-natron-oldoinyo-lengai"
+    },
+    {
+      "_id": "PT0Z0fhD72TdeKdiN0ptDB",
+      "exclusionCount": 8,
+      "slug": "marangu-route-hotel-stay"
+    },
+    {
+      "_id": "OJlbDBzLZ7NM7c3sgK2fYj",
+      "exclusionCount": 8,
+      "slug": "mount-meru-trek"
+    },
+    {
+      "_id": "OJlbDBzLZ7NM7c3sgK2hkb",
+      "exclusionCount": 8,
+      "slug": "northern-circuit-route"
+    },
+    {
+      "_id": "NJnMV77vCyO9g8HOX8MTlp",
+      "exclusionCount": 7,
+      "slug": "northern-serengeti"
+    },
+    {
+      "_id": "OJlbDBzLZ7NM7c3sgK2iTt",
+      "exclusionCount": 7,
+      "slug": "shira-plateau-day-hike"
+    },
+    {
+      "_id": "f38ab3ae-45fa-486d-bbae-4bbcadddf2cd",
+      "exclusionCount": 5,
+      "slug": "tanzanian-traffic-jam-the-great-migration"
+    },
+    {
+      "_id": "PT0Z0fhD72TdeKdiN0ptSi",
+      "exclusionCount": 8,
+      "slug": "umbwe-route-hotel-stay"
+    }
+  ]
+}

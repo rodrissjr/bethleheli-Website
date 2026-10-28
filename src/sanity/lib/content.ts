@@ -236,6 +236,7 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
       inclusionsEyebrow: raw.inclusionsEyebrow || "",
       inclusionsTitle: raw.inclusionsTitle || "",
       inclusionsDescription: raw.inclusionsDescription || "",
+      notIncluded: (raw.notIncluded || []).filter(isDefined),
       inclusionGroups: presetInclusionGroups.length ? presetInclusionGroups : legacyInclusionGroups,
       relatedTrips: (raw.relatedTrips || []).filter(trip => trip.href !== "/trips/northern-serengeti").map(trip => {
         const image = presentImage(trip.image, 1200);
