@@ -35,8 +35,23 @@ export const suppliedItinerariesSource = {
       'https://betheliexpeditions.com/east-african-safari-beach-bliss/',
     ],
   },
-  existingAccommodationSlugs: ['mount-meru-hotel', 'nimali-tarangire'],
+  existingAccommodationSlugs: ['nimali-tarangire'],
   accommodations: [
+    {
+      propertyName: 'Mount Meru Hotel',
+      slug: 'mount-meru-hotel',
+      tier: 'luxury',
+      style: 'hotel',
+      destinationGroup: 'safariMainland',
+      location: 'Arusha, Tanzania',
+      description:
+        'An Arusha hotel set in landscaped grounds with views toward Mount Meru, used for the arrival night and departure-day refresh stop on this itinerary.',
+      imageSources: [
+        'migration/assets/supplied-itineraries/mount-meru-hotel-1.jpg',
+        'migration/assets/supplied-itineraries/mount-meru-hotel-2.jpg',
+        'migration/assets/supplied-itineraries/mount-meru-hotel-3.jpg',
+      ],
+    },
     {
       propertyName: 'Hamerkop House by Lemala',
       slug: 'hamerkop-house-by-lemala',

@@ -1,22 +1,18 @@
 {
-  "generatedAt": "2026-10-28T06:45:41.444Z",
+  "generatedAt": "2026-10-28T15:45:29.221Z",
   "projectId": "ife51h63",
   "dataset": "production",
-  "status": "passed-with-expected-image-warnings",
+  "status": "passed",
   "counts": {
-    "tripDrafts": 3,
-    "accommodationsFound": 21
+    "publishedTrips": 3,
+    "publishedAccommodations": 16
   },
   "errors": [],
-  "warnings": [
-    "tanzanian-traffic-jam-the-great-migration: images remain intentionally incomplete; keep this document as a draft until they are added.",
-    "east-african-safari-and-beach-bliss: images remain intentionally incomplete; keep this document as a draft until they are added.",
-    "african-nights-and-circle-of-life-safari: images remain intentionally incomplete; keep this document as a draft until they are added."
-  ],
+  "warnings": [],
   "sample": {
     "accommodations": [
       {
-        "_id": "drafts.b7b43925-2d74-4a5d-a069-490c1b0b6fc9",
+        "_id": "b7b43925-2d74-4a5d-a069-490c1b0b6fc9",
         "destinationGroup": "safariMainland",
         "galleryCount": 1,
         "hasCoverImage": true,
@@ -28,7 +24,7 @@
         "tier": "luxury"
       },
       {
-        "_id": "drafts.c26a9ffe-1589-45ef-a6af-b5d47e01303f",
+        "_id": "c26a9ffe-1589-45ef-a6af-b5d47e01303f",
         "destinationGroup": "safariMainland",
         "galleryCount": 1,
         "hasCoverImage": true,
@@ -40,7 +36,7 @@
         "tier": "luxury"
       },
       {
-        "_id": "drafts.c0f89f53-0af7-4b0b-ad3b-38349b13e2de",
+        "_id": "c0f89f53-0af7-4b0b-ad3b-38349b13e2de",
         "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
@@ -54,18 +50,6 @@
       {
         "_id": "51580e1b-d4e1-4cef-a003-9a9e0a00f13e",
         "destinationGroup": "safariMainland",
-        "galleryCount": 4,
-        "hasCoverImage": true,
-        "hasDescription": true,
-        "location": "Ndutu during the southern Serengeti calving season",
-        "propertyName": "Intimate Camp Zebra",
-        "slug": "intimate-camp-zebra",
-        "style": "safariCamp",
-        "tier": "midRange"
-      },
-      {
-        "_id": "drafts.51580e1b-d4e1-4cef-a003-9a9e0a00f13e",
-        "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
         "hasDescription": true,
@@ -76,7 +60,7 @@
         "tier": "midRange"
       },
       {
-        "_id": "drafts.af87a779-4c7c-427d-bf22-be615808de57",
+        "_id": "af87a779-4c7c-427d-bf22-be615808de57",
         "destinationGroup": "safariMainland",
         "galleryCount": 3,
         "hasCoverImage": true,
@@ -88,7 +72,7 @@
         "tier": "midRange"
       },
       {
-        "_id": "drafts.487a10cf-5e6c-414d-bb4a-e288103af4da",
+        "_id": "487a10cf-5e6c-414d-bb4a-e288103af4da",
         "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
@@ -102,18 +86,6 @@
       {
         "_id": "84f2bfe6-7c9f-4c69-a166-af16effab071",
         "destinationGroup": "safariMainland",
-        "galleryCount": 3,
-        "hasCoverImage": true,
-        "hasDescription": true,
-        "location": "Eastern Serengeti",
-        "propertyName": "Lemala Nanyukie Lodge",
-        "slug": "lemala-nanyukie-lodge",
-        "style": "tentedSuite",
-        "tier": "luxury"
-      },
-      {
-        "_id": "drafts.84f2bfe6-7c9f-4c69-a166-af16effab071",
-        "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
         "hasDescription": true,
@@ -126,10 +98,10 @@
       {
         "_id": "NJnMV77vCyO9g8HOX8MTUf",
         "destinationGroup": "safariMainland",
-        "galleryCount": 3,
+        "galleryCount": 2,
         "hasCoverImage": true,
         "hasDescription": true,
-        "location": "Arusha",
+        "location": "Arusha, Tanzania",
         "propertyName": "Mount Meru Hotel",
         "slug": "mount-meru-hotel",
         "style": "hotel",
@@ -137,18 +109,6 @@
       },
       {
         "_id": "2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
-        "destinationGroup": "safariMainland",
-        "galleryCount": 4,
-        "hasCoverImage": true,
-        "hasDescription": true,
-        "location": "Seronera Valley, Central Serengeti",
-        "propertyName": "Moyo Tented Camp — Central Serengeti",
-        "slug": "moyo-tented-camp-central-serengeti",
-        "style": "tentedSuite",
-        "tier": "luxury"
-      },
-      {
-        "_id": "drafts.2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
         "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
@@ -162,18 +122,6 @@
       {
         "_id": "952e5f0f-ae8b-43d1-b1b0-1344c070d162",
         "destinationGroup": "safariMainland",
-        "galleryCount": 4,
-        "hasCoverImage": true,
-        "hasDescription": true,
-        "location": "Ndutu, southern Serengeti ecosystem",
-        "propertyName": "Ndutu Kati Kati Tented Camp",
-        "slug": "ndutu-kati-kati-tented-camp",
-        "style": "safariCamp",
-        "tier": "midRange"
-      },
-      {
-        "_id": "drafts.952e5f0f-ae8b-43d1-b1b0-1344c070d162",
-        "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
         "hasDescription": true,
@@ -186,18 +134,6 @@
       {
         "_id": "c93860e3-4e22-4694-bdf7-dde5bae6425e",
         "destinationGroup": "safariMainland",
-        "galleryCount": 4,
-        "hasCoverImage": true,
-        "hasDescription": true,
-        "location": "Eastern rim of the Ngorongoro Crater",
-        "propertyName": "Ngorongoro Lion's Paw",
-        "slug": "ngorongoro-lions-paw",
-        "style": "safariCamp",
-        "tier": "luxury"
-      },
-      {
-        "_id": "drafts.c93860e3-4e22-4694-bdf7-dde5bae6425e",
-        "destinationGroup": "safariMainland",
         "galleryCount": 1,
         "hasCoverImage": true,
         "hasDescription": true,
@@ -208,7 +144,7 @@
         "tier": "luxury"
       },
       {
-        "_id": "drafts.ca79fa22-748e-4996-acdf-4e4153f94e33",
+        "_id": "ca79fa22-748e-4996-acdf-4e4153f94e33",
         "destinationGroup": "safariMainland",
         "galleryCount": 1,
         "hasCoverImage": true,
@@ -232,7 +168,7 @@
         "tier": "luxury"
       },
       {
-        "_id": "drafts.4665023a-adc3-4c21-a9ac-6d0449ca5737",
+        "_id": "4665023a-adc3-4c21-a9ac-6d0449ca5737",
         "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
@@ -244,7 +180,7 @@
         "tier": "midRange"
       },
       {
-        "_id": "drafts.d19ba0cf-a883-40e8-b9e2-6a3037faacc5",
+        "_id": "d19ba0cf-a883-40e8-b9e2-6a3037faacc5",
         "destinationGroup": "safariMainland",
         "galleryCount": 2,
         "hasCoverImage": true,
@@ -256,7 +192,7 @@
         "tier": "midRange"
       },
       {
-        "_id": "drafts.532a8dda-5d16-444b-931f-ab5a4ff83a3c",
+        "_id": "532a8dda-5d16-444b-931f-ab5a4ff83a3c",
         "destinationGroup": "zanzibar",
         "galleryCount": 2,
         "hasCoverImage": true,
@@ -270,7 +206,7 @@
     ],
     "trips": [
       {
-        "_id": "drafts.daf7a257-185b-45b6-88b6-3469152730c7",
+        "_id": "daf7a257-185b-45b6-88b6-3469152730c7",
         "accommodationReferenceIds": [
           "NJnMV77vCyO9g8HOX8MTUf",
           "xDXE1b5fzFsIAlmDXMIqD5",
@@ -287,7 +223,6 @@
         "categories": [
           "safari"
         ],
-        "dayImageCount": 0,
         "daysWithoutExperience": 0,
         "daysWithoutTitles": 0,
         "durationDays": 10,
@@ -303,7 +238,7 @@
         "title": "African Nights & Circle of Life Safari"
       },
       {
-        "_id": "drafts.ed7560cf-8a8c-4c69-ad48-d4999dbabbc3",
+        "_id": "ed7560cf-8a8c-4c69-ad48-d4999dbabbc3",
         "accommodationReferenceIds": [
           "c0f89f53-0af7-4b0b-ad3b-38349b13e2de",
           "xDXE1b5fzFsIAlmDXMIqD5",
@@ -325,7 +260,6 @@
           "safari",
           "zanzibar"
         ],
-        "dayImageCount": 0,
         "daysWithoutExperience": 0,
         "daysWithoutTitles": 0,
         "durationDays": 16,
@@ -341,7 +275,7 @@
         "title": "East African Safari & Beach Bliss"
       },
       {
-        "_id": "drafts.f38ab3ae-45fa-486d-bbae-4bbcadddf2cd",
+        "_id": "f38ab3ae-45fa-486d-bbae-4bbcadddf2cd",
         "accommodationReferenceIds": [
           "487a10cf-5e6c-414d-bb4a-e288103af4da",
           "d19ba0cf-a883-40e8-b9e2-6a3037faacc5",
@@ -357,7 +291,6 @@
         "categories": [
           "safari"
         ],
-        "dayImageCount": 0,
         "daysWithoutExperience": 0,
         "daysWithoutTitles": 0,
         "durationDays": 10,

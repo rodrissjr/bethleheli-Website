@@ -22,7 +22,7 @@ const allAccommodationSlugs = [
 
 const data = await client.fetch(
   `{
-    "trips": *[_type == "trip" && slug.current in $tripSlugs && _id in path("drafts.**")] | order(slug.current asc) {
+    "trips": *[_type == "trip" && slug.current in $tripSlugs && !(_id in path("drafts.**"))] | order(slug.current asc) {
       _id,
       title,
       "slug": slug.current,
@@ -37,12 +37,11 @@ const data = await client.fetch(
       "notIncludedCount": count(notIncluded),
       "hasHeroImage": defined(heroImage.asset->_id),
       "overviewImageCount": count(overviewImages),
-      "dayImageCount": count(itinerary[defined(image.asset->_id)]),
       "seoTitleLength": length(seo.title),
       "seoDescriptionLength": length(seo.description),
       "canonicalPath": seo.canonicalPath
     },
-    "accommodations": *[_type == "accommodation" && slug.current in $allAccommodationSlugs] | order(slug.current asc) {
+    "accommodations": *[_type == "accommodation" && slug.current in $allAccommodationSlugs && !(_id in path("drafts.**"))] | order(slug.current asc) {
       _id,
       "slug": slug.current,
       propertyName,
@@ -67,7 +66,7 @@ const availableAccommodationIds = new Set(
 for (const expected of suppliedItinerariesSource.trips) {
   const trip = data.trips.find(({slug}) => slug === expected.slug)
   if (!trip) {
-    errors.push(`Missing trip draft: ${expected.slug}.`)
+    errors.push(`Missing published trip: ${expected.slug}.`)
     continue
   }
   if (trip.durationDays !== expected.durationDays || trip.itineraryCount !== expected.durationDays) {
@@ -100,23 +99,29 @@ for (const expected of suppliedItinerariesSource.trips) {
   if (trip.canonicalPath !== `/trips/${trip.slug}`) {
     errors.push(`${trip.slug}: canonical path is incorrect.`)
   }
-  if (!trip.hasHeroImage || !trip.overviewImageCount || trip.dayImageCount < expected.durationDays) {
-    warnings.push(`${trip.slug}: images remain intentionally incomplete; keep this document as a draft until they are added.`)
+  if (!trip.hasHeroImage) {
+    errors.push(`${trip.slug}: hero image is missing.`)
+  }
+  if (trip.overviewImageCount !== expected.overviewImageSources.length) {
+    errors.push(`${trip.slug}: overview-image count is incorrect.`)
   }
 }
 
 for (const expected of suppliedItinerariesSource.accommodations) {
   const accommodation = data.accommodations.find(({slug}) => slug === expected.slug)
   if (!accommodation) {
-    errors.push(`Missing accommodation draft: ${expected.slug}.`)
+    errors.push(`Missing published accommodation: ${expected.slug}.`)
     continue
   }
   if (!accommodation.propertyName || !accommodation.tier || !accommodation.style ||
       !accommodation.destinationGroup || !accommodation.location || !accommodation.hasDescription) {
     errors.push(`${expected.slug}: required accommodation metadata is incomplete.`)
   }
-  if (!accommodation.hasCoverImage || !accommodation.galleryCount) {
-    warnings.push(`${expected.slug}: accommodation images remain intentionally incomplete.`)
+  if (!accommodation.hasCoverImage) {
+    errors.push(`${expected.slug}: accommodation cover image is missing.`)
+  }
+  if (accommodation.galleryCount !== expected.imageSources.length - 1) {
+    errors.push(`${expected.slug}: accommodation gallery-image count is incorrect.`)
   }
 }
 
@@ -124,10 +129,10 @@ const report = {
   generatedAt: new Date().toISOString(),
   projectId: 'ife51h63',
   dataset: 'production',
-  status: errors.length ? 'failed' : 'passed-with-expected-image-warnings',
+  status: errors.length ? 'failed' : 'passed',
   counts: {
-    tripDrafts: data.trips.length,
-    accommodationsFound: data.accommodations.length,
+    publishedTrips: data.trips.length,
+    publishedAccommodations: data.accommodations.length,
   },
   errors,
   warnings: [...new Set(warnings)],

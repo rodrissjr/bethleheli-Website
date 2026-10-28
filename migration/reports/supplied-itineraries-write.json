@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T06:42:54.337Z",
+  "generatedAt": "2026-10-28T15:36:39.740Z",
   "mode": "draft-write",
   "projectId": "ife51h63",
   "dataset": "production",
@@ -12,7 +12,7 @@
     ],
     "duplicateDecision": "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
     "publishingDecision": "Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.",
-    "priceDecision": "The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.",
+    "priceDecision": "The source-page prices are retained for trip-card consistency, including historical advertised rates. Every price remains subject to the date-range warning and a current customized quote.",
     "researchDecision": "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative.",
     "additionalSourcePages": [
       "https://betheliexpeditions.com/tanzanian-traffic-jam-the-great-migration/",
@@ -24,20 +24,24 @@
     "sourceDocuments": 3,
     "sourcePages": 3,
     "uniqueTrips": 3,
-    "newAccommodationDrafts": 14,
+    "newAccommodationDrafts": 15,
     "itineraryDays": 36,
-    "images": 43
+    "images": 46
   },
   "warnings": [
     "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
     "Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.",
-    "The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.",
+    "The source-page prices are retained for trip-card consistency, including historical advertised rates. Every price remains subject to the date-range warning and a current customized quote.",
     "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
   ],
   "qualityIssues": [],
   "status": "drafts-written",
   "written": {
     "accommodations": [
+      {
+        "slug": "mount-meru-hotel",
+        "draftId": "drafts.NJnMV77vCyO9g8HOX8MTUf"
+      },
       {
         "slug": "hamerkop-house-by-lemala",
         "draftId": "drafts.c0f89f53-0af7-4b0b-ad3b-38349b13e2de"

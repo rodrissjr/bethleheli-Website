@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T06:53:21.775Z",
+  "generatedAt": "2026-10-28T15:41:10.765Z",
   "projectId": "ife51h63",
   "dataset": "production",
   "status": "published",
@@ -32,6 +32,10 @@
       {
         "slug": "lemala-nanyukie-lodge",
         "publishedId": "84f2bfe6-7c9f-4c69-a166-af16effab071"
+      },
+      {
+        "slug": "mount-meru-hotel",
+        "publishedId": "NJnMV77vCyO9g8HOX8MTUf"
       },
       {
         "slug": "moyo-tented-camp-central-serengeti",
