@@ -1,28 +1,25 @@
 {
-  "generatedAt": "2026-10-27T12:10:24.497Z",
+  "generatedAt": "2026-10-28T06:45:41.444Z",
   "projectId": "ife51h63",
   "dataset": "production",
   "status": "passed-with-expected-image-warnings",
   "counts": {
-    "tripDrafts": 2,
-    "accommodationsFound": 12
+    "tripDrafts": 3,
+    "accommodationsFound": 21
   },
   "errors": [],
   "warnings": [
+    "tanzanian-traffic-jam-the-great-migration: images remain intentionally incomplete; keep this document as a draft until they are added.",
     "east-african-safari-and-beach-bliss: images remain intentionally incomplete; keep this document as a draft until they are added.",
-    "african-nights-and-circle-of-life-safari: images remain intentionally incomplete; keep this document as a draft until they are added.",
-    "hamerkop-house-by-lemala: accommodation images remain intentionally incomplete.",
-    "gibbs-farm: accommodation images remain intentionally incomplete.",
-    "entamanu-ngorongoro: accommodation images remain intentionally incomplete.",
-    "zanzibar-white-sand-luxury-villas-spa: accommodation images remain intentionally incomplete."
+    "african-nights-and-circle-of-life-safari: images remain intentionally incomplete; keep this document as a draft until they are added."
   ],
   "sample": {
     "accommodations": [
       {
         "_id": "drafts.b7b43925-2d74-4a5d-a069-490c1b0b6fc9",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 1,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "North-western rim of the Ngorongoro Crater",
         "propertyName": "Entamanu Ngorongoro",
@@ -33,8 +30,8 @@
       {
         "_id": "drafts.c26a9ffe-1589-45ef-a6af-b5d47e01303f",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 1,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Karatu, on the outer slopes of the Ngorongoro Crater",
         "propertyName": "Gibb's Farm",
@@ -45,8 +42,8 @@
       {
         "_id": "drafts.c0f89f53-0af7-4b0b-ad3b-38349b13e2de",
         "destinationGroup": "safariMainland",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 2,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Kiligolf, between Kilimanjaro International Airport and Arusha",
         "propertyName": "Hamerkop House by Lemala",
@@ -67,9 +64,57 @@
         "tier": "midRange"
       },
       {
+        "_id": "drafts.51580e1b-d4e1-4cef-a003-9a9e0a00f13e",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 2,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Ndutu during the southern Serengeti calving season",
+        "propertyName": "Intimate Camp Zebra",
+        "slug": "intimate-camp-zebra",
+        "style": "safariCamp",
+        "tier": "midRange"
+      },
+      {
+        "_id": "drafts.af87a779-4c7c-427d-bf22-be615808de57",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 3,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Northern Serengeti, near the Mara River",
+        "propertyName": "Karibu Mara River Camp",
+        "slug": "karibu-mara-river-camp",
+        "style": "safariCamp",
+        "tier": "midRange"
+      },
+      {
+        "_id": "drafts.487a10cf-5e6c-414d-bb4a-e288103af4da",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 2,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Lake Duluti, near Arusha",
+        "propertyName": "Lake Duluti Lodge",
+        "slug": "lake-duluti-lodge",
+        "style": "gardenLodge",
+        "tier": "midRange"
+      },
+      {
         "_id": "84f2bfe6-7c9f-4c69-a166-af16effab071",
         "destinationGroup": "safariMainland",
         "galleryCount": 3,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Eastern Serengeti",
+        "propertyName": "Lemala Nanyukie Lodge",
+        "slug": "lemala-nanyukie-lodge",
+        "style": "tentedSuite",
+        "tier": "luxury"
+      },
+      {
+        "_id": "drafts.84f2bfe6-7c9f-4c69-a166-af16effab071",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 2,
         "hasCoverImage": true,
         "hasDescription": true,
         "location": "Eastern Serengeti",
@@ -105,19 +150,31 @@
       {
         "_id": "drafts.2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
         "destinationGroup": "safariMainland",
-        "galleryCount": 4,
+        "galleryCount": 2,
         "hasCoverImage": true,
         "hasDescription": true,
         "location": "Seronera Valley, Central Serengeti",
         "propertyName": "Moyo Tented Camp — Central Serengeti",
         "slug": "moyo-tented-camp-central-serengeti",
         "style": "tentedSuite",
-        "tier": "midRange"
+        "tier": "luxury"
       },
       {
         "_id": "952e5f0f-ae8b-43d1-b1b0-1344c070d162",
         "destinationGroup": "safariMainland",
         "galleryCount": 4,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Ndutu, southern Serengeti ecosystem",
+        "propertyName": "Ndutu Kati Kati Tented Camp",
+        "slug": "ndutu-kati-kati-tented-camp",
+        "style": "safariCamp",
+        "tier": "midRange"
+      },
+      {
+        "_id": "drafts.952e5f0f-ae8b-43d1-b1b0-1344c070d162",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 2,
         "hasCoverImage": true,
         "hasDescription": true,
         "location": "Ndutu, southern Serengeti ecosystem",
@@ -139,6 +196,30 @@
         "tier": "luxury"
       },
       {
+        "_id": "drafts.c93860e3-4e22-4694-bdf7-dde5bae6425e",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 1,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Eastern rim of the Ngorongoro Crater",
+        "propertyName": "Ngorongoro Lion's Paw",
+        "slug": "ngorongoro-lions-paw",
+        "style": "safariCamp",
+        "tier": "luxury"
+      },
+      {
+        "_id": "drafts.ca79fa22-748e-4996-acdf-4e4153f94e33",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 1,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Ngorongoro Conservation Area",
+        "propertyName": "Ngorongoro Serena Lodge",
+        "slug": "ngorongoro-serena-lodge",
+        "style": "safariCamp",
+        "tier": "luxury"
+      },
+      {
         "_id": "xDXE1b5fzFsIAlmDXMIqD5",
         "destinationGroup": "safariMainland",
         "galleryCount": 2,
@@ -151,10 +232,34 @@
         "tier": "luxury"
       },
       {
+        "_id": "drafts.4665023a-adc3-4c21-a9ac-6d0449ca5737",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 2,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Karatu, Tanzania",
+        "propertyName": "Olea Pamoja Farm Lodge",
+        "slug": "olea-pamoja-farm-lodge",
+        "style": "gardenLodge",
+        "tier": "midRange"
+      },
+      {
+        "_id": "drafts.d19ba0cf-a883-40e8-b9e2-6a3037faacc5",
+        "destinationGroup": "safariMainland",
+        "galleryCount": 2,
+        "hasCoverImage": true,
+        "hasDescription": true,
+        "location": "Tarangire National Park",
+        "propertyName": "Tarangire Sopa Lodge",
+        "slug": "tarangire-sopa-lodge",
+        "style": "safariCamp",
+        "tier": "midRange"
+      },
+      {
         "_id": "drafts.532a8dda-5d16-444b-931f-ab5a4ff83a3c",
         "destinationGroup": "zanzibar",
-        "galleryCount": null,
-        "hasCoverImage": false,
+        "galleryCount": 2,
+        "hasCoverImage": true,
         "hasDescription": true,
         "location": "Paje Beach, Zanzibar",
         "propertyName": "Zanzibar White Sand Luxury Villas & Spa",
@@ -191,7 +296,7 @@
         "itineraryCount": 10,
         "landscapeCount": 4,
         "notIncludedCount": 4,
-        "overviewImageCount": 1,
+        "overviewImageCount": 2,
         "seoDescriptionLength": 138,
         "seoTitleLength": 37,
         "slug": "african-nights-and-circle-of-life-safari",
@@ -229,11 +334,43 @@
         "itineraryCount": 16,
         "landscapeCount": 4,
         "notIncludedCount": 5,
-        "overviewImageCount": 1,
+        "overviewImageCount": 2,
         "seoDescriptionLength": 142,
         "seoTitleLength": 44,
         "slug": "east-african-safari-and-beach-bliss",
         "title": "East African Safari & Beach Bliss"
+      },
+      {
+        "_id": "drafts.f38ab3ae-45fa-486d-bbae-4bbcadddf2cd",
+        "accommodationReferenceIds": [
+          "487a10cf-5e6c-414d-bb4a-e288103af4da",
+          "d19ba0cf-a883-40e8-b9e2-6a3037faacc5",
+          "4665023a-adc3-4c21-a9ac-6d0449ca5737",
+          "ca79fa22-748e-4996-acdf-4e4153f94e33",
+          "2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
+          "2bda6c34-fa95-45ea-9ada-2ae114dfce6f",
+          "af87a779-4c7c-427d-bf22-be615808de57",
+          "af87a779-4c7c-427d-bf22-be615808de57",
+          "af87a779-4c7c-427d-bf22-be615808de57"
+        ],
+        "canonicalPath": "/trips/tanzanian-traffic-jam-the-great-migration",
+        "categories": [
+          "safari"
+        ],
+        "dayImageCount": 0,
+        "daysWithoutExperience": 0,
+        "daysWithoutTitles": 0,
+        "durationDays": 10,
+        "hasHeroImage": true,
+        "includedServiceCount": 16,
+        "itineraryCount": 10,
+        "landscapeCount": 4,
+        "notIncludedCount": 5,
+        "overviewImageCount": 2,
+        "seoDescriptionLength": 122,
+        "seoTitleLength": 38,
+        "slug": "tanzanian-traffic-jam-the-great-migration",
+        "title": "Tanzanian Traffic Jam: The Great Migration"
       }
     ]
   }

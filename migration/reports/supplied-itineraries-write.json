@@ -1,31 +1,37 @@
 {
-  "generatedAt": "2026-10-24T09:25:05.256Z",
+  "generatedAt": "2026-10-28T06:42:54.337Z",
   "mode": "draft-write",
   "projectId": "ife51h63",
   "dataset": "production",
   "source": {
-    "source": "Three supplied Microsoft Word itinerary documents",
+    "source": "Three supplied Microsoft Word itinerary documents plus three source itinerary pages",
     "sourceDocuments": [
       "01_East_African_Safari_and_Beach_Bliss.docx",
       "02_East_African_Safari_and_Beach_Bliss_Copy.docx",
       "03_African_Nights_and_Circle_of_Life_Safari.docx"
     ],
     "duplicateDecision": "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
-    "publishingDecision": "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
-    "priceDecision": "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
-    "researchDecision": "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
+    "publishingDecision": "Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.",
+    "priceDecision": "The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.",
+    "researchDecision": "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative.",
+    "additionalSourcePages": [
+      "https://betheliexpeditions.com/tanzanian-traffic-jam-the-great-migration/",
+      "https://betheliexpeditions.com/african-nights-circle-of-life-safari/",
+      "https://betheliexpeditions.com/east-african-safari-beach-bliss/"
+    ]
   },
   "counts": {
     "sourceDocuments": 3,
-    "uniqueTrips": 2,
-    "newAccommodationDrafts": 9,
-    "itineraryDays": 26,
-    "images": 0
+    "sourcePages": 3,
+    "uniqueTrips": 3,
+    "newAccommodationDrafts": 14,
+    "itineraryDays": 36,
+    "images": 43
   },
   "warnings": [
     "The first two files have identical canonical paragraph and table content (SHA-256 df7f430d200634061ae28a2a3cbfb7a1c4972562db14ef58bcdf1e0bc3770dff), so East African Safari & Beach Bliss is imported once.",
-    "Trips and newly introduced accommodations are created as drafts because the supplied files intentionally omit the images required for a finished public page.",
-    "The supplied prices expired in 2025. They are retained in planning notes for provenance but are not written to the current startingPrice field.",
+    "Trips and newly introduced accommodations are imported as drafts with original photos extracted from the three supplied source itinerary pages.",
+    "The DOCX prices are historical. Current website rates are used only while their published date range remains valid; all advertised rates remain subject to a current customized quote.",
     "Official operator/property pages and UNESCO/TANAPA references were used only to fill required accommodation metadata and correct factual wording; the supplied itinerary structure and daily content remain authoritative."
   ],
   "qualityIssues": [],
@@ -67,9 +73,33 @@
       {
         "slug": "moyo-tented-camp-central-serengeti",
         "draftId": "drafts.2bda6c34-fa95-45ea-9ada-2ae114dfce6f"
+      },
+      {
+        "slug": "lake-duluti-lodge",
+        "draftId": "drafts.487a10cf-5e6c-414d-bb4a-e288103af4da"
+      },
+      {
+        "slug": "tarangire-sopa-lodge",
+        "draftId": "drafts.d19ba0cf-a883-40e8-b9e2-6a3037faacc5"
+      },
+      {
+        "slug": "olea-pamoja-farm-lodge",
+        "draftId": "drafts.4665023a-adc3-4c21-a9ac-6d0449ca5737"
+      },
+      {
+        "slug": "ngorongoro-serena-lodge",
+        "draftId": "drafts.ca79fa22-748e-4996-acdf-4e4153f94e33"
+      },
+      {
+        "slug": "karibu-mara-river-camp",
+        "draftId": "drafts.af87a779-4c7c-427d-bf22-be615808de57"
       }
     ],
     "trips": [
+      {
+        "slug": "tanzanian-traffic-jam-the-great-migration",
+        "draftId": "drafts.f38ab3ae-45fa-486d-bbae-4bbcadddf2cd"
+      },
       {
         "slug": "east-african-safari-and-beach-bliss",
         "draftId": "drafts.ed7560cf-8a8c-4c69-ad48-d4999dbabbc3"
