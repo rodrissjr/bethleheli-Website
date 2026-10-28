@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import "./reference.css";
 import { ScrollMotion } from "@/components/site";
@@ -6,6 +7,25 @@ import { AdTrackingCapture } from "@/components/ad-tracking-capture";
 import { WhatsAppWidget } from "@/components/whatsapp-widget";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://betheliexpeditions.com";
+
+const devPerformanceMeasureGuard = `
+(() => {
+  const originalMeasure = Performance.prototype.measure;
+
+  Performance.prototype.measure = function (name, startOrOptions, endMark) {
+    if (startOrOptions && typeof startOrOptions === "object") {
+      const options = { ...startOrOptions };
+
+      if (typeof options.start === "number" && options.start < 0) options.start = 0;
+      if (typeof options.end === "number" && options.end < 0) options.end = 0;
+
+      return originalMeasure.call(this, name, options);
+    }
+
+    return originalMeasure.call(this, name, startOrOptions, endMark);
+  };
+})();
+`;
 
 // src/app/icon.png is the dedicated 32x32 symbol-only browser favicon.
 export const metadata: Metadata = {
@@ -36,7 +56,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><AdTrackingCapture /><ScrollMotion />{children}<WhatsAppWidget /></body>
+      <body>
+        {process.env.NODE_ENV === "development" ? (
+          <Script id="dev-performance-measure-guard" strategy="beforeInteractive">
+            {devPerformanceMeasureGuard}
+          </Script>
+        ) : null}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <AdTrackingCapture />
+        <ScrollMotion />
+        {children}
+        <WhatsAppWidget />
+      </body>
     </html>
   );
 }
