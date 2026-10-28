@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-10-28T06:53:21.775Z",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "status": "published",
+  "published": {
+    "accommodations": [
+      {
+        "slug": "entamanu-ngorongoro",
+        "publishedId": "b7b43925-2d74-4a5d-a069-490c1b0b6fc9"
+      },
+      {
+        "slug": "gibbs-farm",
+        "publishedId": "c26a9ffe-1589-45ef-a6af-b5d47e01303f"
+      },
+      {
+        "slug": "hamerkop-house-by-lemala",
+        "publishedId": "c0f89f53-0af7-4b0b-ad3b-38349b13e2de"
+      },
+      {
+        "slug": "intimate-camp-zebra",
+        "publishedId": "51580e1b-d4e1-4cef-a003-9a9e0a00f13e"
+      },
+      {
+        "slug": "karibu-mara-river-camp",
+        "publishedId": "af87a779-4c7c-427d-bf22-be615808de57"
+      },
+      {
+        "slug": "lake-duluti-lodge",
+        "publishedId": "487a10cf-5e6c-414d-bb4a-e288103af4da"
+      },
+      {
+        "slug": "lemala-nanyukie-lodge",
+        "publishedId": "84f2bfe6-7c9f-4c69-a166-af16effab071"
+      },
+      {
+        "slug": "moyo-tented-camp-central-serengeti",
+        "publishedId": "2bda6c34-fa95-45ea-9ada-2ae114dfce6f"
+      },
+      {
+        "slug": "ndutu-kati-kati-tented-camp",
+        "publishedId": "952e5f0f-ae8b-43d1-b1b0-1344c070d162"
+      },
+      {
+        "slug": "ngorongoro-lions-paw",
+        "publishedId": "c93860e3-4e22-4694-bdf7-dde5bae6425e"
+      },
+      {
+        "slug": "ngorongoro-serena-lodge",
+        "publishedId": "ca79fa22-748e-4996-acdf-4e4153f94e33"
+      },
+      {
+        "slug": "olea-pamoja-farm-lodge",
+        "publishedId": "4665023a-adc3-4c21-a9ac-6d0449ca5737"
+      },
+      {
+        "slug": "tarangire-sopa-lodge",
+        "publishedId": "d19ba0cf-a883-40e8-b9e2-6a3037faacc5"
+      },
+      {
+        "slug": "zanzibar-white-sand-luxury-villas-spa",
+        "publishedId": "532a8dda-5d16-444b-931f-ab5a4ff83a3c"
+      }
+    ],
+    "trips": [
+      {
+        "slug": "african-nights-and-circle-of-life-safari",
+        "publishedId": "daf7a257-185b-45b6-88b6-3469152730c7"
+      },
+      {
+        "slug": "east-african-safari-and-beach-bliss",
+        "publishedId": "ed7560cf-8a8c-4c69-ad48-d4999dbabbc3"
+      },
+      {
+        "slug": "tanzanian-traffic-jam-the-great-migration",
+        "publishedId": "f38ab3ae-45fa-486d-bbae-4bbcadddf2cd"
+      }
+    ]
+  },
+  "publicTrips": [
+    {
+      "_id": "daf7a257-185b-45b6-88b6-3469152730c7",
+      "accommodationReferenceCount": 10,
+      "hasHeroImage": true,
+      "overviewImageCount": 2,
+      "resolvedAccommodationCount": 10,
+      "slug": "african-nights-and-circle-of-life-safari"
+    },
+    {
+      "_id": "ed7560cf-8a8c-4c69-ad48-d4999dbabbc3",
+      "accommodationReferenceCount": 14,
+      "hasHeroImage": true,
+      "overviewImageCount": 2,
+      "resolvedAccommodationCount": 14,
+      "slug": "east-african-safari-and-beach-bliss"
+    },
+    {
+      "_id": "f38ab3ae-45fa-486d-bbae-4bbcadddf2cd",
+      "accommodationReferenceCount": 9,
+      "hasHeroImage": true,
+      "overviewImageCount": 2,
+      "resolvedAccommodationCount": 9,
+      "slug": "tanzanian-traffic-jam-the-great-migration"
+    }
+  ]
+}
