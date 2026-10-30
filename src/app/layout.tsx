@@ -7,6 +7,7 @@ import { AdTrackingCapture } from "@/components/ad-tracking-capture";
 import { WhatsAppWidget } from "@/components/whatsapp-widget";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://betheliexpeditions.com";
+const portalFormKey = process.env.NEXT_PUBLIC_PORTAL_FORM_KEY || "sdf_oFw6oahp09bJbfeelcJ10za7";
 
 const devPerformanceMeasureGuard = `
 (() => {
@@ -67,6 +68,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ScrollMotion />
         {children}
         <WhatsAppWidget />
+        <Script
+          src="https://safari-digital-portal.vercel.app/s.js"
+          data-key={portalFormKey}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

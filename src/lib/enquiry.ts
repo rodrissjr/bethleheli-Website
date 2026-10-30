@@ -4,6 +4,8 @@ type PortalResult = { ok: boolean; skipped?: boolean; error?: string };
 const fallbackError = "Your enquiry could not be sent. Please try again later.";
 const successMessage = "Your enquiry was sent. The team will be in touch.";
 const web3FormsEndpoint = "https://api.web3forms.com/submit";
+const portalUrl = process.env.NEXT_PUBLIC_PORTAL_URL || "https://safari-digital-portal.vercel.app";
+const portalKey = process.env.NEXT_PUBLIC_PORTAL_FORM_KEY || "sdf_oFw6oahp09bJbfeelcJ10za7";
 
 function stringFields(form: HTMLFormElement) {
   return Object.fromEntries(
@@ -25,6 +27,17 @@ function storedTracking() {
   }
 }
 
+function cookieValue(name: string) {
+  if (typeof document === "undefined") return "";
+  const prefix = `${name}=`;
+  const value = document.cookie.split("; ").find(cookie => cookie.startsWith(prefix))?.slice(prefix.length) || "";
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 function portalPayload(fields: Record<string, string>, extras: Record<string, string>, key: string) {
   const email = fields.email;
   const phone = fields.phone || fields.whatsapp;
@@ -35,6 +48,11 @@ function portalPayload(fields: Record<string, string>, extras: Record<string, st
     fields.adults && `${fields.adults} ${fields.adults === "1" ? "adult" : "adults"}`,
     fields.children && `${fields.children} ${fields.children === "1" ? "child" : "children"}`,
   ].filter(Boolean);
+  const messageParts = [
+    fields.message || fields.notes,
+    (extras.travelStyle || fields.travelStyle) && `Travel style: ${extras.travelStyle || fields.travelStyle}`,
+    fields.days && `Available duration: ${fields.days}`,
+  ].filter(Boolean);
 
   const optional = {
     email,
@@ -43,8 +61,10 @@ function portalPayload(fields: Record<string, string>, extras: Record<string, st
     travel_dates: travelDates,
     travellers: travellerParts.join(", "),
     country: fields.country,
-    message: fields.message || fields.notes,
+    message: messageParts.join("\n"),
     ...storedTracking(),
+    fbc: cookieValue("_fbc"),
+    fbp: cookieValue("_fbp"),
   };
 
   return {
@@ -56,10 +76,6 @@ function portalPayload(fields: Record<string, string>, extras: Record<string, st
 }
 
 async function sendToPortal(fields: Record<string, string>, extras: Record<string, string>): Promise<PortalResult> {
-  const portalUrl = process.env.NEXT_PUBLIC_PORTAL_URL;
-  const portalKey = process.env.NEXT_PUBLIC_PORTAL_FORM_KEY;
-  if (!portalUrl || !portalKey) return { ok: false, skipped: true };
-
   try {
     const response = await fetch(`${portalUrl.replace(/\/$/, "")}/api/inquiries`, {
       method: "POST",
@@ -118,6 +134,9 @@ async function sendToWeb3Forms(kind: "contact" | "trip", fields: Record<string, 
 
 export async function sendEnquiry(kind: "contact" | "trip", form: HTMLFormElement, extras: Record<string, string> = {}, web3FormsAccessKey = "") {
   const fields = stringFields(form);
+  if (!fields.name || (!fields.email && !fields.phone && !fields.whatsapp)) {
+    return { ok: false, message: "Please enter your name and either an email address or phone number." };
+  }
   const [existing, portal] = await Promise.all([
     sendToWeb3Forms(kind, fields, extras, web3FormsAccessKey),
     sendToPortal(fields, extras),
