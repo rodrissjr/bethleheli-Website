@@ -27,8 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
+export default async function Page({ params, searchParams }: { params: Promise<{ slug?: string[] }>; searchParams: Promise<{ category?: string | string[] }> }) {
   const { slug } = await params;
+  const { category } = await searchParams;
   const key = routeKeyFromSlug(slug);
   const dynamicTripSlug = slug?.length === 2 && slug[0] === "trips" ? slug[1] : null;
   if (!key && dynamicTripSlug) {
@@ -49,7 +50,10 @@ export default async function Page({ params }: { params: Promise<{ slug?: string
     case "umbwe": return <KilimanjaroRouteDetailPage route="umbwe" trip={await getKilimanjaroRouteTrip("umbwe")} />;
     case "safari": return <SafariReferencePage />;
     case "zanzibar": return <ZanzibarReferencePage />;
-    case "trips": return <TripsReferencePage trips={await getTripCards()} />;
+    case "trips": {
+      const initialCategory = typeof category === "string" ? category : undefined;
+      return <TripsReferencePage key={initialCategory || "All"} trips={await getTripCards()} initialCategory={initialCategory} />;
+    }
     case "northernSerengeti": return <TripDetailReferencePage data={await getTripPageContent("northern-serengeti")} trips={await getTripCards()} slug="northern-serengeti" />;
     case "groups": return <GroupsPage departures={await getGroupDepartures()} web3FormsAccessKey={web3FormsAccessKey} />;
     case "terms": return <TermsPage />;
