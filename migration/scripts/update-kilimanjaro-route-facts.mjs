@@ -70,16 +70,11 @@ const changes = documents.map((document) => {
       `${document.slug}: expected ${facts.dayTypes.length} itinerary days, found ${document.itinerary.length}`,
     )
   }
-  const itinerary = document.itinerary.map((day, index) => ({
-    ...day,
-    dayType: facts.dayTypes[index],
-  }))
   const after = {
     trekkingDays: facts.trekkingDays,
     ...(facts.routeDistanceKm ? {routeDistanceKm: facts.routeDistanceKm} : {}),
     ...(facts.title ? {title: facts.title} : {}),
     ...(facts.seoTitle ? {'seo.title': facts.seoTitle} : {}),
-    itinerary,
   }
   return {
     _id: document._id,
@@ -98,13 +93,23 @@ const changes = documents.map((document) => {
       routeDistanceKm: facts.routeDistanceKm ?? null,
       dayTypes: facts.dayTypes,
     },
+    dayTypePatches: document.itinerary.map((day, index) => ({
+      key: day._key,
+      value: facts.dayTypes[index],
+    })),
     patch: after,
   }
 })
 
 if (writeMode) {
   for (const change of changes) {
-    await client.patch(change._id).set(change.patch).commit({visibility: 'sync'})
+    let patch = client.patch(change._id).set(change.patch)
+    for (const dayTypePatch of change.dayTypePatches) {
+      patch = patch.set({
+        [`itinerary[_key=="${dayTypePatch.key}"].dayType`]: dayTypePatch.value,
+      })
+    }
+    await patch.commit({visibility: 'sync'})
     console.log(`Updated Kilimanjaro facts: ${change.slug} (${change._id})`)
   }
 }

@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-10-30T11:46:15.731Z",
+  "status": "restored",
+  "scope": "Published Kilimanjaro trips only; drafts and all non-itinerary fields are preserved.",
+  "changes": [
+    {
+      "_id": "PT0Z0fhD72TdeKdiN0ptDB",
+      "slug": "marangu-route-hotel-stay",
+      "beforeCount": 8,
+      "restoredCount": 8
+    },
+    {
+      "_id": "PT0Z0fhD72TdeKdiN0ptSi",
+      "slug": "umbwe-route-hotel-stay",
+      "beforeCount": 8,
+      "restoredCount": 8
+    },
+    {
+      "_id": "OJlbDBzLZ7NM7c3sgK2hkb",
+      "slug": "northern-circuit-route",
+      "beforeCount": 9,
+      "restoredCount": 9
+    },
+    {
+      "_id": "OJlbDBzLZ7NM7c3sgK2iTt",
+      "slug": "shira-plateau-day-hike",
+      "beforeCount": 1,
+      "restoredCount": 1
+    }
+  ],
+  "verification": [
+    {
+      "dayCount": 8,
+      "daysWithExperience": 8,
+      "daysWithMealPlan": 8,
+      "daysWithStays": 8,
+      "daysWithSummary": 8,
+      "slug": "marangu-route-hotel-stay"
+    },
+    {
+      "dayCount": 9,
+      "daysWithExperience": 9,
+      "daysWithMealPlan": 9,
+      "daysWithStays": 9,
+      "daysWithSummary": 9,
+      "slug": "northern-circuit-route"
+    },
+    {
+      "dayCount": 1,
+      "daysWithExperience": 1,
+      "daysWithMealPlan": 1,
+      "daysWithStays": 1,
+      "daysWithSummary": 1,
+      "slug": "shira-plateau-day-hike"
+    },
+    {
+      "dayCount": 8,
+      "daysWithExperience": 8,
+      "daysWithMealPlan": 8,
+      "daysWithStays": 8,
+      "daysWithSummary": 8,
+      "slug": "umbwe-route-hotel-stay"
+    }
+  ]
+}

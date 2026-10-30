@@ -93,9 +93,9 @@ function ReferenceHero({
       {lead && <p className="ref-hero-lead">{lead}</p>}
       <p>{copy}</p>
       <div className="ref-actions"><PrimaryLink href={actionHref}>{action}</PrimaryLink><Link className="ghost-button" href={secondActionHref}>{secondAction}<span className="arrow" aria-hidden="true"><ArrowIcon /></span></Link></div>
+      {routeFacts && <div className="ref-hero-route-facts">{routeFacts.map((fact, index) => <span key={fact}><b aria-hidden="true">{["▣", "△", "▧", "◇"][index]}</b>{fact}</span>)}</div>}
     </div>
-    {routeFacts ? <div className="shell ref-hero-route-facts">{routeFacts.map((fact, index) => <span key={fact}><b aria-hidden="true">{["▣", "△", "▧", "◇"][index]}</b>{fact}</span>)}</div> :
-      <div className="shell ref-hero-trust"><div className="ref-hero-rating"><TripadvisorLogo light compact /><small>5.0 {heroClass === "ref-hero-zanzibar" ? <span className="ref-zanzibar-hero-stars" role="img" aria-label="5 out of 5 stars">{Array.from({ length: 5 }, (_, i) => <span key={i}><Image src={image("figma-zanzibar-hero-star.svg")} alt="" width={16.6309} height={15.915} /></span>)}</span> : <RatingStars size={14} />}</small></div>{(trustItems || ["Local Tanzanian team", "Personal trip planning", "Your journey, your pace"]).map(item => <span key={item}><b aria-hidden="true">✓</b>{item}</span>)}<span className="sr-only">Current section: {active}</span></div>}
+    {!routeFacts && <div className="shell ref-hero-trust"><div className="ref-hero-rating"><TripadvisorLogo light compact /><small>5.0 {heroClass === "ref-hero-zanzibar" ? <span className="ref-zanzibar-hero-stars" role="img" aria-label="5 out of 5 stars">{Array.from({ length: 5 }, (_, i) => <span key={i}><Image src={image("figma-zanzibar-hero-star.svg")} alt="" width={16.6309} height={15.915} /></span>)}</span> : <RatingStars size={14} />}</small></div>{(trustItems || ["Local Tanzanian team", "Personal trip planning", "Your journey, your pace"]).map(item => <span key={item}><b aria-hidden="true">✓</b>{item}</span>)}<span className="sr-only">Current section: {active}</span></div>}
   </section>;
 }
 

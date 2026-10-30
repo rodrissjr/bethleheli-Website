@@ -54,7 +54,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
 .ref-hero-rating small span{color:#ea4729;letter-spacing:2px}
 .ref-hero-trust>span:not(.sr-only){white-space:nowrap}
 .ref-hero-trust>span>b{color:#ea4729;margin-right:9px;font-size:17px;font-weight:500}
-.ref-hero-route-facts{position:absolute;z-index:2;left:50%;bottom:103px;transform:translateX(-50%);display:grid;grid-template-columns:repeat(4,1fr);align-items:center;min-height:80px;padding:14px 25px;border:1px solid rgba(255,255,255,.22);border-radius:20px;background:rgba(255,255,255,.08);backdrop-filter:blur(6px)}
+.ref-hero-route-facts{display:grid;grid-template-columns:repeat(4,1fr);align-items:center;width:100%;min-height:80px;margin-top:28px;padding:14px 25px;border:1px solid rgba(255,255,255,.22);border-radius:20px;background:rgba(255,255,255,.08);backdrop-filter:blur(6px)}
 .ref-hero-route-facts span{display:flex;align-items:center;gap:13px;color:#fff;font-size:16px;font-weight:600;white-space:nowrap}
 .ref-hero-route-facts b{color:#ea4729;font-size:30px;font-weight:400}
 .ref-section{padding:112px 0;background:#fafafa}
@@ -754,7 +754,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
   .home-ref-trust>div:first-child{min-width:0}
   .home-ref-photo-strip{position:relative;top:auto;left:auto;right:auto;margin-top:24px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;padding-bottom:15px}
   .home-ref-photo-strip figure,.home-ref-photo-strip figure:first-child,.home-ref-photo-strip figure:nth-child(2),.home-ref-photo-strip figure:nth-child(3),.home-ref-photo-strip figure:nth-child(4){top:0;scroll-snap-align:start}
-  .ref-hero-route-facts{bottom:45px;gap:12px}
+  .ref-hero-route-facts{gap:12px}
   .ref-hero-route-facts span{font-size:12px}
 }
 @media(max-width:650px){
@@ -767,7 +767,7 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
   .home-ref-photo-strip{margin-top:22px;gap:10px}
   .home-ref-photo-strip figure,.home-ref-photo-strip figure:first-child,.home-ref-photo-strip figure:nth-child(4){flex-basis:155px}
   .home-ref-photo-strip img,.home-ref-photo-strip figure:first-child img{height:170px}
-  .ref-hero-route-facts{grid-template-columns:1fr 1fr;min-height:0;bottom:22px;padding:12px}
+  .ref-hero-route-facts{grid-template-columns:1fr 1fr;min-height:0;margin-top:20px;padding:12px}
   .ref-hero-route-facts span{font-size:10px;white-space:normal;gap:5px}
   .ref-hero-route-facts b{font-size:19px}
   .ref-hero-body:has(.ref-hero-lead){padding-top:135px}

@@ -30,6 +30,9 @@ const data = await client.fetch(
       "itineraryCount": count(itinerary),
       "trekkingDayCount": count(itinerary[dayType == "trekking"]),
       "missingDayImages": count(itinerary[!defined(image.asset->_id)]),
+      "missingDaySummaries": count(itinerary[!defined(summary) || summary == ""]),
+      "missingDayExperiences": count(itinerary[!defined(experience) || experience == ""]),
+      "missingDayMealPlans": count(itinerary[!defined(mealPlan)]),
       "missingAccommodationReferences": count(itinerary[].accommodations[!defined(@->_id)]),
       "landscapeCount": count(landscapes),
       "missingLandscapeImages": count(landscapes[!defined(image.asset->_id)]),
@@ -80,6 +83,9 @@ for (const expected of docxTripSource.trips) {
   }
   if (trip.overviewImageCount < 1 || trip.missingOverviewImages) errors.push(`${trip.slug}: overview images are missing or unresolved.`)
   if (trip.missingDayImages) errors.push(`${trip.slug}: ${trip.missingDayImages} itinerary images are unresolved.`)
+  if (trip.missingDaySummaries) errors.push(`${trip.slug}: ${trip.missingDaySummaries} itinerary summaries are missing.`)
+  if (trip.missingDayExperiences) errors.push(`${trip.slug}: ${trip.missingDayExperiences} itinerary experiences are missing.`)
+  if (trip.missingDayMealPlans) errors.push(`${trip.slug}: ${trip.missingDayMealPlans} itinerary meal plans are missing.`)
   if (trip.missingAccommodationReferences) errors.push(`${trip.slug}: ${trip.missingAccommodationReferences} accommodation references are unresolved.`)
   if (trip.landscapeCount < 1 || trip.missingLandscapeImages) errors.push(`${trip.slug}: landscapes are missing or unresolved.`)
   if (trip.inclusionGroupCount < 1) errors.push(`${trip.slug}: inclusion groups are missing.`)

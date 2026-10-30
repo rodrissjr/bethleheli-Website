@@ -31,6 +31,8 @@
     "sanity:drive-images:write": "cd studio && BETHELI_DRIVE_IMAGES_WRITE=1 npx sanity exec ../migration/scripts/apply-drive-trip-images.mjs --with-user-token",
     "sanity:kilimanjaro-facts:dry-run": "cd studio && npx sanity exec ../migration/scripts/update-kilimanjaro-route-facts.mjs --with-user-token",
     "sanity:kilimanjaro-facts:write": "cd studio && BETHELI_KILIMANJARO_FACTS_WRITE=1 npx sanity exec ../migration/scripts/update-kilimanjaro-route-facts.mjs --with-user-token",
+    "sanity:kilimanjaro-itineraries:dry-run": "cd studio && npx sanity exec ../migration/scripts/restore-kilimanjaro-itineraries.mjs --with-user-token",
+    "sanity:kilimanjaro-itineraries:write": "cd studio && BETHELI_KILIMANJARO_ITINERARIES_WRITE=1 npx sanity exec ../migration/scripts/restore-kilimanjaro-itineraries.mjs --with-user-token",
     "sanity:supplied-itineraries:publish-placeholders": "cd studio && npx sanity exec ../migration/scripts/publish-supplied-itineraries-with-placeholder.mjs --with-user-token"
   },
   "dependencies": {
