@@ -13,7 +13,10 @@ export const TRIP_PAGE_QUERY = defineQuery(/* groq */ `
   *[_type == "trip" && slug.current == $slug][0] {
     _id,
     title,
+    categories,
     durationDays,
+    trekkingDays,
+    routeDistanceKm,
     startingPrice { amount, currency },
     heroImage { ${imageFields} },
     heroSummary,
@@ -28,6 +31,7 @@ export const TRIP_PAGE_QUERY = defineQuery(/* groq */ `
     planningDescription,
     itinerary[] {
       _key,
+      dayType,
       title,
       summary,
       image { ${imageFields} },
@@ -81,16 +85,19 @@ export const TRIP_PAGE_QUERY = defineQuery(/* groq */ `
 `);
 
 export const KILIMANJARO_ROUTE_TRIPS_QUERY = defineQuery(/* groq */ `
-  *[_type == "trip" && "kilimanjaro" in categories && defined(slug.current)] | order(durationDays asc, title asc) {
+  *[_type == "trip" && "kilimanjaro" in categories && defined(slug.current)] | order(trekkingDays asc, title asc) {
     _id,
     title,
     "slug": slug.current,
     durationDays,
+    trekkingDays,
+    routeDistanceKm,
     startingPrice { amount, currency },
     itineraryFor,
     destinations,
     itinerary[] {
       _key,
+      dayType,
       title,
       summary,
       experience,
@@ -128,12 +135,13 @@ export const TRIP_SEO_QUERY = defineQuery(/* groq */ `
 `);
 
 export const TRIP_CARDS_QUERY = defineQuery(/* groq */ `
-  *[_type == "trip" && defined(slug.current) && slug.current != "northern-serengeti"] | order(durationDays asc, title asc) {
+  *[_type == "trip" && defined(slug.current) && slug.current != "northern-serengeti"] | order(coalesce(trekkingDays, durationDays) asc, title asc) {
     _id,
     title,
     "slug": slug.current,
     categories,
     durationDays,
+    trekkingDays,
     startingPrice { amount, currency },
     heroImage { ${imageFields} },
     "overviewImage": overviewImages[0] { ${imageFields} },

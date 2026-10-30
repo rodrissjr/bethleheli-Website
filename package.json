@@ -29,6 +29,8 @@
     "sanity:trip-exclusions:write": "cd studio && BETHELI_TRIP_EXCLUSIONS_WRITE=1 npx sanity exec ../migration/scripts/populate-trip-exclusions.mjs --with-user-token",
     "sanity:drive-images:dry-run": "cd studio && npx sanity exec ../migration/scripts/apply-drive-trip-images.mjs --with-user-token",
     "sanity:drive-images:write": "cd studio && BETHELI_DRIVE_IMAGES_WRITE=1 npx sanity exec ../migration/scripts/apply-drive-trip-images.mjs --with-user-token",
+    "sanity:kilimanjaro-facts:dry-run": "cd studio && npx sanity exec ../migration/scripts/update-kilimanjaro-route-facts.mjs --with-user-token",
+    "sanity:kilimanjaro-facts:write": "cd studio && BETHELI_KILIMANJARO_FACTS_WRITE=1 npx sanity exec ../migration/scripts/update-kilimanjaro-route-facts.mjs --with-user-token",
     "sanity:supplied-itineraries:publish-placeholders": "cd studio && npx sanity exec ../migration/scripts/publish-supplied-itineraries-with-placeholder.mjs --with-user-token"
   },
   "dependencies": {

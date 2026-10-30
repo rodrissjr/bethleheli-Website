@@ -210,7 +210,9 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
 
     return {
       title: raw.title || "Trip",
-      durationDays: raw.durationDays || itinerary.length,
+      durationDays: raw.categories?.includes("kilimanjaro")
+        ? raw.trekkingDays || raw.durationDays || itinerary.length
+        : raw.durationDays || itinerary.length,
       startingPrice: formatMoney(raw.startingPrice),
       heroImage,
       heroSummary: raw.heroSummary || "",
@@ -259,6 +261,8 @@ type RawKilimanjaroRouteTrip = {
   title?: string | null;
   slug?: string | null;
   durationDays?: number | null;
+  trekkingDays?: number | null;
+  routeDistanceKm?: number | null;
   startingPrice?: RawMoney | null;
   itineraryFor?: string | null;
   destinations?: Array<string | null> | null;
@@ -268,6 +272,7 @@ type RawKilimanjaroRouteTrip = {
     summary?: string | null;
     experience?: string | null;
     mealPlan?: string | null;
+    dayType?: "trekking" | "arrival" | "departure" | "other" | null;
     image?: RawImage | null;
     accommodations?: Array<string | null> | null;
   } | null> | null;
@@ -295,11 +300,13 @@ export async function getKilimanjaroRouteTrips(): Promise<Partial<Record<string,
         const source = normalizeRouteText([trip.slug, trip.title, trip.itineraryFor].filter(Boolean).join(" "));
         return source.includes(routeName);
       });
-      if (!matched?.title || !matched.durationDays) continue;
+      if (!matched?.title || !matched.durationDays || !matched.trekkingDays) continue;
 
       matchedTrips[route] = {
         title: matched.title,
-        durationDays: matched.durationDays,
+        trekkingDays: matched.trekkingDays,
+        totalItineraryDays: matched.durationDays,
+        routeDistanceKm: matched.routeDistanceKm ?? null,
         startingPrice: formatMoney(matched.startingPrice),
         itineraryFor: matched.itineraryFor || "",
         destinations: (matched.destinations || []).filter((destination): destination is string => Boolean(destination)),
@@ -309,6 +316,7 @@ export async function getKilimanjaroRouteTrips(): Promise<Partial<Record<string,
           summary: day.summary || "",
           experience: day.experience || "",
           mealPlan: mealPlanLabels[day.mealPlan || ""] || day.mealPlan || "",
+          dayType: day.dayType || "other",
           accommodations: (day.accommodations || []).filter((name): name is string => Boolean(name)),
           image: presentImage(day.image, 1200),
         })),
@@ -407,13 +415,16 @@ export async function getTripCards(): Promise<CmsTripCard[]> {
         .map((category) => categoryLabels[category])
         .filter((category): category is CmsTripCard["categories"][number] => Boolean(category));
       const sourcedCardImage = trip.slug ? sourcedTripCardImages[trip.slug] : undefined;
-      if (!trip.slug || !trip.title || !trip.durationDays || (!sourcedCardImage && !cardImage) || !categories.length) return [];
+      const days = categories.includes("Kilimanjaro")
+        ? trip.trekkingDays || trip.durationDays
+        : trip.durationDays;
+      if (!trip.slug || !trip.title || !days || (!sourcedCardImage && !cardImage) || !categories.length) return [];
       return [{
         title: trip.title,
         src: sourcedCardImage || cardImage!.src,
         href: `/trips/${trip.slug}`,
         categories,
-        days: trip.durationDays,
+        days,
         price: formatMoney(trip.startingPrice),
       } satisfies CmsTripCard];
     });

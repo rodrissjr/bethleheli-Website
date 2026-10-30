@@ -1,6 +1,13 @@
 const image = (path, alt) => ({path: `public/images/${path}`, alt})
 
+const inferDayType = (title) => {
+  if (/arrival|briefing/i.test(title)) return 'arrival'
+  if (/departure|recovery/i.test(title)) return 'departure'
+  return 'trekking'
+}
+
 const day = (title, summary, experience, imageName, imageAlt, mealPlan, accommodationSlugs) => ({
+  dayType: inferDayType(title),
   title,
   summary,
   experience,
@@ -395,12 +402,14 @@ export const docxTripSource = {
       },
     },
     {
-      title: '8-Day Kilimanjaro Marangu Route and Hotel Stay',
+      title: '6-Day Kilimanjaro Marangu Route and Hotel Stay',
       cardTitle: 'Marangu Route & Hotel Stay',
       slug: 'marangu-route-hotel-stay',
       categories: ['kilimanjaro'],
       locationLabel: 'Kilimanjaro',
       durationDays: 8,
+      trekkingDays: 6,
+      routeDistanceKm: 66.9,
       startingPrice: {amount: 1450, currency: 'USD'},
       cardImage: image('figma-kili-routes-route-landscape2.png', 'Kilimanjaro Marangu Route landscape'),
       heroImage: image('figma-kili-routes-route-landscape2.png', 'Kilimanjaro Marangu Route landscape'),
@@ -433,15 +442,17 @@ export const docxTripSource = {
       inclusionsDescription: 'The package combines a six-day hut-based climb with the practical support described in the supplied itinerary.',
       inclusionGroups: mountainInclusions({hutBased: true, hotelIncluded: true}),
       relatedTrips: kilimanjaroRelatedTrips,
-      seo: {title: '8-Day Marangu Route and Hotel Stay | Betheli', description: 'Climb Kilimanjaro on the six-day Marangu Route with hut accommodation, a Horombo acclimatization day and hotel nights before and after.', canonicalPath: '/trips/marangu-route-hotel-stay', shareImage: image('figma-kili-routes-route-landscape2.png', 'Kilimanjaro Marangu Route landscape')},
+      seo: {title: '6-Day Marangu Route and Hotel Stay | Betheli', description: 'Climb Kilimanjaro on the six-day Marangu Route with hut accommodation, a Horombo acclimatization day and hotel nights before and after.', canonicalPath: '/trips/marangu-route-hotel-stay', shareImage: image('figma-kili-routes-route-landscape2.png', 'Kilimanjaro Marangu Route landscape')},
     },
     {
-      title: '8-Day Kilimanjaro Umbwe Route and Hotel Stay',
+      title: '6-Day Kilimanjaro Umbwe Route and Hotel Stay',
       cardTitle: 'Umbwe Route & Hotel Stay',
       slug: 'umbwe-route-hotel-stay',
       categories: ['kilimanjaro'],
       locationLabel: 'Kilimanjaro',
       durationDays: 8,
+      trekkingDays: 6,
+      routeDistanceKm: 46.3,
       startingPrice: {amount: 1450, currency: 'USD'},
       cardImage: image('figma-kili-routes-route-landscape5.png', 'Hikers on the steep Umbwe Route'),
       heroImage: image('figma-kili-routes-route-landscape5.png', 'Hikers on the steep Umbwe Route'),
@@ -474,7 +485,7 @@ export const docxTripSource = {
       inclusionsDescription: 'The package includes the six-day mountain trek, hotel nights and the specified safety and support services.',
       inclusionGroups: mountainInclusions({hotelIncluded: true}),
       relatedTrips: kilimanjaroRelatedTrips,
-      seo: {title: '8-Day Umbwe Route and Hotel Stay | Betheli', description: 'Take the steep, quiet Umbwe Route to Uhuru Peak with six mountain days, camping support and hotel nights before and after the climb.', canonicalPath: '/trips/umbwe-route-hotel-stay', shareImage: image('figma-kili-routes-route-landscape5.png', 'Hikers on the steep Umbwe Route')},
+      seo: {title: '6-Day Umbwe Route and Hotel Stay | Betheli', description: 'Take the steep, quiet Umbwe Route to Uhuru Peak with six mountain days, camping support and hotel nights before and after the climb.', canonicalPath: '/trips/umbwe-route-hotel-stay', shareImage: image('figma-kili-routes-route-landscape5.png', 'Hikers on the steep Umbwe Route')},
     },
     {
       title: '9-Day Kilimanjaro Northern Circuit Route',
@@ -483,6 +494,8 @@ export const docxTripSource = {
       categories: ['kilimanjaro'],
       locationLabel: 'Kilimanjaro',
       durationDays: 9,
+      trekkingDays: 9,
+      routeDistanceKm: 97,
       startingPrice: {amount: 1450, currency: 'USD'},
       cardImage: image('figma-kili-routes-route-landscape4.png', 'Trekkers on the Northern Circuit Route'),
       heroImage: image('figma-kili-routes-route-landscape4.png', 'Trekkers on the Northern Circuit Route'),
@@ -525,6 +538,7 @@ export const docxTripSource = {
       categories: ['kilimanjaro'],
       locationLabel: 'Kilimanjaro',
       durationDays: 1,
+      trekkingDays: 1,
       startingPrice: {amount: 255, currency: 'USD'},
       cardImage: image('drive-library/lemosho-shira-plateau.webp', 'Hikers crossing the Shira Plateau'),
       heroImage: image('drive-library/lemosho-shira-plateau.webp', 'Hikers crossing the Shira Plateau'),

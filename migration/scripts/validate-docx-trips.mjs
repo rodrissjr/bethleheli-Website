@@ -23,9 +23,12 @@ const data = await client.fetch(
       "slug": slug.current,
       categories,
       durationDays,
+      trekkingDays,
+      routeDistanceKm,
       "overviewImageCount": count(overviewImages),
       "missingOverviewImages": count(overviewImages[!defined(asset->_id)]),
       "itineraryCount": count(itinerary),
+      "trekkingDayCount": count(itinerary[dayType == "trekking"]),
       "missingDayImages": count(itinerary[!defined(image.asset->_id)]),
       "missingAccommodationReferences": count(itinerary[].accommodations[!defined(@->_id)]),
       "landscapeCount": count(landscapes),
@@ -67,6 +70,14 @@ for (const expected of docxTripSource.trips) {
   if (!trip.categories?.length) errors.push(`${trip.slug}: categories are missing.`)
   if (trip.durationDays !== expected.durationDays) errors.push(`${trip.slug}: duration is incorrect.`)
   if (trip.itineraryCount !== expected.durationDays) errors.push(`${trip.slug}: itinerary count does not match duration.`)
+  if (expected.categories.includes('kilimanjaro') && /kilimanjaro/i.test(expected.title)) {
+    if (trip.trekkingDays !== expected.trekkingDays || trip.trekkingDayCount !== expected.trekkingDays) {
+      errors.push(`${trip.slug}: trekking-day count is incorrect.`)
+    }
+    if (expected.routeDistanceKm && trip.routeDistanceKm !== expected.routeDistanceKm) {
+      errors.push(`${trip.slug}: route distance is incorrect.`)
+    }
+  }
   if (trip.overviewImageCount < 1 || trip.missingOverviewImages) errors.push(`${trip.slug}: overview images are missing or unresolved.`)
   if (trip.missingDayImages) errors.push(`${trip.slug}: ${trip.missingDayImages} itinerary images are unresolved.`)
   if (trip.missingAccommodationReferences) errors.push(`${trip.slug}: ${trip.missingAccommodationReferences} accommodation references are unresolved.`)

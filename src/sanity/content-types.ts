@@ -76,7 +76,9 @@ export type CmsTripPageData = {
 
 export type CmsKilimanjaroRouteTrip = {
   title: string;
-  durationDays: number;
+  trekkingDays: number;
+  totalItineraryDays: number;
+  routeDistanceKm: number | null;
   startingPrice: string;
   itineraryFor: string;
   destinations: string[];
@@ -86,6 +88,7 @@ export type CmsKilimanjaroRouteTrip = {
     summary: string;
     experience: string;
     mealPlan: string;
+    dayType: "trekking" | "arrival" | "departure" | "other";
     accommodations: string[];
     image: CmsImage | null;
   }>;

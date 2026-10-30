@@ -8,6 +8,22 @@ export const itineraryDay = defineType({
   icon: CalendarIcon,
   fields: [
     defineField({
+      name: 'dayType',
+      title: 'Day Type',
+      type: 'string',
+      description:
+        'For Kilimanjaro trips, only days marked Trekking day count toward the public trip duration.',
+      options: {
+        list: [
+          {title: 'Trekking day', value: 'trekking'},
+          {title: 'Arrival / pre-climb day', value: 'arrival'},
+          {title: 'Recovery / departure day', value: 'departure'},
+          {title: 'Other trip day', value: 'other'},
+        ],
+        layout: 'radio',
+      },
+    }),
+    defineField({
       name: 'title',
       title: 'Day Title',
       type: 'string',

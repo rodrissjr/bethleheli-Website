@@ -81,6 +81,15 @@ const validateSource = () => {
     if (!trip.categories.length || new Set(trip.categories).size !== trip.categories.length) {
       errors.push(`${trip.slug}: categories must contain one or more unique values.`)
     }
+    if (trip.categories.includes('kilimanjaro') && /kilimanjaro/i.test(trip.title)) {
+      const trekkingDayCount = trip.itinerary.filter(({dayType}) => dayType === 'trekking').length
+      if (trip.trekkingDays !== trekkingDayCount) {
+        errors.push(`${trip.slug}: trekkingDays must match the itinerary days marked as trekking.`)
+      }
+      if (trip.trekkingDays > 1 && !trip.routeDistanceKm) {
+        errors.push(`${trip.slug}: multi-day Kilimanjaro routes require a route distance.`)
+      }
+    }
     for (const category of trip.categories) {
       if (!allowedCategories.has(category)) errors.push(`${trip.slug}: unknown category ${category}.`)
     }
@@ -248,6 +257,8 @@ if (errors.length) {
       categories: trip.categories,
       locationLabel: trip.locationLabel,
       durationDays: trip.durationDays,
+      ...(trip.trekkingDays ? {trekkingDays: trip.trekkingDays} : {}),
+      ...(trip.routeDistanceKm ? {routeDistanceKm: trip.routeDistanceKm} : {}),
       startingPrice: money(trip.startingPrice),
       cardImage: contentImage(trip.cardImage),
       heroImage: contentImage(trip.heroImage),
@@ -266,6 +277,7 @@ if (errors.length) {
       itinerary: trip.itinerary.map((entry, dayIndex) => ({
         _key: `day-${dayIndex + 1}`,
         _type: 'itineraryDay',
+        dayType: entry.dayType,
         title: entry.title,
         summary: entry.summary,
         image: contentImage(entry.image),

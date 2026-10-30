@@ -254,6 +254,31 @@
             "value": "itineraryDay"
           }
         },
+        "dayType": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "trekking"
+              },
+              {
+                "type": "string",
+                "value": "arrival"
+              },
+              {
+                "type": "string",
+                "value": "departure"
+              },
+              {
+                "type": "string",
+                "value": "other"
+              }
+            ]
+          },
+          "optional": true
+        },
         "title": {
           "type": "objectAttribute",
           "value": {
@@ -1053,6 +1078,20 @@
         "optional": true
       },
       "durationDays": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
+      "trekkingDays": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
+        },
+        "optional": true
+      },
+      "routeDistanceKm": {
         "type": "objectAttribute",
         "value": {
           "type": "number"

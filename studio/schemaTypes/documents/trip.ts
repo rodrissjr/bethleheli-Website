@@ -57,10 +57,52 @@ export const trip = defineType({
     }),
     defineField({
       name: 'durationDays',
-      title: 'Duration in Days',
+      title: 'Total Itinerary Days',
       type: 'number',
       group: 'hero',
+      description:
+        'The full day-by-day itinerary length, including arrival and departure days. Kilimanjaro cards use Trekking Days instead.',
       validation: (rule) => rule.integer().min(1),
+    }),
+    defineField({
+      name: 'trekkingDays',
+      title: 'Trekking Days',
+      type: 'number',
+      group: 'hero',
+      description:
+        'Kilimanjaro mountain days only. Do not count arrival, hotel recovery or departure days.',
+      hidden: ({document}) =>
+        !document?.categories?.includes('kilimanjaro') ||
+        !/kilimanjaro/i.test(String(document?.title || '')),
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          const categories = context.document?.categories as string[] | undefined
+          const title = String(context.document?.title || '')
+          if (!categories?.includes('kilimanjaro') || !/kilimanjaro/i.test(title)) return true
+          if (typeof value !== 'number') return 'Trekking days are required for Kilimanjaro trips.'
+          if (!Number.isInteger(value) || value < 1) return 'Enter a whole number of at least 1.'
+
+          const itinerary = context.document?.itinerary as
+            | Array<{dayType?: string}>
+            | undefined
+          const typedTrekkingDays = itinerary?.filter((day) => day.dayType === 'trekking').length
+          if (typedTrekkingDays && typedTrekkingDays !== value) {
+            return `Trekking days must match the ${typedTrekkingDays} itinerary days marked as Trekking day.`
+          }
+          return true
+        }),
+    }),
+    defineField({
+      name: 'routeDistanceKm',
+      title: 'Route Distance (km)',
+      type: 'number',
+      group: 'hero',
+      description:
+        'Gate-to-gate trekking distance, including the descent. Use the distance for this exact route variation.',
+      hidden: ({document}) =>
+        !document?.categories?.includes('kilimanjaro') ||
+        !/kilimanjaro/i.test(String(document?.title || '')),
+      validation: (rule) => rule.positive().precision(1),
     }),
     defineField({
       name: 'startingPrice',
@@ -269,6 +311,13 @@ export const trip = defineType({
         return `Daily itinerary must contain exactly ${durationDays} days.`
       }
 
+      const categories = document?.categories as string[] | undefined
+      const title = String(document?.title || '')
+      const trekkingDays = document?.trekkingDays as number | undefined
+      if (categories?.includes('kilimanjaro') && /kilimanjaro/i.test(title) && !trekkingDays) {
+        return 'Kilimanjaro trips must include the number of trekking days.'
+      }
+
       return true
     }),
   preview: {
@@ -276,9 +325,10 @@ export const trip = defineType({
       title: 'title',
       categories: 'categories',
       durationDays: 'durationDays',
+      trekkingDays: 'trekkingDays',
       media: 'heroImage',
     },
-    prepare({title, categories, durationDays, media}) {
+    prepare({title, categories, durationDays, trekkingDays, media}) {
       const categoryLabel = Array.isArray(categories)
         ? categories
             .map((category) => category.charAt(0).toUpperCase() + category.slice(1))
@@ -286,7 +336,10 @@ export const trip = defineType({
         : ''
       return {
         title,
-        subtitle: [categoryLabel, durationDays ? `${durationDays} days` : null]
+        subtitle: [
+          categoryLabel,
+          trekkingDays ? `${trekkingDays} trekking days` : durationDays ? `${durationDays} days` : null,
+        ]
           .filter(Boolean)
           .join(' · '),
         media,

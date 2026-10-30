@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-10-30T11:10:07.417Z",
+  "status": "written",
+  "sourceNote": "Distances are gate-to-gate and include descent. Standard route values use GPS-tracked distances; Northern Circuit is approximately 97 km.",
+  "changes": [
+    {
+      "_id": "PT0Z0fhD72TdeKdiN0ptDB",
+      "slug": "marangu-route-hotel-stay",
+      "before": {
+        "title": "8-Day Kilimanjaro Marangu Route and Hotel Stay",
+        "durationDays": 8,
+        "trekkingDays": null,
+        "routeDistanceKm": null,
+        "dayTypes": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "after": {
+        "title": "6-Day Kilimanjaro Marangu Route and Hotel Stay",
+        "totalItineraryDays": 8,
+        "trekkingDays": 6,
+        "routeDistanceKm": 66.9,
+        "dayTypes": [
+          "arrival",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "departure"
+        ]
+      }
+    },
+    {
+      "_id": "OJlbDBzLZ7NM7c3sgK2hkb",
+      "slug": "northern-circuit-route",
+      "before": {
+        "title": "9-Day Kilimanjaro Northern Circuit Route",
+        "durationDays": 9,
+        "trekkingDays": null,
+        "routeDistanceKm": null,
+        "dayTypes": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "after": {
+        "title": "9-Day Kilimanjaro Northern Circuit Route",
+        "totalItineraryDays": 9,
+        "trekkingDays": 9,
+        "routeDistanceKm": 97,
+        "dayTypes": [
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking"
+        ]
+      }
+    },
+    {
+      "_id": "OJlbDBzLZ7NM7c3sgK2iTt",
+      "slug": "shira-plateau-day-hike",
+      "before": {
+        "title": "Kilimanjaro Shira Plateau Day Hike",
+        "durationDays": 1,
+        "trekkingDays": null,
+        "routeDistanceKm": null,
+        "dayTypes": [
+          null
+        ]
+      },
+      "after": {
+        "title": "Kilimanjaro Shira Plateau Day Hike",
+        "totalItineraryDays": 1,
+        "trekkingDays": 1,
+        "routeDistanceKm": null,
+        "dayTypes": [
+          "trekking"
+        ]
+      }
+    },
+    {
+      "_id": "PT0Z0fhD72TdeKdiN0ptSi",
+      "slug": "umbwe-route-hotel-stay",
+      "before": {
+        "title": "8-Day Kilimanjaro Umbwe Route and Hotel Stay",
+        "durationDays": 8,
+        "trekkingDays": null,
+        "routeDistanceKm": null,
+        "dayTypes": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "after": {
+        "title": "6-Day Kilimanjaro Umbwe Route and Hotel Stay",
+        "totalItineraryDays": 8,
+        "trekkingDays": 6,
+        "routeDistanceKm": 46.3,
+        "dayTypes": [
+          "arrival",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "departure"
+        ]
+      }
+    }
+  ]
+}
