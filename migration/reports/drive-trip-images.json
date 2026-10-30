@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2026-10-30T09:02:16.876Z",
+  "status": "updated",
+  "uploadedAssets": [
+    "northern-circuit-hero.webp",
+    "northern-circuit-trail.webp",
+    "northern-circuit-rainforest.webp",
+    "lemosho-shira-plateau.webp",
+    "lemosho-moorland.webp",
+    "umbwe-alpine.webp",
+    "umbwe-camp.webp",
+    "marangu-summit.webp",
+    "marangu-trail.webp",
+    "marangu-hero.webp",
+    "marangu-huts.webp",
+    "marangu-rainforest.webp",
+    "umbwe-hero.webp",
+    "umbwe-trail.webp",
+    "umbwe-rainforest.webp",
+    "lemosho-hero.webp",
+    "safari-guides.webp",
+    "safari-road.webp",
+    "safari-vehicle.webp",
+    "safari-crater-road.webp",
+    "safari-flamingos.webp",
+    "safari-picnic.webp",
+    "safari-viewpoint.webp",
+    "safari-community.webp",
+    "safari-migration.webp",
+    "safari-team.webp"
+  ],
+  "verified": [
+    {
+      "dayCount": 10,
+      "daysWithImages": 10,
+      "hasCard": true,
+      "hasHero": true,
+      "overviewCount": 2,
+      "slug": "african-nights-and-circle-of-life-safari"
+    },
+    {
+      "dayCount": 16,
+      "daysWithImages": 16,
+      "hasCard": true,
+      "hasHero": true,
+      "overviewCount": 2,
+      "slug": "east-african-safari-and-beach-bliss"
+    },
+    {
+      "dayCount": 8,
+      "daysWithImages": 8,
+      "hasCard": true,
+      "hasHero": true,
+      "overviewCount": 3,
+      "slug": "marangu-route-hotel-stay"
+    },
+    {
+      "dayCount": 9,
+      "daysWithImages": 9,
+      "hasCard": true,
+      "hasHero": true,
+      "overviewCount": 3,
+      "slug": "northern-circuit-route"
+    },
+    {
+      "dayCount": 1,
+      "daysWithImages": 1,
+      "hasCard": true,
+      "hasHero": true,
+      "overviewCount": 2,
+      "slug": "shira-plateau-day-hike"
+    },
+    {
+      "dayCount": 10,
+      "daysWithImages": 10,
+      "hasCard": true,
+      "hasHero": true,
+      "overviewCount": 2,
+      "slug": "tanzanian-traffic-jam-the-great-migration"
+    },
+    {
+      "dayCount": 8,
+      "daysWithImages": 8,
+      "hasCard": true,
+      "hasHero": true,
+      "overviewCount": 3,
+      "slug": "umbwe-route-hotel-stay"
+    }
+  ]
+}

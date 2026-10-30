@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "images:optimize": "node migration/scripts/optimize-public-images.mjs",
     "studio:dev": "npm run dev --prefix studio",
     "studio:build": "npm run build --prefix studio",
     "sanity:typegen": "npm run typegen --prefix studio",
@@ -26,6 +27,8 @@
     "sanity:supplied-itineraries:prices:write": "cd studio && BETHELI_SUPPLIED_ITINERARY_PRICES_WRITE=1 npx sanity exec ../migration/scripts/update-supplied-itinerary-prices.mjs --with-user-token",
     "sanity:trip-exclusions:dry-run": "cd studio && npx sanity exec ../migration/scripts/populate-trip-exclusions.mjs --with-user-token",
     "sanity:trip-exclusions:write": "cd studio && BETHELI_TRIP_EXCLUSIONS_WRITE=1 npx sanity exec ../migration/scripts/populate-trip-exclusions.mjs --with-user-token",
+    "sanity:drive-images:dry-run": "cd studio && npx sanity exec ../migration/scripts/apply-drive-trip-images.mjs --with-user-token",
+    "sanity:drive-images:write": "cd studio && BETHELI_DRIVE_IMAGES_WRITE=1 npx sanity exec ../migration/scripts/apply-drive-trip-images.mjs --with-user-token",
     "sanity:supplied-itineraries:publish-placeholders": "cd studio && npx sanity exec ../migration/scripts/publish-supplied-itineraries-with-placeholder.mjs --with-user-token"
   },
   "dependencies": {
