@@ -39,13 +39,14 @@ export const trip = defineType({
       of: [defineArrayMember({type: 'string'})],
       options: {
         list: [
+          {title: 'Day Trips', value: 'dayTrip'},
           {title: 'Safari', value: 'safari'},
           {title: 'Zanzibar', value: 'zanzibar'},
           {title: 'Kilimanjaro', value: 'kilimanjaro'},
         ],
         layout: 'grid',
       },
-      validation: (rule) => rule.max(3).unique(),
+      validation: (rule) => rule.max(4).unique(),
     }),
     defineField({
       name: 'category',

@@ -394,6 +394,7 @@ export async function getTripSeo(slug: string): Promise<CmsSeo | null> {
 }
 
 const categoryLabels: Record<string, CmsTripCard["categories"][number]> = {
+  dayTrip: "Day Trips",
   kilimanjaro: "Kilimanjaro",
   safari: "Safari",
   zanzibar: "Zanzibar",

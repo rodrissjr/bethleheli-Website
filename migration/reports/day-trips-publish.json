@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-10-31T12:05:08.339Z",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "status": "published",
+  "published": [
+    {
+      "slug": "chemka-hot-springs-day-trip",
+      "publishedId": "676e375e-6fcd-4e6e-ad7b-3aaed9f1cc16"
+    },
+    {
+      "slug": "kilimanjaro-day-trip-via-marangu-route",
+      "publishedId": "8e965ddd-c353-4e80-b0ac-600d02030c3f"
+    },
+    {
+      "slug": "materuni-waterfall-and-coffee-day-trip",
+      "publishedId": "3b4d4e64-44b0-4306-ad78-25a275507de8"
+    },
+    {
+      "slug": "serval-wildlife-day-trip",
+      "publishedId": "dd399a52-0718-4959-bf7a-ea933b09f4f8"
+    }
+  ],
+  "publicTrips": [
+    {
+      "_id": "676e375e-6fcd-4e6e-ad7b-3aaed9f1cc16",
+      "categories": [
+        "dayTrip"
+      ],
+      "durationDays": 1,
+      "exclusionCount": 4,
+      "heroAsset": "image-6948696fc179749998075ccbff3c607e7b762b05-1024x768-webp",
+      "itineraryCount": 1,
+      "itineraryImageCount": 1,
+      "overviewImageCount": 4,
+      "routeDistanceKm": null,
+      "seoImage": "image-6948696fc179749998075ccbff3c607e7b762b05-1024x768-webp",
+      "slug": "chemka-hot-springs-day-trip",
+      "title": "Chemka Hot Springs Day Trip",
+      "trekkingDays": null
+    },
+    {
+      "_id": "8e965ddd-c353-4e80-b0ac-600d02030c3f",
+      "categories": [
+        "dayTrip",
+        "kilimanjaro"
+      ],
+      "durationDays": 1,
+      "exclusionCount": 6,
+      "heroAsset": "image-c0f6722cfe60582ba9548046dca007117fb40b55-1600x1067-webp",
+      "itineraryCount": 1,
+      "itineraryImageCount": 1,
+      "overviewImageCount": 3,
+      "routeDistanceKm": 16,
+      "seoImage": "image-c0f6722cfe60582ba9548046dca007117fb40b55-1600x1067-webp",
+      "slug": "kilimanjaro-day-trip-via-marangu-route",
+      "title": "Kilimanjaro Day Trip via Marangu Route",
+      "trekkingDays": 1
+    },
+    {
+      "_id": "3b4d4e64-44b0-4306-ad78-25a275507de8",
+      "categories": [
+        "dayTrip"
+      ],
+      "durationDays": 1,
+      "exclusionCount": 3,
+      "heroAsset": "image-a7bbd7513e2c5275a9178f219c58871ac13f1675-750x1000-webp",
+      "itineraryCount": 1,
+      "itineraryImageCount": 1,
+      "overviewImageCount": 4,
+      "routeDistanceKm": null,
+      "seoImage": "image-a7bbd7513e2c5275a9178f219c58871ac13f1675-750x1000-webp",
+      "slug": "materuni-waterfall-and-coffee-day-trip",
+      "title": "Materuni Waterfall & Coffee Day Trip",
+      "trekkingDays": null
+    },
+    {
+      "_id": "dd399a52-0718-4959-bf7a-ea933b09f4f8",
+      "categories": [
+        "dayTrip",
+        "safari"
+      ],
+      "durationDays": 1,
+      "exclusionCount": 3,
+      "heroAsset": "image-88a558cfd7e9632f8f69da1f057723a6fd25889f-1000x559-png",
+      "itineraryCount": 1,
+      "itineraryImageCount": 1,
+      "overviewImageCount": 2,
+      "routeDistanceKm": null,
+      "seoImage": "image-88a558cfd7e9632f8f69da1f057723a6fd25889f-1000x559-png",
+      "slug": "serval-wildlife-day-trip",
+      "title": "Serval Wildlife Day Trip",
+      "trekkingDays": null
+    }
+  ]
+}

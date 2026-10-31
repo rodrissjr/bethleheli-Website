@@ -54,6 +54,7 @@ export const inclusionCatalog: readonly InclusionCatalogGroup[] = [
       {key: 'domestic-flight', icon: 'ticket', title: 'Domestic flight', description: 'The domestic flight specifically listed in the confirmed itinerary.'},
       {key: 'ferry-tickets', icon: 'ticket', title: 'Ferry tickets', description: 'Ferry tickets specifically listed in the confirmed itinerary.'},
       {key: 'zanzibar-transfers', icon: 'route', title: 'Zanzibar transfers', description: 'Road transfers in Zanzibar as listed in the itinerary.'},
+      {key: 'day-trip-transfers', icon: 'route', title: 'Day-trip hotel transfers', description: 'Return road transfers between the agreed Arusha or Moshi hotel and the day-trip activity.'},
     ],
   },
   {
@@ -82,6 +83,7 @@ export const inclusionCatalog: readonly InclusionCatalogGroup[] = [
       {key: 'mountain-cook', icon: 'utensils', title: 'Mountain cook', description: 'A cook preparing the included meals during the climb.'},
       {key: 'safari-guide', icon: 'users', title: 'Professional safari guide', description: 'A professional driver-guide throughout the confirmed safari route.'},
       {key: 'zanzibar-guide', icon: 'users', title: 'Local Zanzibar guide', description: 'A local guide for the Zanzibar activities listed in the itinerary.'},
+      {key: 'local-day-trip-guide', icon: 'users', title: 'Local day-trip guide', description: 'A local guide for the activities listed in the confirmed day-trip itinerary.'},
     ],
   },
   {
@@ -93,6 +95,7 @@ export const inclusionCatalog: readonly InclusionCatalogGroup[] = [
       {key: 'full-board-meals', icon: 'utensils', title: 'Full-board meals', description: 'Breakfast, lunch and dinner as listed for each itinerary day.'},
       {key: 'breakfast', icon: 'utensils', title: 'Breakfast', description: 'Breakfast on the days specifically listed in the itinerary.'},
       {key: 'lunch-box', icon: 'utensils', title: 'Lunch box', description: 'A packed lunch on the days specifically listed in the itinerary.'},
+      {key: 'day-trip-lunch', icon: 'utensils', title: 'Day-trip lunch', description: 'The lunch specifically listed in the confirmed day-trip itinerary.'},
       {key: 'drinking-water', icon: 'droplets', title: 'Drinking water', description: 'Drinking water supplied during the activities listed in the itinerary.'},
       {key: 'dietary-support', icon: 'heart', title: 'Dietary requirement support', description: 'Advance coordination of dietary requirements where available.'},
     ],
@@ -111,6 +114,7 @@ export const inclusionCatalog: readonly InclusionCatalogGroup[] = [
       {key: 'crater-service-fee', icon: 'ticket', title: 'Ngorongoro Crater service fee', description: 'The crater service fee when a crater game drive is included.'},
       {key: 'walking-safari', icon: 'users', title: 'Guided walking safari', description: 'A guided walking safari with the required local guide or ranger.'},
       {key: 'cultural-visit', icon: 'users', title: 'Community and cultural visit', description: 'The respectful community or cultural experience listed in the itinerary.'},
+      {key: 'day-trip-entry-fees', icon: 'ticket', title: 'Day-trip entry fees', description: 'Entry and activity fees specifically listed in the confirmed day-trip itinerary.'},
       {key: 'hot-air-balloon-safari', icon: 'ticket', title: 'Hot-air balloon safari', description: 'A sunrise hot-air balloon flight and the associated experience listed in the itinerary.'},
       {key: 'stone-town-tour', icon: 'route', title: 'Stone Town tour', description: 'A guided Stone Town experience as listed in the itinerary.'},
       {key: 'spice-farm-tour', icon: 'route', title: 'Spice farm tour', description: 'A guided Zanzibar spice farm visit as listed in the itinerary.'},

@@ -98,7 +98,7 @@ export type CmsTripCard = {
   title: string;
   src: string;
   href: string;
-  categories: Array<"Kilimanjaro" | "Safari" | "Zanzibar">;
+  categories: Array<"Day Trips" | "Kilimanjaro" | "Safari" | "Zanzibar">;
   days: number;
   price: string;
 };

@@ -1,0 +1,171 @@
+{
+  "generatedAt": "2026-10-31T12:02:32.280Z",
+  "mode": "draft-write",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "source": {
+    "driveFolderId": "1CWAQBl5YvbRk3PfQ2-m1SZJcgCPfTLw9",
+    "dayTripsFolderId": "18gRbPvuSORBRyBnXCcRXwkinKyANPfvr",
+    "sourceDocuments": [
+      {
+        "id": "17sK3wjmM-znSMHyB7svPtdYAp6hWE-6e",
+        "name": "3- day trips content.docx",
+        "localPath": "migration/assets/day-trips/source-documents/3-day-trips-content.docx"
+      },
+      {
+        "id": "14rCTgEp7oP2HnPKI2sUZBUWlg0vlB9vL",
+        "name": "Kilimanjaro Day Trip via Marangu Rout3.docx",
+        "localPath": "migration/assets/day-trips/source-documents/kilimanjaro-day-trip-via-marangu-route.docx"
+      }
+    ],
+    "imageFolders": [
+      {
+        "id": "1cv1XqazG0JU5bvnbi_Q9fzmWp44Wq_nO",
+        "name": "images for chemka day trip"
+      },
+      {
+        "id": "1RrRIpI6QcSCz3fkbY6nYxhYDhR95FQAu",
+        "name": "images for Materuni waterfalls & coffe trip"
+      },
+      {
+        "id": "1FSWm9q7OsOijR_MnpNzrPud__W_SlU-q",
+        "name": "MARANGU -PHOTOS + ITINERARAY"
+      }
+    ],
+    "decisions": [
+      "Prices were not supplied, so all four trips remain price on request.",
+      "The Marangu day trip uses only the client Marangu gallery.",
+      "The Drive did not include a dedicated Serval gallery; the existing website wildlife and client safari transport images are retained for that trip.",
+      "All imported image files used by Sanity are below 250,000 bytes."
+    ]
+  },
+  "counts": {
+    "trips": 4,
+    "itineraryDays": 4,
+    "uniqueImages": 17
+  },
+  "imageManifest": [
+    {
+      "path": "migration/assets/day-trips/optimized/materuni/materuni-waterfall.webp",
+      "alt": "Materuni Waterfall on the day-trip walking route",
+      "bytes": 158584,
+      "sha256": "6587006caf906a13176ee027ad8d6cf73ca2c891c7fe15dc63b4d343004bfb84"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/materuni/materuni-coffee-hero.webp",
+      "alt": "Guests preparing coffee beans in Materuni village",
+      "bytes": 153914,
+      "sha256": "1c0d06c82e8468d967dcef471905707d9240e51078aa54851730834bef786c3a"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/materuni/materuni-coffee-pounding.webp",
+      "alt": "Traditional coffee pounding during the Materuni experience",
+      "bytes": 149670,
+      "sha256": "2f5c5a9675212999a2cecddbafe9ba0eb576e8fb13205b68b37a56000d98a95d"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/materuni/materuni-coffee-guests.webp",
+      "alt": "Visitors learning about Chagga coffee traditions in Materuni",
+      "bytes": 180804,
+      "sha256": "4a1b82a7f6edac753c2a823ff364f114f4c9d6ebf56069f996504f8bfcae062f"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/materuni/materuni-coffee-roasting.webp",
+      "alt": "Traditional coffee roasting in Materuni village",
+      "bytes": 119664,
+      "sha256": "ae328bf210b84cf51983915e3f5bf2b16bd770c268178a9f15cdbbc303c4fc99"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/chemka/chemka-springs-hero.webp",
+      "alt": "Clear blue water beneath trees at Chemka Hot Springs",
+      "bytes": 220932,
+      "sha256": "c629a5bf65763c92d673930ac8a2bbc3244c3b0d5b34bce0c159b0ca476ecb96"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/chemka/chemka-forest-pool.webp",
+      "alt": "The forest-framed pool at Chemka Hot Springs",
+      "bytes": 242980,
+      "sha256": "3bfc420ee5218737ba08d7f7d5539086080a23772d0cf63331fa9be703934d64"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/chemka/chemka-clear-water.webp",
+      "alt": "Clear water and leafy banks at Chemka Hot Springs",
+      "bytes": 69842,
+      "sha256": "7569485fff6247e82879e21aa6d8f5f6d56962e2294cc5167b2ea16ee4dab267"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/chemka/chemka-shaded-pool.webp",
+      "alt": "A shaded swimming area at Chemka Hot Springs",
+      "bytes": 184046,
+      "sha256": "f79b055e2dbe467665710b81e07760ede1d454615297edbce3974a40136c1c90"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/chemka/chemka-rope-swing.webp",
+      "alt": "Rope swing beside the clear water at Chemka Hot Springs",
+      "bytes": 223508,
+      "sha256": "c61645b7b24100892521b7d977aff53a8e19e850161e5ad3eefe6f27c2542838"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/serval/serval-wildlife-hero.png",
+      "alt": "Cheetahs in northern Tanzania wildlife country",
+      "bytes": 168815,
+      "sha256": "3202a41078ffd04553fb05c155c62a5d6b636accc3b39b7d4aec4f8cc8435106"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/serval/serval-wildlife-overview.webp",
+      "alt": "Zebra crossing open grassland in northern Tanzania",
+      "bytes": 134164,
+      "sha256": "e5a585241cc617df172cbdd2411a8e4ff34cd8936bdae5175f1eee5c70c48849"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/serval/serval-transfer.webp",
+      "alt": "Betheli Expeditions vehicle ready for a northern Tanzania day trip",
+      "bytes": 201308,
+      "sha256": "d13dc60ce7b2d04eef0b8652dfdc677a79cfdf1c6f166d52862ab4e09e76b92b"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/marangu/marangu-day-hike-hero.webp",
+      "alt": "Hikers on the Marangu Route on Mount Kilimanjaro",
+      "bytes": 202718,
+      "sha256": "219ae8b4681fc8d264d5a892cbf850468c1bfede1ee8c3fafd6c93f856b48abb"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/marangu/marangu-rainforest.webp",
+      "alt": "Hikers walking through the Marangu Route rainforest",
+      "bytes": 176040,
+      "sha256": "a2142499e1eabb279c65eaab3cb3a08860a55cdfd6274e8cae037db3b69be03a"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/marangu/marangu-trail.webp",
+      "alt": "Hikers following the Marangu Route trail",
+      "bytes": 173736,
+      "sha256": "844e8d74d46cda24cbad84f5f746c5a7234bd0e0bc460b1098d13262885a3138"
+    },
+    {
+      "path": "migration/assets/day-trips/optimized/marangu/mandara-hut.webp",
+      "alt": "Mandara Hut on the Marangu Route",
+      "bytes": 211600,
+      "sha256": "4b93b822afbf5f561081f1575a7cfcb52006238c4f43c7165ffcc6313e8af369"
+    }
+  ],
+  "qualityIssues": [],
+  "status": "drafts-written",
+  "written": [
+    {
+      "slug": "materuni-waterfall-and-coffee-day-trip",
+      "draftId": "drafts.3b4d4e64-44b0-4306-ad78-25a275507de8"
+    },
+    {
+      "slug": "chemka-hot-springs-day-trip",
+      "draftId": "drafts.676e375e-6fcd-4e6e-ad7b-3aaed9f1cc16"
+    },
+    {
+      "slug": "serval-wildlife-day-trip",
+      "draftId": "drafts.dd399a52-0718-4959-bf7a-ea933b09f4f8"
+    },
+    {
+      "slug": "kilimanjaro-day-trip-via-marangu-route",
+      "draftId": "drafts.8e965ddd-c353-4e80-b0ac-600d02030c3f"
+    }
+  ]
+}
