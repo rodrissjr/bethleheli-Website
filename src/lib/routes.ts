@@ -17,7 +17,7 @@ export const pageMeta: Record<PageKey, Meta> = {
   contact: { title: "Contact Bathiel Expeditions", description: "Start a conversation with the Bathiel Expeditions team.", path: "/contact", image: "/images/figma-contact-hero.jpg" },
   faq: { title: "Tanzania Travel Questions", description: "Answers to common Kilimanjaro, safari, Zanzibar and booking questions.", path: "/faq", image: "/images/figma-faq-hero.jpg" },
   trips: { title: "Tanzania Trips", description: "Explore thoughtfully designed Kilimanjaro, safari and Zanzibar journeys.", path: "/trips", image: "/images/trips-hero-serengeti.webp" },
-  northernSerengeti: { title: "Northern Serengeti River Crossing Safari", description: "View a six-day Northern Serengeti River Crossing Safari itinerary.", path: "/trips/northern-serengeti", image: "/images/figma-trips-hero.png" },
+  northernSerengeti: { title: "Northern Serengeti River Crossing Safari", description: "View a six-day Northern Serengeti River Crossing Safari itinerary.", path: "/trips/northern-serengeti", image: "/images/northern-serengeti-migration.webp" },
   groups: { title: "Kilimanjaro Climbing Groups", description: "View upcoming Kilimanjaro climbing group departures.", path: "/groups", image: "/images/home-10.jpg" },
   thankYou: { title: "Thank You", description: "Your enquiry has been received by the Betheli Expeditions team.", path: "/thank-you", image: "/images/figma-plan-hero.png" },
   terms: { title: "Booking Terms & Conditions", description: "Read Betheli Expeditions booking, payment, cancellation and travel terms.", path: "/terms-and-conditions", image: "/images/figma-home-hero.png" },

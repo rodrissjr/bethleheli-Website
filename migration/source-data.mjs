@@ -179,8 +179,8 @@ export const source = {
     locationLabel: 'Safari',
     durationDays: 6,
     startingPrice: {amount: 1732, currency: 'USD'},
-    cardImage: image('figma-trips-hero.png', 'Northern Serengeti safari landscape'),
-    heroImage: image('figma-trips-hero.png', 'Northern Serengeti river-crossing safari'),
+    cardImage: image('northern-serengeti-migration.webp', 'Wildebeest on the Northern Serengeti plains'),
+    heroImage: image('northern-serengeti-migration.webp', 'Great Migration wildebeest in the Northern Serengeti'),
     heroSummary:
       'A migration-focused safari through Tarangire, Central Serengeti, Northern Serengeti and Ngorongoro, with a full day at the Mara River.',
     overviewParagraphs: [
@@ -384,7 +384,7 @@ export const source = {
       description:
         'Explore a six-day Northern Serengeti safari through Tarangire, Ngorongoro and the Mara River region with Betheli Expeditions.',
       canonicalPath: '/trips/northern-serengeti',
-      shareImage: image('figma-trips-hero.png', 'Northern Serengeti river-crossing safari'),
+      shareImage: image('northern-serengeti-migration.webp', 'Great Migration wildebeest in the Northern Serengeti'),
     },
   },
   groupDepartures: [

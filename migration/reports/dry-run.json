@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T10:20:07.012Z",
+  "generatedAt": "2026-10-31T11:02:33.246Z",
   "mode": "dry-run",
   "projectId": "ife51h63",
   "dataset": "production",
@@ -22,7 +22,7 @@
     "itineraryDays": 6,
     "itineraryAccommodationReferences": 12,
     "relatedTripCards": 4,
-    "uniqueImages": 42
+    "uniqueImages": 43
   },
   "qualityIssues": [],
   "status": "ready-for-review"

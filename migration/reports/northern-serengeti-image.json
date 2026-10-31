@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-10-31T10:53:47.109Z",
+  "status": "written",
+  "trip": {
+    "_id": "NJnMV77vCyO9g8HOX8MTlp",
+    "currentCardAsset": "image-894e8339835cfe5c69d924f382982c346f9fa763-941x1188-jpg",
+    "currentHeroAsset": "image-894e8339835cfe5c69d924f382982c346f9fa763-941x1188-jpg",
+    "currentShareAsset": "image-894e8339835cfe5c69d924f382982c346f9fa763-941x1188-jpg",
+    "slug": "6-day-northern-serengeti-river-crossing-safari",
+    "title": "6-Day Northern Serengeti River Crossing Safari"
+  },
+  "replacement": {
+    "filename": "northern-serengeti-migration.webp",
+    "alt": "Great Migration wildebeest in the Northern Serengeti",
+    "assetId": "image-49a04cf5e9712e0a2449130fda97b6d9c6f5163e-1120x743-webp"
+  }
+}
