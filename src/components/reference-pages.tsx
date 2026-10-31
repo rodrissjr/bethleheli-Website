@@ -424,7 +424,7 @@ export function ZanzibarReferencePage() {
 
 const kilimanjaroRoutes: Card[] = [
   { title: "Machame Route", copy: "A scenic southern approach, camping beneath big skies and crossing dramatic ridges.", note: "7 trekking days · 56.7 km", image: image("drive-library/machame-hero.webp"), href: "/kilimanjaro/machame-route" },
-  { title: "Lemosho Route", copy: "A quieter western start through forest, opening onto the broad Shira Plateau.", note: "7 trekking days · 64.7 km", image: image("drive-library/lemosho-hero.webp"), href: "/kilimanjaro/lemosho-route" },
+  { title: "Lemosho Route", copy: "A quieter western start through forest, opening onto the broad Shira Plateau.", note: "8 trekking days · 64.7 km", image: image("drive-library/lemosho-hero.webp"), href: "/kilimanjaro/lemosho-route" },
   { title: "Marangu Route", copy: "The hut-based trail, with a direct approach and the same route for the descent.", note: "6 trekking days · 66.9 km", image: image("drive-library/marangu-hero.webp"), href: "/kilimanjaro/marangu-route" },
   { title: "Rongai Route", copy: "Approach from the north, with a gentler early gradient and quieter trails.", note: "7 trekking days · 68 km", image: image("drive-library/rongai-hero.webp"), href: "/kilimanjaro/rongai-route" },
   { title: "Northern Circuit", copy: "A longer journey around the mountain’s northern slopes, with time to settle into the pace.", note: "9 trekking days · approx. 97 km", image: image("drive-library/northern-circuit-hero.webp"), href: "/kilimanjaro/northern-circuit" },
@@ -433,7 +433,7 @@ const kilimanjaroRoutes: Card[] = [
 
 const routeFallbackFacts: Record<KilimanjaroRouteSlug, { days: string; difficulty: string; difficultyLevel: number; distanceKm: number; startingPrice: string; approximateDistance?: boolean }> = {
   machame: { days: "7", difficulty: "Hard", difficultyLevel: 4, distanceKm: 56.7, startingPrice: "$2,399" },
-  lemosho: { days: "7", difficulty: "Moderate–hard", difficultyLevel: 3, distanceKm: 64.7, startingPrice: "$2,499" },
+  lemosho: { days: "8", difficulty: "Moderate–hard", difficultyLevel: 3, distanceKm: 64.7, startingPrice: "$2,499" },
   marangu: { days: "6", difficulty: "Moderate–hard", difficultyLevel: 3, distanceKm: 66.9, startingPrice: "$2,050" },
   rongai: { days: "7", difficulty: "Moderate–hard", difficultyLevel: 3, distanceKm: 68, startingPrice: "$2,534" },
   "northern-circuit": { days: "9", difficulty: "Challenging", difficultyLevel: 4, distanceKm: 97, startingPrice: "$3,265", approximateDistance: true },
@@ -614,7 +614,7 @@ type KilimanjaroRouteDetail = {
 
 const routeDetailData: Record<Exclude<KilimanjaroRouteSlug, "machame">, KilimanjaroRouteDetail> = {
   lemosho: {
-    name: "Lemosho Route", shortName: "Lemosho", heroImage: "drive-library/lemosho-hero.webp", overviewImage: "drive-library/lemosho-shira-plateau.webp", itineraryImage: "drive-library/lemosho-barranco.webp", mapImage: "figma-home-map.png", distanceKm: 64.7, duration: "7 Days", days: 7, difficulty: "Challenging", scenery: "Exceptional", lead: "A quiet western approach with room to find your rhythm.",
+    name: "Lemosho Route", shortName: "Lemosho", heroImage: "drive-library/lemosho-hero.webp", overviewImage: "drive-library/lemosho-shira-plateau.webp", itineraryImage: "drive-library/lemosho-barranco.webp", mapImage: "figma-home-map.png", distanceKm: 64.7, duration: "8 Days", days: 8, difficulty: "Challenging", scenery: "Exceptional", lead: "A quiet western approach with room to find your rhythm.",
     heroCopy: "Begin in remote rainforest, cross the broad Shira Plateau and follow a beautifully varied line toward Kilimanjaro’s summit.",
     overview: ["The Lemosho Route begins on Kilimanjaro’s quieter western side, entering remote rainforest before opening onto the broad Shira Plateau. The approach gives trekkers a gradual introduction to the mountain and a memorable progression through forest, heath and high volcanic landscapes.", "After crossing Shira, the route joins the southern circuit around Lava Tower, Barranco and Karanga before the Barafu summit approach and Mweka descent. Seven- and eight-day versions are available; the longer schedule creates more time for acclimatization, although altitude remains a serious challenge for every climber."],
     bestFor: "Scenery and a longer approach", startingPoint: "Lemosho trailhead", accommodation: "Camping route",
