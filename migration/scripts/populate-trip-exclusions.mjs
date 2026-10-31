@@ -7,6 +7,10 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repositoryRoot = resolve(scriptDirectory, '../..')
 const reportDirectory = resolve(repositoryRoot, 'migration/reports')
 const writeMode = process.env.BETHELI_TRIP_EXCLUSIONS_WRITE === '1'
+const requestedSlugs = process.env.BETHELI_TRIP_EXCLUSIONS_SLUGS
+  ?.split(',')
+  .map((slug) => slug.trim())
+  .filter(Boolean)
 
 const commonSafariExclusions = [
   'International airfare to and from Tanzania',
@@ -26,7 +30,8 @@ const commonMountainExclusions = [
   'Guide, porter and cook gratuities',
   'Drinks, snacks and meals not specifically listed',
   'Personal expenses such as laundry, telephone calls and shopping',
-  'Additional hotel nights, transfers or activities not listed in the confirmed itinerary',
+  'Hotel accommodation before or after the climb (available on request at an additional cost)',
+  'Additional transfers or activities not listed in the confirmed itinerary',
 ]
 
 const exclusionsBySlug = {
@@ -83,9 +88,13 @@ const client = getCliClient({apiVersion: '2026-10-20'}).withConfig({
   useCdn: false,
 })
 
-const slugs = Object.keys(exclusionsBySlug)
+const slugs = requestedSlugs?.length ? requestedSlugs : Object.keys(exclusionsBySlug)
+const unknownRequestedSlugs = slugs.filter((slug) => !exclusionsBySlug[slug])
+if (unknownRequestedSlugs.length) {
+  throw new Error(`No exclusions configured for: ${unknownRequestedSlugs.join(', ')}`)
+}
 const documents = await client.fetch(
-  `*[_type == "trip" && slug.current in $slugs] {
+  `*[_type == "trip" && !(_id in path("drafts.**")) && slug.current in $slugs] {
     _id,
     title,
     "slug": slug.current,

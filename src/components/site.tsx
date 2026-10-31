@@ -17,7 +17,7 @@ const navItems = [
 ] as const;
 const navSubmenus: Record<string, readonly (readonly [string, string])[]> = {
   Kilimanjaro: [["Kilimanjaro overview", "/kilimanjaro"], ["Machame Route", "/kilimanjaro/machame-route"], ["Lemosho Route", "/kilimanjaro/lemosho-route"], ["Marangu Route", "/kilimanjaro/marangu-route"], ["Rongai Route", "/kilimanjaro/rongai-route"], ["Northern Circuit", "/kilimanjaro/northern-circuit"], ["Umbwe Route", "/kilimanjaro/umbwe-route"], ["Group climbs", "/groups"]],
-  Trips: [["All trips", "/trips"], ["Zanzibar", "/trips?category=Zanzibar"], ["Safari", "/trips?category=Safari"], ["Kilimanjaro", "/trips?category=Kilimanjaro"], ["Plan a combo trip", "/plan-your-trip"]],
+  Trips: [["All trips", "/trips"], ["Zanzibar", "/trips?category=Zanzibar"], ["Safari", "/trips?category=Safari"], ["Kilimanjaro", "/trips?category=Kilimanjaro"]],
 };
 const mobileNavItems = [
   ["Home", "/"], ["Kilimanjaro", "/kilimanjaro"], ["Safari", "/safari"], ["Zanzibar", "/zanzibar"], ["Trips", "/trips"],

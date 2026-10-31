@@ -12,20 +12,25 @@ const factsBySlug = {
   'marangu-route-hotel-stay': {
     trekkingDays: 6,
     routeDistanceKm: 66.9,
-    title: '6-Day Kilimanjaro Marangu Route and Hotel Stay',
-    seoTitle: '6-Day Marangu Route and Hotel Stay | Betheli',
+    startingPrice: {amount: 2050, currency: 'USD'},
+    title: '6-Day Kilimanjaro Marangu Route',
+    heroSummary: 'A six-day hut-based Kilimanjaro climb with an acclimatization day at Horombo Hut. Hotel accommodation can be arranged separately on request.',
+    seoTitle: '6-Day Marangu Route | Betheli',
     dayTypes: ['arrival', 'trekking', 'trekking', 'trekking', 'trekking', 'trekking', 'trekking', 'departure'],
   },
   'umbwe-route-hotel-stay': {
     trekkingDays: 6,
     routeDistanceKm: 46.3,
-    title: '6-Day Kilimanjaro Umbwe Route and Hotel Stay',
-    seoTitle: '6-Day Umbwe Route and Hotel Stay | Betheli',
+    startingPrice: {amount: 2317, currency: 'USD'},
+    title: '6-Day Kilimanjaro Umbwe Route',
+    heroSummary: 'A steep and quiet six-day Kilimanjaro climb via Umbwe. Hotel accommodation can be arranged separately on request.',
+    seoTitle: '6-Day Umbwe Route | Betheli',
     dayTypes: ['arrival', 'trekking', 'trekking', 'trekking', 'trekking', 'trekking', 'trekking', 'departure'],
   },
   'northern-circuit-route': {
     trekkingDays: 9,
     routeDistanceKm: 97,
+    startingPrice: {amount: 3265, currency: 'USD'},
     dayTypes: Array(9).fill('trekking'),
   },
   'shira-plateau-day-hike': {
@@ -47,10 +52,12 @@ const documents = await client.fetch(
   `*[_type == "trip" && !(_id in path("drafts.**")) && slug.current in $slugs] {
     _id,
     title,
+    heroSummary,
     "slug": slug.current,
     durationDays,
     trekkingDays,
     routeDistanceKm,
+    startingPrice,
     itinerary[] { _key, title, dayType },
     seo { title }
   } | order(slug asc, _id asc)`,
@@ -73,7 +80,9 @@ const changes = documents.map((document) => {
   const after = {
     trekkingDays: facts.trekkingDays,
     ...(facts.routeDistanceKm ? {routeDistanceKm: facts.routeDistanceKm} : {}),
+    ...(facts.startingPrice ? {startingPrice: facts.startingPrice} : {}),
     ...(facts.title ? {title: facts.title} : {}),
+    ...(facts.heroSummary ? {heroSummary: facts.heroSummary} : {}),
     ...(facts.seoTitle ? {'seo.title': facts.seoTitle} : {}),
   }
   return {
@@ -84,6 +93,8 @@ const changes = documents.map((document) => {
       durationDays: document.durationDays,
       trekkingDays: document.trekkingDays,
       routeDistanceKm: document.routeDistanceKm,
+      startingPrice: document.startingPrice ?? null,
+      heroSummary: document.heroSummary ?? null,
       dayTypes: document.itinerary.map(({dayType}) => dayType ?? null),
     },
     after: {
@@ -91,6 +102,8 @@ const changes = documents.map((document) => {
       totalItineraryDays: document.durationDays,
       trekkingDays: facts.trekkingDays,
       routeDistanceKm: facts.routeDistanceKm ?? null,
+      startingPrice: facts.startingPrice ?? document.startingPrice ?? null,
+      heroSummary: facts.heroSummary ?? document.heroSummary ?? null,
       dayTypes: facts.dayTypes,
     },
     dayTypePatches: document.itinerary.map((day, index) => ({

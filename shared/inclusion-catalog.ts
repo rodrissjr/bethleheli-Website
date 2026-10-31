@@ -62,6 +62,7 @@ export const inclusionCatalog: readonly InclusionCatalogGroup[] = [
     title: 'Places to stay',
     description: 'Overnight stays included in the confirmed package.',
     items: [
+      {key: 'pre-trip-hotel', icon: 'tent', title: 'Pre-trip hotel stay', description: 'An optional hotel night before the main journey, useful before a safari or climb. Post-trip accommodation is arranged only when needed.'},
       {key: 'pre-post-trip-hotel', icon: 'tent', title: 'Pre- and post-trip hotel stay', description: 'Hotel nights before or after the main journey as listed in the itinerary.'},
       {key: 'mountain-camping', icon: 'tent', title: 'Mountain camping accommodation', description: 'Tented accommodation and shared camping equipment on the mountain.'},
       {key: 'mountain-huts', icon: 'tent', title: 'Mountain hut accommodation', description: 'Shared mountain huts on routes where hut accommodation is used.'},

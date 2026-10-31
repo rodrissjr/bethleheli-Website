@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T11:10:07.417Z",
+  "generatedAt": "2026-10-31T10:23:53.430Z",
   "status": "written",
   "sourceNote": "Distances are gate-to-gate and include descent. Standard route values use GPS-tracked distances; Northern Circuit is approximately 97 km.",
   "changes": [
@@ -7,26 +7,37 @@
       "_id": "PT0Z0fhD72TdeKdiN0ptDB",
       "slug": "marangu-route-hotel-stay",
       "before": {
-        "title": "8-Day Kilimanjaro Marangu Route and Hotel Stay",
+        "title": "6-Day Kilimanjaro Marangu Route and Hotel Stay",
         "durationDays": 8,
-        "trekkingDays": null,
-        "routeDistanceKm": null,
+        "trekkingDays": 6,
+        "routeDistanceKm": 66.9,
+        "startingPrice": {
+          "_type": "money",
+          "amount": 1450,
+          "currency": "USD"
+        },
+        "heroSummary": "A six-day hut-based Kilimanjaro climb with an acclimatization day at Horombo Hut and hotel nights before and after the trek.",
         "dayTypes": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "arrival",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "departure"
         ]
       },
       "after": {
-        "title": "6-Day Kilimanjaro Marangu Route and Hotel Stay",
+        "title": "6-Day Kilimanjaro Marangu Route",
         "totalItineraryDays": 8,
         "trekkingDays": 6,
         "routeDistanceKm": 66.9,
+        "startingPrice": {
+          "amount": 2050,
+          "currency": "USD"
+        },
+        "heroSummary": "A six-day hut-based Kilimanjaro climb with an acclimatization day at Horombo Hut. Hotel accommodation can be arranged separately on request.",
         "dayTypes": [
           "arrival",
           "trekking",
@@ -45,18 +56,24 @@
       "before": {
         "title": "9-Day Kilimanjaro Northern Circuit Route",
         "durationDays": 9,
-        "trekkingDays": null,
-        "routeDistanceKm": null,
+        "trekkingDays": 9,
+        "routeDistanceKm": 97,
+        "startingPrice": {
+          "_type": "money",
+          "amount": 1450,
+          "currency": "USD"
+        },
+        "heroSummary": "A nine-day Kilimanjaro trek from the western rainforest across the Shira Plateau and around the quieter northern slopes to Uhuru Peak.",
         "dayTypes": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking"
         ]
       },
       "after": {
@@ -64,6 +81,11 @@
         "totalItineraryDays": 9,
         "trekkingDays": 9,
         "routeDistanceKm": 97,
+        "startingPrice": {
+          "amount": 3265,
+          "currency": "USD"
+        },
+        "heroSummary": "A nine-day Kilimanjaro trek from the western rainforest across the Shira Plateau and around the quieter northern slopes to Uhuru Peak.",
         "dayTypes": [
           "trekking",
           "trekking",
@@ -85,6 +107,12 @@
         "durationDays": 1,
         "trekkingDays": null,
         "routeDistanceKm": null,
+        "startingPrice": {
+          "_type": "money",
+          "amount": 255,
+          "currency": "USD"
+        },
+        "heroSummary": "Experience Kilimanjaro in one day with a high-altitude hike across the Shira Plateau and an optional extension to Cathedral Point at 3,962 metres.",
         "dayTypes": [
           null
         ]
@@ -94,6 +122,12 @@
         "totalItineraryDays": 1,
         "trekkingDays": 1,
         "routeDistanceKm": null,
+        "startingPrice": {
+          "_type": "money",
+          "amount": 255,
+          "currency": "USD"
+        },
+        "heroSummary": "Experience Kilimanjaro in one day with a high-altitude hike across the Shira Plateau and an optional extension to Cathedral Point at 3,962 metres.",
         "dayTypes": [
           "trekking"
         ]
@@ -103,26 +137,37 @@
       "_id": "PT0Z0fhD72TdeKdiN0ptSi",
       "slug": "umbwe-route-hotel-stay",
       "before": {
-        "title": "8-Day Kilimanjaro Umbwe Route and Hotel Stay",
+        "title": "6-Day Kilimanjaro Umbwe Route and Hotel Stay",
         "durationDays": 8,
-        "trekkingDays": null,
-        "routeDistanceKm": null,
+        "trekkingDays": 6,
+        "routeDistanceKm": 46.3,
+        "startingPrice": {
+          "_type": "money",
+          "amount": 1450,
+          "currency": "USD"
+        },
+        "heroSummary": "A steep and quiet six-day Kilimanjaro climb via Umbwe, with hotel nights before and after the trek.",
         "dayTypes": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "arrival",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "trekking",
+          "departure"
         ]
       },
       "after": {
-        "title": "6-Day Kilimanjaro Umbwe Route and Hotel Stay",
+        "title": "6-Day Kilimanjaro Umbwe Route",
         "totalItineraryDays": 8,
         "trekkingDays": 6,
         "routeDistanceKm": 46.3,
+        "startingPrice": {
+          "amount": 2317,
+          "currency": "USD"
+        },
+        "heroSummary": "A steep and quiet six-day Kilimanjaro climb via Umbwe. Hotel accommodation can be arranged separately on request.",
         "dayTypes": [
           "arrival",
           "trekking",
