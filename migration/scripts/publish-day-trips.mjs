@@ -33,6 +33,7 @@ for (const draft of drafts) {
   if (!draft.heroImage?.asset?._ref) errors.push(`${draft.slug.current}: hero image missing.`)
   if (!draft.overviewImages?.length) errors.push(`${draft.slug.current}: overview images missing.`)
   if (!draft.itinerary?.length) errors.push(`${draft.slug.current}: itinerary missing.`)
+  if (!draft.practicalInformation?.length) errors.push(`${draft.slug.current}: practical information missing.`)
   if (!draft.notIncluded?.length) errors.push(`${draft.slug.current}: exclusions missing.`)
   if (!draft.seo?.shareImage?.asset?._ref) errors.push(`${draft.slug.current}: SEO image missing.`)
 }
@@ -77,6 +78,7 @@ if (errors.length) {
       "overviewImageCount": count(overviewImages),
       "itineraryCount": count(itinerary),
       "itineraryImageCount": count(itinerary[defined(image.asset)]),
+      "practicalInformationCount": count(practicalInformation),
       "exclusionCount": count(notIncluded),
       "seoImage": seo.shareImage.asset->_id
     } | order(slug asc)`,
@@ -90,6 +92,7 @@ if (errors.length) {
       !trip.overviewImageCount ||
       !trip.itineraryCount ||
       !trip.itineraryImageCount ||
+      !trip.practicalInformationCount ||
       !trip.exclusionCount ||
       !trip.seoImage,
   )

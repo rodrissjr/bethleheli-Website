@@ -907,6 +907,17 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
 .trips-ref-filter-summary button:focus-visible{outline:2px solid #ea4729;outline-offset:3px}
 .trips-ref-card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;overflow:visible;padding:0}
 .trips-ref-card-grid>a{width:auto;min-width:0;height:440px}
+.trips-ref-card-grid .home-ref-trip-bottom-request{align-items:stretch;flex-direction:column;gap:12px}
+.trips-ref-card-grid .home-ref-trip-bottom-request .home-ref-trip-price{white-space:normal}
+.trips-ref-card-grid .home-ref-trip-bottom-request .home-ref-trip-link{width:100%;margin:0}
+
+.trip-ref-practical{background:#f5f7f7;color:#243138}
+.trip-ref-practical .intro{max-width:720px}
+.trip-ref-practical-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:42px}
+.trip-ref-practical-grid article{display:flex;gap:18px;min-height:170px;padding:28px;border:1px solid #dce3e4;border-radius:14px;background:#fff;box-shadow:0 12px 32px rgba(36,49,56,.07)}
+.trip-ref-practical-grid article>span{display:grid;flex:0 0 38px;width:38px;height:38px;border-radius:50%;place-items:center;background:#ea4729;color:#fff;font-size:19px;font-weight:700}
+.trip-ref-practical-grid h3{margin:2px 0 9px;font-size:20px;line-height:1.3}
+.trip-ref-practical-grid p{color:#5c686f;font-size:14px;line-height:1.75}
 
 .trips-ref-listing .home-ref-adventure-filters select{border-color:rgba(36,49,56,.28);background:#fff;color:#243138}
 .trips-ref-listing .trips-ref-category-nav{border-color:rgba(36,49,56,.14)}
@@ -947,6 +958,8 @@ body:has(.trip-subnav) .hero-content>p:not(.eyebrow){max-width:840px;font-size:1
   .trips-ref-listing-head .home-ref-adventure-filters{width:100%;flex-wrap:wrap}
   .trips-ref-card-grid{grid-template-columns:1fr;gap:16px}
   .trips-ref-card-grid>a{height:430px}
+  .trip-ref-practical-grid{grid-template-columns:1fr;margin-top:30px}
+  .trip-ref-practical-grid article{min-height:0;padding:22px}
   .safari-page .ref-why-grid>.shell>img{height:310px;object-position:center}
 }
 

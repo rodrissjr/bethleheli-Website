@@ -11,10 +11,11 @@ export const trip = defineType({
     {name: 'hero', title: '1. Hero', default: true},
     {name: 'overview', title: '2. Overview'},
     {name: 'itinerary', title: '3. Itinerary'},
-    {name: 'landscapes', title: '4. Landscapes'},
-    {name: 'inclusions', title: '5. Inclusions'},
-    {name: 'relationships', title: '6. Related Trips'},
-    {name: 'seo', title: '7. SEO'},
+    {name: 'practical', title: '4. Practical Information'},
+    {name: 'landscapes', title: '5. Landscapes'},
+    {name: 'inclusions', title: '6. Inclusions'},
+    {name: 'relationships', title: '7. Related Trips'},
+    {name: 'seo', title: '8. SEO'},
   ],
   fields: [
     defineField({
@@ -195,6 +196,16 @@ export const trip = defineType({
       type: 'array',
       group: 'itinerary',
       of: [defineArrayMember({type: 'itineraryDay'})],
+    }),
+    defineField({
+      name: 'practicalInformation',
+      title: 'Practical Information',
+      type: 'array',
+      group: 'practical',
+      description:
+        'Essential trip-specific details such as route facts, what to bring, fitness, safety and activity notes.',
+      of: [defineArrayMember({type: 'practicalInfoItem'})],
+      validation: (rule) => rule.max(8),
     }),
     defineField({
       name: 'landscapesTitle',

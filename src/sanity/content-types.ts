@@ -40,6 +40,11 @@ export type CmsTripPageData = {
     mealPlan: string;
     stays: CmsTripStay[];
   }>;
+  practicalInformation: Array<{
+    key: string;
+    title: string;
+    details: string;
+  }>;
   landscapesTitle: string;
   landscapes: Array<{
     key: string;

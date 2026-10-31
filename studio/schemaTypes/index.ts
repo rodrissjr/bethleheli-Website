@@ -8,6 +8,7 @@ import {inclusionItem} from './objects/inclusionItem'
 import {itineraryDay} from './objects/itineraryDay'
 import {landscape} from './objects/landscape'
 import {money} from './objects/money'
+import {practicalInfoItem} from './objects/practicalInfoItem'
 import {relatedTripCard} from './objects/relatedTripCard'
 import {seo} from './objects/seo'
 
@@ -18,6 +19,7 @@ export const schemaTypes = [
   tripSettings,
   contentImage,
   money,
+  practicalInfoItem,
   seo,
   relatedTripCard,
   itineraryDay,

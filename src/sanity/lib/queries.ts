@@ -45,6 +45,7 @@ export const TRIP_PAGE_QUERY = defineQuery(/* groq */ `
         gallery[] { ${imageFields} }
       }
     },
+    practicalInformation[] { _key, title, details },
     landscapesTitle,
     landscapes[] {
       _key,

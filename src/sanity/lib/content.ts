@@ -226,6 +226,11 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
       planningTitle: raw.planningTitle || "",
       planningDescription: raw.planningDescription || "",
       itinerary,
+      practicalInformation: (raw.practicalInformation || []).map((item, index) => ({
+        key: item._key || `practical-${index + 1}`,
+        title: item.title || "Practical information",
+        details: item.details || "",
+      })).filter(item => Boolean(item.details)),
       landscapesTitle: raw.landscapesTitle || "",
       landscapes: (raw.landscapes || []).map((landscape, index) => ({
         key: landscape._key || `landscape-${index + 1}`,

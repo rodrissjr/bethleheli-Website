@@ -54,6 +54,28 @@ export const dayTripsSource = {
         'Join Betheli Expeditions for a full day of nature, culture and freshly brewed coffee in Materuni village. Departing from Arusha or Moshi, the experience combines a guided waterfall walk, a hands-on coffee-making session and a traditional local lunch.',
         'Village paths pass farmland and lush vegetation on the way to the waterfall. The trail can be muddy and slippery, so sturdy walking shoes are recommended. The order of activities may change with weather and local arrangements.',
       ],
+      practicalInformation: [
+        {
+          title: 'Departure and duration',
+          details:
+            'This is a full-day private trip with return transport from an agreed hotel in Arusha or Moshi. Pickup time is confirmed with your final arrangements.',
+        },
+        {
+          title: 'What to bring',
+          details:
+            'Bring comfortable walking shoes with good grip, a light rain jacket, sun protection, drinking-water bottle and a camera.',
+        },
+        {
+          title: 'Walking conditions and fitness',
+          details:
+            'Moderate fitness is recommended. The waterfall trail crosses farmland and lush vegetation and can become muddy or slippery after rain.',
+        },
+        {
+          title: 'Activity order',
+          details:
+            'The waterfall walk, traditional lunch and bean-to-cup coffee experience are all included, but their order may change with weather and local arrangements.',
+        },
+      ],
       itineraryFor: 'Nature, culture and coffee day trip',
       travelDatesText: 'Available year-round, subject to local conditions',
       guestsText: 'Private arrangements based on group size',
@@ -115,6 +137,28 @@ export const dayTripsSource = {
         'Discover Chemka Hot Springs, also known as Kikuletwa Hot Springs, on a relaxing full-day trip from Arusha or Moshi. Clear water and leafy surroundings offer a peaceful break before or after a safari or Kilimanjaro climb.',
         'Despite the name, the water is refreshing rather than hot. Some areas are deep, so guests should enter only where they feel comfortable and follow local safety guidance. Children and non-swimmers require close supervision.',
       ],
+      practicalInformation: [
+        {
+          title: 'Departure and duration',
+          details:
+            'This is a full-day private trip with return transport from an agreed hotel in Arusha or Moshi. The final road section to the springs is unpaved.',
+        },
+        {
+          title: 'What to bring',
+          details:
+            'Pack swimwear, a towel, sandals or water shoes, sun protection, a change of clothes and a refillable drinking-water bottle.',
+        },
+        {
+          title: 'Swimming safety',
+          details:
+            'The spring water is refreshing rather than hot and some areas are deep. Enter only where you feel comfortable; children and non-swimmers require close supervision.',
+        },
+        {
+          title: 'Your day at Chemka',
+          details:
+            'There is time to swim, use the shaded banks, take photographs and enjoy the included picnic lunch before the afternoon return journey.',
+        },
+      ],
       itineraryFor: 'Swimming and relaxation day trip',
       travelDatesText: 'Available year-round, subject to road and local conditions',
       guestsText: 'Private arrangements based on group size',
@@ -172,6 +216,28 @@ export const dayTripsSource = {
       overviewParagraphs: [
         'Visit Serval Wildlife in the Siha area on a day trip from Arusha or Moshi, combining a scheduled guided wildlife experience, photography and time to relax in the green foothills of Mount Kilimanjaro.',
         'The on-site team provides a briefing and explains the animals in their care. Guests must follow staff instructions throughout the visit. Encounters depend on animal welfare and facility rules, so specific interactions cannot be guaranteed.',
+      ],
+      practicalInformation: [
+        {
+          title: 'Departure and duration',
+          details:
+            'Return private transfers are arranged from an agreed hotel in Arusha or Moshi. Entry time depends on the facility’s confirmed availability.',
+        },
+        {
+          title: 'What to bring',
+          details:
+            'Wear comfortable shoes and bring sun protection, a refillable drinking-water bottle and a camera. Avoid flash photography and follow staff guidance.',
+        },
+        {
+          title: 'Animal welfare and encounters',
+          details:
+            'The guided experience follows the facility’s current animal-welfare rules. Specific animal interactions cannot be promised and may change on the day.',
+        },
+        {
+          title: 'Meals',
+          details:
+            'Lunch and additional drinks are not included. An optional lunch may be arranged when availability and timing allow.',
+        },
       ],
       itineraryFor: 'Guided wildlife experience and photography',
       travelDatesText: 'Available year-round, subject to facility availability',
@@ -231,6 +297,28 @@ export const dayTripsSource = {
       overviewParagraphs: [
         'Walk beneath the rainforest canopy, listen to birdsong and follow the legendary Marangu Route with Betheli Expeditions. This rewarding day hike offers a genuine taste of Africa’s highest mountain without attempting the summit.',
         'The return hike covers approximately 16 kilometres and normally takes 6–8 hours, depending on pace and conditions. Mandara Hut sits at roughly 2,720 metres. Weather, daylight and guest wellbeing determine the final turnaround point.',
+      ],
+      practicalInformation: [
+        {
+          title: 'Route facts',
+          details:
+            'The guided route runs from Marangu Gate to Mandara Hut and back: approximately 16 km return, 6–8 hours of hiking and a highest point of about 2,720 metres. Difficulty is moderate.',
+        },
+        {
+          title: 'What to bring',
+          details:
+            'Bring sturdy hiking shoes, a daypack, rain jacket, warm layer, sun hat, sunscreen and a refillable drinking-water bottle.',
+        },
+        {
+          title: 'Trail and turnaround',
+          details:
+            'Rainforest paths can be wet and slippery. The guide adjusts pace and the turnaround point for weather, daylight and guest wellbeing; this day hike does not reach Uhuru Peak.',
+        },
+        {
+          title: 'Departure timing',
+          details:
+            'Pickup is early from Moshi and earlier from Arusha so there is enough time for park registration, the ascent, picnic lunch and a safe descent before dark.',
+        },
       ],
       itineraryFor: 'Moderate Kilimanjaro rainforest day hike',
       travelDatesText: 'Available year-round, subject to park and trail conditions',

@@ -64,6 +64,14 @@ const validateSource = () => {
     if (!trip.notIncluded.length || !trip.includedServiceKeys.length) {
       errors.push(`${trip.slug}: inclusions and exclusions are required.`)
     }
+    if (!trip.practicalInformation?.length) {
+      errors.push(`${trip.slug}: practical information is required.`)
+    }
+    for (const item of trip.practicalInformation || []) {
+      if (!item.title || !item.details || item.details.length < 20) {
+        errors.push(`${trip.slug}: every practical information item needs a heading and details.`)
+      }
+    }
     for (const day of trip.itinerary) {
       if (day.mealPlan && !allowedMealPlans.has(day.mealPlan)) {
         errors.push(`${trip.slug}: invalid meal plan ${day.mealPlan}.`)
@@ -213,6 +221,12 @@ if (errors.length) {
       planningTitle: trip.planningTitle,
       planningDescription: trip.planningDescription,
       itinerary,
+      practicalInformation: trip.practicalInformation.map((item, index) => ({
+        _key: `practical-${index + 1}`,
+        _type: 'practicalInfoItem',
+        title: item.title,
+        details: item.details,
+      })),
       landscapesTitle: '',
       landscapes: [],
       inclusionsEyebrow: trip.inclusionsEyebrow,
