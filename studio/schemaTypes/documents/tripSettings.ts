@@ -11,7 +11,8 @@ export const tripSettings = defineType({
       name: 'map',
       title: 'Shared Tanzania Map',
       type: 'contentImage',
-      description: 'This single map is displayed on every trip itinerary page.',
+      description:
+        'Fallback image shown only when a trip has no valid interactive route points.',
       validation: (rule) => rule.required(),
     }),
   ],

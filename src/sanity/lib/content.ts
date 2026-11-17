@@ -19,6 +19,7 @@ import type {
   CmsTripStay,
 } from "@/sanity/content-types";
 import { buildInclusionGroups } from "../../../shared/inclusion-catalog";
+import { createTripRouteMap } from "@/lib/trip-route-map";
 import type { InclusionIcon } from "../../../shared/inclusion-catalog";
 import { sanityClient } from "./client";
 import { urlForImage } from "./image";
@@ -161,7 +162,7 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
     const legacyOverviewImage = presentImage(raw?.overviewImage, 1600);
     if (!overviewImages.length && legacyOverviewImage) overviewImages.push(legacyOverviewImage);
     const map = presentImage(raw?.sharedMap, 1200);
-    if (!raw || !heroImage || !overviewImages.length || !map) return null;
+    if (!raw || !heroImage || !overviewImages.length) return null;
 
     const itinerary = (raw.itinerary || []).map((day, dayIndex) => ({
       key: day._key || `day-${dayIndex + 1}`,
@@ -225,6 +226,12 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
       travelDatesText: raw.travelDatesText || "",
       guestsText: raw.guestsText || "",
       map,
+      routeMap: createTripRouteMap({
+        title: raw.title || "Trip",
+        rawStops: raw.routeStops,
+        legacyDestinations: raw.destinations,
+        fallbackImage: map,
+      }),
       destinations: raw.destinations || [],
       planningTitle: raw.planningTitle || "",
       planningDescription: raw.planningDescription || "",

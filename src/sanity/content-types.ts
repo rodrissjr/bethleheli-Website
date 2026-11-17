@@ -16,6 +16,23 @@ export type CmsTripStay = {
   }>;
 };
 
+export type CmsTripRouteStop = {
+  key: string;
+  name: string;
+  lat: number;
+  lng: number;
+  dayLabel: string;
+  description: string;
+  markerLabel: string;
+  href: string;
+};
+
+export type CmsTripRouteMap = {
+  label: string;
+  stops: CmsTripRouteStop[];
+  fallbackImage: CmsImage | null;
+};
+
 export type CmsTripPageData = {
   title: string;
   durationDays: number;
@@ -27,7 +44,8 @@ export type CmsTripPageData = {
   itineraryFor: string;
   travelDatesText: string;
   guestsText: string;
-  map: CmsImage;
+  map: CmsImage | null;
+  routeMap: CmsTripRouteMap;
   destinations: string[];
   planningTitle: string;
   planningDescription: string;

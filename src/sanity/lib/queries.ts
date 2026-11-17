@@ -27,6 +27,23 @@ export const TRIP_PAGE_QUERY = defineQuery(/* groq */ `
     travelDatesText,
     guestsText,
     destinations,
+    routeStops[] {
+      _key,
+      displayName,
+      dayLabel,
+      description,
+      destinationPageLink,
+      markerLabel,
+      allowDuplicateCoordinates,
+      coordinateOverride { lat, lng },
+      destination-> {
+        _id,
+        title,
+        "slug": slug.current,
+        summary,
+        location { lat, lng }
+      }
+    },
     planningTitle,
     planningDescription,
     itinerary[] {

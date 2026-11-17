@@ -178,6 +178,43 @@ export const trip = defineType({
       validation: (rule) => rule.unique(),
     }),
     defineField({
+      name: 'routeStops',
+      title: 'Interactive Map Route',
+      type: 'array',
+      group: 'itinerary',
+      description:
+        'Ordered map stops for this trip. Drag items to change route order. The website connects valid points in exactly this order.',
+      of: [defineArrayMember({type: 'routeStop'})],
+      validation: (rule) => [
+        rule.min(2).warning('Add at least two valid route stops to draw a connected route.'),
+        rule.custom((stops) => {
+          if (!stops) return true
+          const keys = stops.map((stop) => stop?._key).filter(Boolean)
+          if (new Set(keys).size !== keys.length) return 'Every route stop must have a unique key.'
+
+          const seen = new Set<string>()
+          const seenDestinations = new Set<string>()
+          for (const stop of stops) {
+            const destinationRef = stop?.destination?._ref
+            if (destinationRef) {
+              if (seenDestinations.has(destinationRef) && !stop?.allowDuplicateCoordinates) {
+                return 'The same destination appears more than once. Mark an intentional return stop or remove the duplicate.'
+              }
+              seenDestinations.add(destinationRef)
+            }
+            const point = stop?.coordinateOverride as {lat?: number; lng?: number} | undefined
+            if (!point || typeof point.lat !== 'number' || typeof point.lng !== 'number') continue
+            const key = `${point.lat.toFixed(6)},${point.lng.toFixed(6)}`
+            if (seen.has(key) && !stop?.allowDuplicateCoordinates) {
+              return 'Duplicate override coordinates found. Mark an intentional return stop or correct the duplicate.'
+            }
+            seen.add(key)
+          }
+          return true
+        }),
+      ],
+    }),
+    defineField({
       name: 'planningTitle',
       title: 'Planning Panel Title',
       type: 'string',

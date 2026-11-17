@@ -1703,6 +1703,42 @@ main>.ref-zanzibar-combinations,main>.ref-zanzibar-faq{background:#fafafa!import
 @media(max-width:700px){.review-controls>button{width:44px;height:44px;font-size:24px}.trip-ref-fact-icon{width:40px;height:40px}.trip-ref-fact-icon img:first-child{inset:auto}.trip-ref-itinerary>.shell{grid-template-columns:1fr;gap:32px}.trip-ref-quote{max-width:446px}.trip-ref-itinerary-title button{min-width:0;font-size:13px;padding-inline:14px}}
 @media(min-width:701px) and (max-width:900px){.trip-ref-itinerary>.shell{grid-template-columns:1fr;gap:40px}.trip-ref-quote{max-width:446px}}
 
+/* Interactive trip map: preserve the itinerary card footprint and visual language. */
+.trip-route-card{width:100%;overflow:hidden;border:1px solid #e2e6e6;border-radius:20px;background:#fafafa;box-shadow:0 2px 13px rgba(0,0,0,.05)}
+.trip-route-map-canvas,.trip-route-map-loading{position:relative;width:100%;aspect-ratio:1.4;background:#eef1ea}
+.trip-route-map-loading{display:grid;place-items:center;color:#667178;font-size:13px}
+.trip-route-map-canvas:focus-visible{outline:3px solid #ea4729;outline-offset:-3px}
+.trip-route-map-canvas .leaflet-control-zoom{overflow:hidden;border:1px solid rgba(36,49,56,.24);border-radius:6px;box-shadow:0 3px 12px rgba(36,49,56,.15)}
+.trip-route-map-canvas .leaflet-control-zoom a{display:grid;place-items:center;width:32px;height:32px;border-color:rgba(36,49,56,.16);background:#fff;color:#243138;font:700 22px/1 Inter,Arial,sans-serif}
+.trip-route-map-canvas .leaflet-control-zoom a:hover,.trip-route-map-canvas .leaflet-control-zoom a:focus-visible{background:#f0f4f8;color:#ea4729}
+.trip-route-map-canvas .leaflet-control-attribution{padding:2px 5px;background:rgba(255,255,255,.86);font-size:8px}
+.trip-route-marker{display:grid!important;place-items:center;width:26px!important;height:26px!important;margin:0!important;border:3px solid #fff;border-radius:50%;background:#243138;color:#fff;box-shadow:0 2px 7px rgba(0,0,0,.3);font:700 8px/1 Inter,Arial,sans-serif;transition:background .18s,box-shadow .18s,transform .18s}
+.trip-route-marker.active{background:#ea4729;box-shadow:0 0 0 4px rgba(234,71,41,.28),0 2px 7px rgba(0,0,0,.3);transform:scale(1.08)}
+.trip-route-marker:focus-visible{outline:3px solid #ea4729;outline-offset:3px}
+.trip-route-details{padding:18px 17px 20px;background:#fafafa}
+.trip-route-details>h3{margin:0 0 8px!important;color:#ea4729!important;font-family:Inter,Arial,sans-serif!important;font-size:12px!important;font-weight:700!important;letter-spacing:.09em;text-transform:uppercase}
+.trip-route-details ol{margin:0;padding:0;list-style:none}
+.trip-route-details li{margin:0;padding:0;border-top:1px solid #dce0e1}
+.trip-route-details li:last-child{border-bottom:1px solid #dce0e1}
+.trip-route-details li button{display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:6px;width:100%;min-height:42px;padding:8px 0;border:0;background:transparent;color:#243138;text-align:left;cursor:pointer;transition:background .18s,color .18s}
+.trip-route-details li button>span{color:#ea4729;font-size:10px;font-weight:700}
+.trip-route-details li button>strong{min-width:0;font-size:12px;font-weight:600;line-height:1.35}
+.trip-route-details li button>small{color:#75818e;font-size:9px;white-space:nowrap}
+.trip-route-details li.active button{color:#ea4729}
+.trip-route-details li button:hover,.trip-route-details li button:focus-visible{background:rgba(234,71,41,.06)}
+.trip-route-details li button:focus-visible{outline:2px solid #ea4729;outline-offset:2px}
+.trip-route-selection{padding-top:15px}
+.trip-route-selection>strong{color:#243138;font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:700}
+.trip-route-selection>p{margin:7px 0 0;color:#667178;font-size:11px;line-height:1.55}
+.trip-route-selection>a{display:inline-block;margin-top:8px;color:#ea4729;font-size:11px;font-weight:700;text-decoration:none}
+.trip-route-selection>a:hover,.trip-route-selection>a:focus-visible{text-decoration:underline;text-underline-offset:3px}
+.trip-route-card-fallback{display:grid;place-items:center;aspect-ratio:1.4;background:#f0f4f8}
+.trip-route-card-fallback>img{display:block;width:100%;height:100%;object-fit:cover}
+.trip-route-card-fallback>p{padding:24px;color:#667178;text-align:center}
+@media(max-width:900px){.trip-route-card{max-width:446px}.trip-route-map-canvas,.trip-route-map-loading,.trip-route-card-fallback{aspect-ratio:1.4}}
+@media(max-width:480px){.trip-route-details{padding:16px 14px 18px}.trip-route-details li button{grid-template-columns:24px minmax(0,1fr) auto}.trip-route-map-canvas,.trip-route-map-loading,.trip-route-card-fallback{min-height:260px;aspect-ratio:auto}}
+@media(prefers-reduced-motion:reduce){.trip-route-marker,.trip-route-details li button{transition:none}}
+
 /* Kilimanjaro: the framed mountain-facts card from Figma. */
 .ref-kili-intro{padding:96px 0;background:#fafafa}
 .ref-kili-facts{display:flex;align-items:center;gap:24px;margin-top:48px;padding:24px 32px;border:1px solid rgba(36,49,56,.14);border-radius:20px;background:#fff}
