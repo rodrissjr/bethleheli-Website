@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-11-17T20:50:58.050Z",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "validatedTripCount": 15,
+  "routeStopCount": 99,
+  "trips": [
+    {
+      "slug": "7-day-northern-tanzania-safari-mara-river-crossing",
+      "title": "7-Day Northern Tanzania Safari Experience",
+      "routeStopCount": 6
+    },
+    {
+      "slug": "4-day-lake-natron-and-oldoinyo-lengai-adventure",
+      "title": "4-Day Lake Natron & Oldoinyo Lengai Adventure",
+      "routeStopCount": 7
+    },
+    {
+      "slug": "mount-meru-trek",
+      "title": "4-Day Mount Meru Trek",
+      "routeStopCount": 7
+    },
+    {
+      "slug": "marangu-route-hotel-stay",
+      "title": "6-Day Kilimanjaro Marangu Route",
+      "routeStopCount": 9
+    },
+    {
+      "slug": "umbwe-route-hotel-stay",
+      "title": "6-Day Kilimanjaro Umbwe Route",
+      "routeStopCount": 10
+    },
+    {
+      "slug": "machame-route",
+      "title": "7-Day Kilimanjaro Machame Route",
+      "routeStopCount": 10
+    },
+    {
+      "slug": "northern-circuit-route",
+      "title": "9-Day Kilimanjaro Northern Circuit Route",
+      "routeStopCount": 11
+    },
+    {
+      "slug": "african-nights-and-circle-of-life-safari",
+      "title": "African Nights & Circle of Life Safari",
+      "routeStopCount": 7
+    },
+    {
+      "slug": "chemka-hot-springs-day-trip",
+      "title": "Chemka Hot Springs Day Trip",
+      "routeStopCount": 2
+    },
+    {
+      "slug": "east-african-safari-and-beach-bliss",
+      "title": "East African Safari & Beach Bliss",
+      "routeStopCount": 7
+    },
+    {
+      "slug": "kilimanjaro-day-hike-marangu-route",
+      "title": "Kilimanjaro Day Hike Marangu Route",
+      "routeStopCount": 4
+    },
+    {
+      "slug": "shira-plateau-day-hike",
+      "title": "Kilimanjaro Shira Plateau Day Hike",
+      "routeStopCount": 6
+    },
+    {
+      "slug": "materuni-waterfall-and-coffee-day-trip",
+      "title": "Materuni Waterfall & Coffee Day Trip",
+      "routeStopCount": 3
+    },
+    {
+      "slug": "serval-wildlife-day-trip",
+      "title": "Serval Wildlife Day Trip",
+      "routeStopCount": 3
+    },
+    {
+      "slug": "tanzanian-traffic-jam-the-great-migration",
+      "title": "Tanzanian Traffic Jam: The Great Migration",
+      "routeStopCount": 7
+    }
+  ],
+  "qualityIssues": [],
+  "status": "passed"
+}

@@ -15,7 +15,6 @@ const stop = (name: string, dayLabel: string, locationKey?: string): TripRoutePr
 
 export const tripRouteLocations: Record<string, TripRouteLocation> = {
   arusha: location(-3.3869, 36.683, "Arrival, briefing and the northern circuit starting point."),
-  "return to arusha": location(-3.3869, 36.683, "Return to Arusha after the journey."),
   "arusha or moshi": location(-3.3349, 37.3404, "The Kilimanjaro journey base in Moshi or Arusha."),
   "tarangire national park": location(-3.8333, 36, "Baobab country, river habitat and memorable game viewing."),
   "ngorongoro crater": location(-3.1618, 35.5877, "The crater floor and its concentrated wildlife habitats."),
@@ -83,7 +82,7 @@ export const tripRouteProfiles: Record<string, TripRouteProfileStop[]> = {
     stop("Ngorongoro Crater", "Day 3"),
     stop("Central Serengeti", "Day 4"),
     stop("Northern Serengeti – Mara River", "Days 5–6"),
-    stop("Return to Arusha", "Day 7"),
+    stop("Return to Arusha", "Day 7", "arusha"),
   ],
   "4-day-lake-natron-and-oldoinyo-lengai-adventure": [
     stop("Arusha", "Day 1"),
@@ -92,7 +91,7 @@ export const tripRouteProfiles: Record<string, TripRouteProfileStop[]> = {
     stop("Ngaresero Waterfalls", "Day 2"),
     stop("Oldoinyo Lengai", "Day 3"),
     stop("Maasai community", "Day 4"),
-    stop("Return to Arusha", "Day 4"),
+    stop("Return to Arusha", "Day 4", "arusha"),
   ],
   "mount-meru-trek": [
     stop("Arusha National Park", "Day 1"),
@@ -158,7 +157,7 @@ export const tripRouteProfiles: Record<string, TripRouteProfileStop[]> = {
     stop("Ndutu", "Day 6"),
     stop("Southern Serengeti", "Days 7–8"),
     stop("Central Serengeti", "Day 9"),
-    stop("Return to Arusha", "Day 10"),
+    stop("Return to Arusha", "Day 10", "arusha"),
   ],
   "chemka-hot-springs-day-trip": [
     stop("Chemka Hot Springs", "Day 1"),
@@ -204,7 +203,7 @@ export const tripRouteProfiles: Record<string, TripRouteProfileStop[]> = {
     stop("Ngorongoro Conservation Area", "Day 4"),
     stop("Central Serengeti", "Days 5–6"),
     stop("Northern Serengeti", "Days 7–9"),
-    stop("Return to Arusha", "Day 10"),
+    stop("Return to Arusha", "Day 10", "arusha"),
   ],
 };
 

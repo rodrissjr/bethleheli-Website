@@ -1,0 +1,500 @@
+{
+  "generatedAt": "2026-11-17T20:45:46.959Z",
+  "mode": "production-write",
+  "projectId": "ife51h63",
+  "dataset": "production",
+  "tripCount": 15,
+  "destinationCount": 59,
+  "routeStopCount": 99,
+  "profiles": [
+    {
+      "tripSlug": "7-day-northern-tanzania-safari-mara-river-crossing",
+      "routeStopCount": 6,
+      "routeOrder": [
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Tarangire National Park",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Ngorongoro Crater",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Central Serengeti",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Northern Serengeti – Mara River",
+          "dayLabel": "Days 5–6"
+        },
+        {
+          "name": "Return to Arusha",
+          "dayLabel": "Day 7"
+        }
+      ]
+    },
+    {
+      "tripSlug": "4-day-lake-natron-and-oldoinyo-lengai-adventure",
+      "routeStopCount": 7,
+      "routeOrder": [
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Great Rift Valley",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Lake Natron",
+          "dayLabel": "Days 1–2"
+        },
+        {
+          "name": "Ngaresero Waterfalls",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Oldoinyo Lengai",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Maasai community",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Return to Arusha",
+          "dayLabel": "Day 4"
+        }
+      ]
+    },
+    {
+      "tripSlug": "mount-meru-trek",
+      "routeStopCount": 7,
+      "routeOrder": [
+        {
+          "name": "Arusha National Park",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Momella Gate",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Miriakamba Hut",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Saddle Hut",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Socialist Peak",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Miriakamba Hut",
+          "dayLabel": "Days 3–4"
+        },
+        {
+          "name": "Momella Gate",
+          "dayLabel": "Day 4"
+        }
+      ]
+    },
+    {
+      "tripSlug": "marangu-route-hotel-stay",
+      "routeStopCount": 9,
+      "routeOrder": [
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Marangu Gate",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Mandara Hut",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Horombo Hut",
+          "dayLabel": "Days 3–4"
+        },
+        {
+          "name": "Kibo Hut",
+          "dayLabel": "Day 5"
+        },
+        {
+          "name": "Uhuru Peak",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Horombo Hut",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Marangu Gate",
+          "dayLabel": "Day 7"
+        },
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 8"
+        }
+      ]
+    },
+    {
+      "tripSlug": "umbwe-route-hotel-stay",
+      "routeStopCount": 10,
+      "routeOrder": [
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Umbwe Gate",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Umbwe Cave Camp",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Barranco Camp",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Karanga Camp",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Barafu Camp",
+          "dayLabel": "Day 5"
+        },
+        {
+          "name": "Uhuru Peak",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Mweka Camp",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Mweka Gate",
+          "dayLabel": "Day 7"
+        },
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 8"
+        }
+      ]
+    },
+    {
+      "tripSlug": "machame-route",
+      "routeStopCount": 10,
+      "routeOrder": [
+        {
+          "name": "Machame Gate",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Machame Camp",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Shira Plateau",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Lava Tower",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Barranco Camp",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Karanga Camp",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Barafu Camp",
+          "dayLabel": "Day 5"
+        },
+        {
+          "name": "Uhuru Peak",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Mweka Camp",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Mweka Gate",
+          "dayLabel": "Day 7"
+        }
+      ]
+    },
+    {
+      "tripSlug": "northern-circuit-route",
+      "routeStopCount": 11,
+      "routeOrder": [
+        {
+          "name": "Londorossi Gate",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Mti Mkubwa",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Shira 1 Camp",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Shira 2 Camp",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Moir Hut",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Buffalo Camp",
+          "dayLabel": "Day 5"
+        },
+        {
+          "name": "Third Cave",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "School Hut",
+          "dayLabel": "Day 7"
+        },
+        {
+          "name": "Uhuru Peak",
+          "dayLabel": "Day 8"
+        },
+        {
+          "name": "Mweka Camp",
+          "dayLabel": "Day 8"
+        },
+        {
+          "name": "Mweka Gate",
+          "dayLabel": "Day 9"
+        }
+      ]
+    },
+    {
+      "tripSlug": "african-nights-and-circle-of-life-safari",
+      "routeStopCount": 7,
+      "routeOrder": [
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Tarangire National Park",
+          "dayLabel": "Days 2–3"
+        },
+        {
+          "name": "Ngorongoro Conservation Area",
+          "dayLabel": "Days 4–5"
+        },
+        {
+          "name": "Ndutu",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Southern Serengeti",
+          "dayLabel": "Days 7–8"
+        },
+        {
+          "name": "Central Serengeti",
+          "dayLabel": "Day 9"
+        },
+        {
+          "name": "Return to Arusha",
+          "dayLabel": "Day 10"
+        }
+      ]
+    },
+    {
+      "tripSlug": "chemka-hot-springs-day-trip",
+      "routeStopCount": 2,
+      "routeOrder": [
+        {
+          "name": "Chemka Hot Springs",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Kikuletwa",
+          "dayLabel": "Day 1"
+        }
+      ]
+    },
+    {
+      "tripSlug": "east-african-safari-and-beach-bliss",
+      "routeStopCount": 7,
+      "routeOrder": [
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Tarangire National Park",
+          "dayLabel": "Days 2–3"
+        },
+        {
+          "name": "Lake Eyasi",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Karatu",
+          "dayLabel": "Day 5"
+        },
+        {
+          "name": "Ngorongoro Conservation Area",
+          "dayLabel": "Days 6–7"
+        },
+        {
+          "name": "Serengeti National Park",
+          "dayLabel": "Days 8–10"
+        },
+        {
+          "name": "Zanzibar",
+          "dayLabel": "Days 11–16"
+        }
+      ]
+    },
+    {
+      "tripSlug": "kilimanjaro-day-hike-marangu-route",
+      "routeStopCount": 4,
+      "routeOrder": [
+        {
+          "name": "Marangu Gate",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Mount Kilimanjaro rainforest",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Mandara Hut",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Marangu Gate",
+          "dayLabel": "Day 1"
+        }
+      ]
+    },
+    {
+      "tripSlug": "shira-plateau-day-hike",
+      "routeStopCount": 6,
+      "routeOrder": [
+        {
+          "name": "Londorossi Gate",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Murram Barrier",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Shira Plateau",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Cathedral Point",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Murram Barrier",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Londorossi Gate",
+          "dayLabel": "Day 1"
+        }
+      ]
+    },
+    {
+      "tripSlug": "materuni-waterfall-and-coffee-day-trip",
+      "routeStopCount": 3,
+      "routeOrder": [
+        {
+          "name": "Materuni village",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Materuni Waterfall",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Mount Kilimanjaro foothills",
+          "dayLabel": "Day 1"
+        }
+      ]
+    },
+    {
+      "tripSlug": "serval-wildlife-day-trip",
+      "routeStopCount": 3,
+      "routeOrder": [
+        {
+          "name": "Siha",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Serval Wildlife",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Mount Kilimanjaro foothills",
+          "dayLabel": "Day 1"
+        }
+      ]
+    },
+    {
+      "tripSlug": "tanzanian-traffic-jam-the-great-migration",
+      "routeStopCount": 7,
+      "routeOrder": [
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Tarangire National Park",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Lake Manyara National Park",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Ngorongoro Conservation Area",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Central Serengeti",
+          "dayLabel": "Days 5–6"
+        },
+        {
+          "name": "Northern Serengeti",
+          "dayLabel": "Days 7–9"
+        },
+        {
+          "name": "Return to Arusha",
+          "dayLabel": "Day 10"
+        }
+      ]
+    }
+  ],
+  "qualityIssues": [],
+  "status": "written",
+  "writtenTripDocuments": 15
+}
