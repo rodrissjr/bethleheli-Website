@@ -1,5 +1,6 @@
 import {describe, expect, it} from "vitest";
-import {createTripRouteMap, legacyTripRouteStops, presentTripRouteStops, routeLineCoordinates, safeDestinationUrl} from "./trip-route-map";
+import {liveTripRouteSlugs, tripRouteProfiles} from "./trip-route-catalog";
+import {catalogTripRouteStops, createTripRouteMap, presentTripRouteStops, routeLineCoordinates, safeDestinationUrl} from "./trip-route-map";
 
 const raw = [
   {
@@ -56,14 +57,7 @@ describe("trip route map adapter", () => {
   });
 
   it("includes the full northern circuit journey from and back to Arusha", () => {
-    const stops = legacyTripRouteStops([
-      "Arusha",
-      "Tarangire National Park",
-      "Ngorongoro Crater",
-      "Central Serengeti",
-      "Northern Serengeti – Mara River",
-      "Return to Arusha",
-    ]);
+    const stops = catalogTripRouteStops("7-day-northern-tanzania-safari-mara-river-crossing");
 
     expect(stops.map(stop => stop.name)).toEqual([
       "Arusha",
@@ -75,6 +69,14 @@ describe("trip route map adapter", () => {
     ]);
     expect(stops.map(stop => stop.dayLabel)).toEqual(["Day 1", "Day 2", "Day 3", "Day 4", "Days 5–6", "Day 7"]);
     expect(routeLineCoordinates(stops).at(0)).toEqual(routeLineCoordinates(stops).at(-1));
+  });
+
+  it("resolves every destination in every live itinerary route profile", () => {
+    expect(liveTripRouteSlugs).toHaveLength(15);
+    for (const slug of liveTripRouteSlugs) {
+      expect(catalogTripRouteStops(slug), slug).toHaveLength(tripRouteProfiles[slug].length);
+      expect(catalogTripRouteStops(slug).length, slug).toBeGreaterThanOrEqual(2);
+    }
   });
 
   it("rejects unsafe destination URLs", () => {

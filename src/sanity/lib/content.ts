@@ -212,17 +212,6 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
       })),
     }));
 
-    const legacyRouteDestinations = slug === "7-day-northern-tanzania-safari-mara-river-crossing"
-      ? [
-          "Arusha",
-          "Tarangire National Park",
-          "Ngorongoro Crater",
-          "Central Serengeti",
-          "Northern Serengeti – Mara River",
-          "Return to Arusha",
-        ]
-      : raw.destinations;
-
     return {
       title: raw.title || "Trip",
       durationDays: raw.categories?.includes("kilimanjaro")
@@ -239,8 +228,9 @@ export async function getTripPageContent(slug: string): Promise<CmsTripPageData 
       map,
       routeMap: createTripRouteMap({
         title: raw.title || "Trip",
+        tripSlug: slug,
         rawStops: raw.routeStops,
-        legacyDestinations: legacyRouteDestinations,
+        legacyDestinations: raw.destinations,
         fallbackImage: map,
       }),
       destinations: raw.destinations || [],

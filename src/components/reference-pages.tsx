@@ -1358,6 +1358,7 @@ export function TripDetailReferencePage({ data, trips = [], slug }: { data?: Cms
   }));
   const routeMap = data?.routeMap ?? createTripRouteMap({
     title: "Northern Serengeti River Crossing Safari",
+    tripSlug: slug,
     legacyDestinations: ["Arusha", "Tarangire National Park", "Ngorongoro Crater", "Central Serengeti", "Northern Serengeti – Mara River", "Return to Arusha"],
     fallbackImage: { src: image("tanzania-national-parks-map.png"), alt: "Map of Tanzania showing its national parks" },
   });
