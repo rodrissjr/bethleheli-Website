@@ -24,6 +24,15 @@ for (const destination of source.destinations) {
 for (const stop of source.routeStops) {
   if (!destinationSlugs.includes(stop.destinationSlug)) errors.push(`Unknown destination: ${stop.destinationSlug}.`)
 }
+const repeatedDestinationSlugs = source.routeStops
+  .map(({destinationSlug}) => destinationSlug)
+  .filter((destinationSlug, index, route) => route.indexOf(destinationSlug) !== index)
+for (const destinationSlug of new Set(repeatedDestinationSlugs)) {
+  const repeatedStops = source.routeStops.filter((stop) => stop.destinationSlug === destinationSlug)
+  if (!repeatedStops.slice(1).every((stop) => stop.allowDuplicateCoordinates)) {
+    errors.push(`${destinationSlug}: repeated route stops must explicitly allow duplicate coordinates.`)
+  }
+}
 
 const report = {
   generatedAt: new Date().toISOString(),
@@ -82,6 +91,7 @@ if (errors.length || !writeMode) {
       _type: 'routeStop',
       _key: `route-stop-${stableKey(stop.destinationSlug)}-${index + 1}`,
       destination: {_type: 'reference', _ref: destinationIds.get(stop.destinationSlug)},
+      ...(stop.displayName ? {displayName: stop.displayName} : {}),
       dayLabel: stop.dayLabel,
       markerLabel: stop.markerLabel,
       destinationPageLink: stop.destinationPageLink,

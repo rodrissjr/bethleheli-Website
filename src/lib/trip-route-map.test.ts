@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vitest";
-import {createTripRouteMap, presentTripRouteStops, routeLineCoordinates, safeDestinationUrl} from "./trip-route-map";
+import {createTripRouteMap, legacyTripRouteStops, presentTripRouteStops, routeLineCoordinates, safeDestinationUrl} from "./trip-route-map";
 
 const raw = [
   {
@@ -53,6 +53,28 @@ describe("trip route map adapter", () => {
     });
     expect(route.stops).toEqual([]);
     expect(route.fallbackImage?.src).toBe("/map.png");
+  });
+
+  it("includes the full northern circuit journey from and back to Arusha", () => {
+    const stops = legacyTripRouteStops([
+      "Arusha",
+      "Tarangire National Park",
+      "Ngorongoro Crater",
+      "Central Serengeti",
+      "Northern Serengeti – Mara River",
+      "Return to Arusha",
+    ]);
+
+    expect(stops.map(stop => stop.name)).toEqual([
+      "Arusha",
+      "Tarangire National Park",
+      "Ngorongoro Crater",
+      "Central Serengeti",
+      "Northern Serengeti – Mara River",
+      "Return to Arusha",
+    ]);
+    expect(stops.map(stop => stop.dayLabel)).toEqual(["Day 1", "Day 2", "Day 3", "Day 4", "Days 5–6", "Day 7"]);
+    expect(routeLineCoordinates(stops).at(0)).toEqual(routeLineCoordinates(stops).at(-1));
   });
 
   it("rejects unsafe destination URLs", () => {

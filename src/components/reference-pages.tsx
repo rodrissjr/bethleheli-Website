@@ -1358,7 +1358,7 @@ export function TripDetailReferencePage({ data, trips = [], slug }: { data?: Cms
   }));
   const routeMap = data?.routeMap ?? createTripRouteMap({
     title: "Northern Serengeti River Crossing Safari",
-    legacyDestinations: ["Arusha", "Tarangire National Park", "Ngorongoro Crater", "Central Serengeti", "Northern Serengeti – Mara River"],
+    legacyDestinations: ["Arusha", "Tarangire National Park", "Ngorongoro Crater", "Central Serengeti", "Northern Serengeti – Mara River", "Return to Arusha"],
     fallbackImage: { src: image("tanzania-national-parks-map.png"), alt: "Map of Tanzania showing its national parks" },
   });
   return <><section className="trip-ref-hero" id="general"><Photo src={data?.heroImage.src ?? image("figma-trips-hero.png")} alt={data?.heroImage.alt || ""} priority sizes="100vw" /><div className="trip-ref-hero-shade" /><Header active="Home" variant="classic" /><div className="shell trip-ref-hero-copy"><Link className="trip-ref-back-link" href="/trips"><span className="trip-ref-back-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M11 18l-6-6 6-6" /></svg></span>Back to trips</Link><p>{data ? (data.startingPrice ? <>From <b>{data.startingPrice}</b></> : <b>Price on request</b>) : <>From <b>$1,732</b></>}</p><h1>{data?.title ?? "6-Day Northern Serengeti River Crossing Safari"}</h1><p>{data?.heroSummary ?? "A migration-focused safari through Tarangire, Central Serengeti, Northern Serengeti and Ngorongoro, with a full day at the Mara River."}</p><div className="trip-ref-rating"><TripadvisorLogo light compact /><small>5.0 <RatingStars size={14} /></small></div></div></section>

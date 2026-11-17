@@ -38,5 +38,13 @@ export const interactiveTripMapSource = {
     {destinationSlug: 'ngorongoro-crater', dayLabel: 'Day 3', markerLabel: '03', destinationPageLink: '/safari'},
     {destinationSlug: 'central-serengeti', dayLabel: 'Day 4', markerLabel: '04', destinationPageLink: '/safari'},
     {destinationSlug: 'northern-serengeti', dayLabel: 'Days 5–6', markerLabel: '05', destinationPageLink: '/safari'},
+    {
+      destinationSlug: 'arusha',
+      displayName: 'Return to Arusha',
+      dayLabel: 'Day 7',
+      markerLabel: '06',
+      destinationPageLink: '/contact',
+      allowDuplicateCoordinates: true,
+    },
   ],
 }

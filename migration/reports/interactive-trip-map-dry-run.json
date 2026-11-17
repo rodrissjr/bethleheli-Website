@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-11-17T19:08:40.290Z",
+  "generatedAt": "2026-11-17T20:04:42.585Z",
   "mode": "dry-run",
   "projectId": "ife51h63",
   "dataset": "production",
   "tripSlug": "7-day-northern-tanzania-safari-mara-river-crossing",
   "destinationCount": 5,
-  "routeStopCount": 5,
+  "routeStopCount": 6,
   "routeOrder": [
     "arusha",
     "tarangire-national-park",
     "ngorongoro-crater",
     "central-serengeti",
-    "northern-serengeti"
+    "northern-serengeti",
+    "arusha"
   ],
   "qualityIssues": [],
   "status": "ready-for-review"

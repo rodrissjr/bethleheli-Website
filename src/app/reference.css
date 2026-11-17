@@ -2235,7 +2235,7 @@ body:has(.contact-main) .contact-main{width:min(1200px,calc(100% - 48px));paddin
 .trip-ref-map-close:hover,.trip-ref-map-close:focus-visible{background:#ea4729}
 @media(min-width:901px){
   .trip-ref-itinerary aside{align-self:stretch;min-width:0}
-  .trip-ref-itinerary-sticky{position:sticky;top:112px;max-height:min(760px,calc(100vh - 132px));overflow:auto;overscroll-behavior:contain;padding:0 8px 10px 0;scrollbar-width:thin;scrollbar-color:rgba(36,49,56,.3) transparent}
+  .trip-ref-itinerary-sticky{position:sticky;top:112px;padding:0}
 }
 
 /* Zanzibar FAQ now follows the same large, tappable accordion language used

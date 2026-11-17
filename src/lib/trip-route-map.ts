@@ -18,6 +18,7 @@ export type RawTripRouteStop = {
 
 const legacyLocations: Record<string, { lat: number; lng: number; description: string }> = {
   arusha: { lat: -3.3869, lng: 36.683, description: "Arrival, briefing and the northern circuit starting point." },
+  "return to arusha": { lat: -3.3869, lng: 36.683, description: "Return to Arusha after the northern circuit safari." },
   "tarangire national park": { lat: -3.8333, lng: 36, description: "Baobab country, river habitat and an unhurried first game drive." },
   "ngorongoro crater": { lat: -3.1618, lng: 35.5877, description: "Descend into the crater for a remarkable day of wildlife viewing." },
   "ngorongoro conservation area": { lat: -3.1618, lng: 35.5877, description: "Highlands, crater landscapes and exceptional wildlife habitat." },
@@ -67,15 +68,34 @@ export function presentTripRouteStops(rawStops: RawTripRouteStop[] | null | unde
 }
 
 export function legacyTripRouteStops(destinations: string[] | null | undefined): CmsTripRouteStop[] {
+  const normalizedDestinations = (destinations || []).map(name => name.trim().toLowerCase());
+  const isNorthernCircuitJourney = [
+    "arusha",
+    "tarangire national park",
+    "ngorongoro crater",
+    "central serengeti",
+    "northern serengeti – mara river",
+    "return to arusha",
+  ].every(destination => normalizedDestinations.includes(destination));
+  const northernCircuitDayLabels: Record<string, string> = {
+    arusha: "Day 1",
+    "tarangire national park": "Day 2",
+    "ngorongoro crater": "Day 3",
+    "central serengeti": "Day 4",
+    "northern serengeti – mara river": "Days 5–6",
+    "return to arusha": "Day 7",
+  };
+
   return (destinations || []).flatMap((name, index) => {
-    const location = legacyLocations[name.trim().toLowerCase()];
+    const normalizedName = name.trim().toLowerCase();
+    const location = legacyLocations[normalizedName];
     if (!location) return [];
     return [{
       key: `legacy-route-stop-${index + 1}`,
       name,
       lat: location.lat,
       lng: location.lng,
-      dayLabel: index === 0 ? "Day 1" : `Day ${index + 1}`,
+      dayLabel: isNorthernCircuitJourney ? northernCircuitDayLabels[normalizedName] : `Day ${index + 1}`,
       description: location.description,
       markerLabel: String(index + 1).padStart(2, "0"),
       href: "",
