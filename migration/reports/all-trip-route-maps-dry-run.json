@@ -1,22 +1,30 @@
 {
-  "generatedAt": "2026-11-17T20:45:46.959Z",
+  "generatedAt": "2026-11-18T07:57:03.839Z",
   "mode": "production-write",
   "projectId": "ife51h63",
   "dataset": "production",
   "tripCount": 15,
-  "destinationCount": 59,
-  "routeStopCount": 99,
+  "destinationCount": 74,
+  "routeStopCount": 147,
   "profiles": [
     {
       "tripSlug": "7-day-northern-tanzania-safari-mara-river-crossing",
-      "routeStopCount": 6,
+      "routeStopCount": 10,
       "routeOrder": [
+        {
+          "name": "Kilimanjaro International Airport",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Arusha",
           "dayLabel": "Day 1"
         },
         {
           "name": "Tarangire National Park",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Karatu",
           "dayLabel": "Day 2"
         },
         {
@@ -32,14 +40,22 @@
           "dayLabel": "Days 5–6"
         },
         {
-          "name": "Return to Arusha",
+          "name": "Kogatende Airstrip",
+          "dayLabel": "Day 7"
+        },
+        {
+          "name": "Arusha Airport",
+          "dayLabel": "Day 7"
+        },
+        {
+          "name": "Kilimanjaro International Airport",
           "dayLabel": "Day 7"
         }
       ]
     },
     {
       "tripSlug": "4-day-lake-natron-and-oldoinyo-lengai-adventure",
-      "routeStopCount": 7,
+      "routeStopCount": 9,
       "routeOrder": [
         {
           "name": "Arusha",
@@ -58,7 +74,15 @@
           "dayLabel": "Day 2"
         },
         {
+          "name": "Lake Natron",
+          "dayLabel": "Day 2"
+        },
+        {
           "name": "Oldoinyo Lengai",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Lake Natron",
           "dayLabel": "Day 3"
         },
         {
@@ -73,8 +97,12 @@
     },
     {
       "tripSlug": "mount-meru-trek",
-      "routeStopCount": 7,
+      "routeStopCount": 9,
       "routeOrder": [
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Arusha National Park",
           "dayLabel": "Day 1"
@@ -102,12 +130,16 @@
         {
           "name": "Momella Gate",
           "dayLabel": "Day 4"
+        },
+        {
+          "name": "Return to Arusha",
+          "dayLabel": "Day 4"
         }
       ]
     },
     {
       "tripSlug": "marangu-route-hotel-stay",
-      "routeStopCount": 9,
+      "routeStopCount": 12,
       "routeOrder": [
         {
           "name": "Arusha or Moshi",
@@ -126,8 +158,20 @@
           "dayLabel": "Days 3–4"
         },
         {
+          "name": "Zebra Rocks",
+          "dayLabel": "Day 4"
+        },
+        {
+          "name": "Horombo Hut",
+          "dayLabel": "Day 4"
+        },
+        {
           "name": "Kibo Hut",
           "dayLabel": "Day 5"
+        },
+        {
+          "name": "Gillman's Point",
+          "dayLabel": "Day 6"
         },
         {
           "name": "Uhuru Peak",
@@ -149,7 +193,7 @@
     },
     {
       "tripSlug": "umbwe-route-hotel-stay",
-      "routeStopCount": 10,
+      "routeStopCount": 11,
       "routeOrder": [
         {
           "name": "Arusha or Moshi",
@@ -174,6 +218,10 @@
         {
           "name": "Barafu Camp",
           "dayLabel": "Day 5"
+        },
+        {
+          "name": "Stella Point",
+          "dayLabel": "Day 6"
         },
         {
           "name": "Uhuru Peak",
@@ -206,7 +254,7 @@
           "dayLabel": "Day 1"
         },
         {
-          "name": "Shira Plateau",
+          "name": "Shira Plateau / Shira 2 Camp",
           "dayLabel": "Day 2"
         },
         {
@@ -241,7 +289,7 @@
     },
     {
       "tripSlug": "northern-circuit-route",
-      "routeStopCount": 11,
+      "routeStopCount": 12,
       "routeOrder": [
         {
           "name": "Londorossi Gate",
@@ -286,13 +334,21 @@
         {
           "name": "Mweka Gate",
           "dayLabel": "Day 9"
+        },
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 9"
         }
       ]
     },
     {
       "tripSlug": "african-nights-and-circle-of-life-safari",
-      "routeStopCount": 7,
+      "routeStopCount": 12,
       "routeOrder": [
+        {
+          "name": "Kilimanjaro International Airport",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Arusha",
           "dayLabel": "Day 1"
@@ -306,7 +362,11 @@
           "dayLabel": "Days 4–5"
         },
         {
-          "name": "Ndutu",
+          "name": "Ngorongoro Crater",
+          "dayLabel": "Day 5"
+        },
+        {
+          "name": "Ndutu / Lake Ndutu",
           "dayLabel": "Day 6"
         },
         {
@@ -314,19 +374,35 @@
           "dayLabel": "Days 7–8"
         },
         {
-          "name": "Central Serengeti",
+          "name": "Central Serengeti / Seronera",
           "dayLabel": "Day 9"
         },
         {
-          "name": "Return to Arusha",
+          "name": "Seronera Airstrip",
+          "dayLabel": "Day 10"
+        },
+        {
+          "name": "Arusha Airport",
+          "dayLabel": "Day 10"
+        },
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 10"
+        },
+        {
+          "name": "Kilimanjaro International Airport",
           "dayLabel": "Day 10"
         }
       ]
     },
     {
       "tripSlug": "chemka-hot-springs-day-trip",
-      "routeStopCount": 2,
+      "routeStopCount": 4,
       "routeOrder": [
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Chemka Hot Springs",
           "dayLabel": "Day 1"
@@ -334,20 +410,40 @@
         {
           "name": "Kikuletwa",
           "dayLabel": "Day 1"
+        },
+        {
+          "name": "Return to Arusha or Moshi",
+          "dayLabel": "Day 1"
         }
       ]
     },
     {
       "tripSlug": "east-african-safari-and-beach-bliss",
-      "routeStopCount": 7,
+      "routeStopCount": 19,
       "routeOrder": [
+        {
+          "name": "Kilimanjaro International Airport",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Arusha",
           "dayLabel": "Day 1"
         },
         {
+          "name": "Arusha Airport",
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Kuro Airstrip",
+          "dayLabel": "Day 2"
+        },
+        {
           "name": "Tarangire National Park",
-          "dayLabel": "Days 2–3"
+          "dayLabel": "Day 2"
+        },
+        {
+          "name": "Silale Swamp",
+          "dayLabel": "Day 3"
         },
         {
           "name": "Lake Eyasi",
@@ -358,23 +454,59 @@
           "dayLabel": "Day 5"
         },
         {
+          "name": "Gibb's Farm",
+          "dayLabel": "Day 5"
+        },
+        {
+          "name": "Ngorongoro Highlands",
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Maasai Village",
+          "dayLabel": "Day 6"
+        },
+        {
           "name": "Ngorongoro Conservation Area",
-          "dayLabel": "Days 6–7"
+          "dayLabel": "Day 6"
+        },
+        {
+          "name": "Ngorongoro Crater",
+          "dayLabel": "Day 7"
         },
         {
           "name": "Serengeti National Park",
           "dayLabel": "Days 8–10"
         },
         {
+          "name": "Seronera Airstrip",
+          "dayLabel": "Day 11"
+        },
+        {
           "name": "Zanzibar",
-          "dayLabel": "Days 11–16"
+          "dayLabel": "Day 11"
+        },
+        {
+          "name": "Zanzibar Airport",
+          "dayLabel": "Day 11"
+        },
+        {
+          "name": "Paje Beach",
+          "dayLabel": "Days 12–15"
+        },
+        {
+          "name": "Zanzibar Airport",
+          "dayLabel": "Day 16"
         }
       ]
     },
     {
       "tripSlug": "kilimanjaro-day-hike-marangu-route",
-      "routeStopCount": 4,
+      "routeStopCount": 6,
       "routeOrder": [
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Marangu Gate",
           "dayLabel": "Day 1"
@@ -390,13 +522,21 @@
         {
           "name": "Marangu Gate",
           "dayLabel": "Day 1"
+        },
+        {
+          "name": "Return to Arusha or Moshi",
+          "dayLabel": "Day 1"
         }
       ]
     },
     {
       "tripSlug": "shira-plateau-day-hike",
-      "routeStopCount": 6,
+      "routeStopCount": 8,
       "routeOrder": [
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Londorossi Gate",
           "dayLabel": "Day 1"
@@ -420,13 +560,21 @@
         {
           "name": "Londorossi Gate",
           "dayLabel": "Day 1"
+        },
+        {
+          "name": "Return to Arusha or Moshi",
+          "dayLabel": "Day 1"
         }
       ]
     },
     {
       "tripSlug": "materuni-waterfall-and-coffee-day-trip",
-      "routeStopCount": 3,
+      "routeStopCount": 6,
       "routeOrder": [
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Materuni village",
           "dayLabel": "Day 1"
@@ -438,13 +586,29 @@
         {
           "name": "Mount Kilimanjaro foothills",
           "dayLabel": "Day 1"
+        },
+        {
+          "name": "Materuni village",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Return to Arusha or Moshi",
+          "dayLabel": "Day 1"
         }
       ]
     },
     {
       "tripSlug": "serval-wildlife-day-trip",
-      "routeStopCount": 3,
+      "routeStopCount": 5,
       "routeOrder": [
+        {
+          "name": "Arusha or Moshi",
+          "dayLabel": "Day 1"
+        },
+        {
+          "name": "Mount Kilimanjaro foothills",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Siha",
           "dayLabel": "Day 1"
@@ -454,15 +618,19 @@
           "dayLabel": "Day 1"
         },
         {
-          "name": "Mount Kilimanjaro foothills",
+          "name": "Return to Arusha or Moshi",
           "dayLabel": "Day 1"
         }
       ]
     },
     {
       "tripSlug": "tanzanian-traffic-jam-the-great-migration",
-      "routeStopCount": 7,
+      "routeStopCount": 14,
       "routeOrder": [
+        {
+          "name": "Kilimanjaro International Airport",
+          "dayLabel": "Day 1"
+        },
         {
           "name": "Arusha",
           "dayLabel": "Day 1"
@@ -476,19 +644,43 @@
           "dayLabel": "Day 3"
         },
         {
+          "name": "Karatu",
+          "dayLabel": "Day 3"
+        },
+        {
+          "name": "Ngorongoro Crater",
+          "dayLabel": "Day 4"
+        },
+        {
           "name": "Ngorongoro Conservation Area",
           "dayLabel": "Day 4"
         },
         {
-          "name": "Central Serengeti",
+          "name": "Central Serengeti / Seronera",
           "dayLabel": "Days 5–6"
         },
         {
           "name": "Northern Serengeti",
-          "dayLabel": "Days 7–9"
+          "dayLabel": "Days 7–8"
         },
         {
-          "name": "Return to Arusha",
+          "name": "Mara River",
+          "dayLabel": "Day 9"
+        },
+        {
+          "name": "Kogatende Airstrip",
+          "dayLabel": "Day 10"
+        },
+        {
+          "name": "Arusha Airport",
+          "dayLabel": "Day 10"
+        },
+        {
+          "name": "Arusha",
+          "dayLabel": "Day 10"
+        },
+        {
+          "name": "Kilimanjaro International Airport",
           "dayLabel": "Day 10"
         }
       ]

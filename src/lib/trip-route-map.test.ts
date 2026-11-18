@@ -56,18 +56,33 @@ describe("trip route map adapter", () => {
     expect(route.fallbackImage?.src).toBe("/map.png");
   });
 
-  it("includes the full northern circuit journey from and back to Arusha", () => {
+  it("includes every transfer and destination in the 7-day northern safari", () => {
     const stops = catalogTripRouteStops("7-day-northern-tanzania-safari-mara-river-crossing");
 
     expect(stops.map(stop => stop.name)).toEqual([
+      "Kilimanjaro International Airport",
       "Arusha",
       "Tarangire National Park",
+      "Karatu",
       "Ngorongoro Crater",
       "Central Serengeti",
       "Northern Serengeti – Mara River",
-      "Return to Arusha",
+      "Kogatende Airstrip",
+      "Arusha Airport",
+      "Kilimanjaro International Airport",
     ]);
-    expect(stops.map(stop => stop.dayLabel)).toEqual(["Day 1", "Day 2", "Day 3", "Day 4", "Days 5–6", "Day 7"]);
+    expect(stops.map(stop => stop.dayLabel)).toEqual([
+      "Day 1",
+      "Day 1",
+      "Day 2",
+      "Day 2",
+      "Day 3",
+      "Day 4",
+      "Days 5–6",
+      "Day 7",
+      "Day 7",
+      "Day 7",
+    ]);
     expect(routeLineCoordinates(stops).at(0)).toEqual(routeLineCoordinates(stops).at(-1));
   });
 

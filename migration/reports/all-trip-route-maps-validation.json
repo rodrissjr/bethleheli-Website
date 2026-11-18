@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-11-17T20:50:58.050Z",
+  "generatedAt": "2026-11-18T08:02:08.814Z",
   "projectId": "ife51h63",
   "dataset": "production",
   "validatedTripCount": 15,
-  "routeStopCount": 99,
+  "routeStopCount": 147,
   "trips": [
     {
       "slug": "7-day-northern-tanzania-safari-mara-river-crossing",
       "title": "7-Day Northern Tanzania Safari Experience",
-      "routeStopCount": 6
+      "routeStopCount": 10
     },
     {
       "slug": "4-day-lake-natron-and-oldoinyo-lengai-adventure",
       "title": "4-Day Lake Natron & Oldoinyo Lengai Adventure",
-      "routeStopCount": 7
+      "routeStopCount": 9
     },
     {
       "slug": "mount-meru-trek",
       "title": "4-Day Mount Meru Trek",
-      "routeStopCount": 7
+      "routeStopCount": 9
     },
     {
       "slug": "marangu-route-hotel-stay",
       "title": "6-Day Kilimanjaro Marangu Route",
-      "routeStopCount": 9
+      "routeStopCount": 12
     },
     {
       "slug": "umbwe-route-hotel-stay",
       "title": "6-Day Kilimanjaro Umbwe Route",
-      "routeStopCount": 10
+      "routeStopCount": 11
     },
     {
       "slug": "machame-route",
@@ -38,47 +38,47 @@
     {
       "slug": "northern-circuit-route",
       "title": "9-Day Kilimanjaro Northern Circuit Route",
-      "routeStopCount": 11
+      "routeStopCount": 12
     },
     {
       "slug": "african-nights-and-circle-of-life-safari",
       "title": "African Nights & Circle of Life Safari",
-      "routeStopCount": 7
+      "routeStopCount": 12
     },
     {
       "slug": "chemka-hot-springs-day-trip",
       "title": "Chemka Hot Springs Day Trip",
-      "routeStopCount": 2
+      "routeStopCount": 4
     },
     {
       "slug": "east-african-safari-and-beach-bliss",
       "title": "East African Safari & Beach Bliss",
-      "routeStopCount": 7
+      "routeStopCount": 19
     },
     {
       "slug": "kilimanjaro-day-hike-marangu-route",
       "title": "Kilimanjaro Day Hike Marangu Route",
-      "routeStopCount": 4
+      "routeStopCount": 6
     },
     {
       "slug": "shira-plateau-day-hike",
       "title": "Kilimanjaro Shira Plateau Day Hike",
-      "routeStopCount": 6
+      "routeStopCount": 8
     },
     {
       "slug": "materuni-waterfall-and-coffee-day-trip",
       "title": "Materuni Waterfall & Coffee Day Trip",
-      "routeStopCount": 3
+      "routeStopCount": 6
     },
     {
       "slug": "serval-wildlife-day-trip",
       "title": "Serval Wildlife Day Trip",
-      "routeStopCount": 3
+      "routeStopCount": 5
     },
     {
       "slug": "tanzanian-traffic-jam-the-great-migration",
       "title": "Tanzanian Traffic Jam: The Great Migration",
-      "routeStopCount": 7
+      "routeStopCount": 14
     }
   ],
   "qualityIssues": [],
